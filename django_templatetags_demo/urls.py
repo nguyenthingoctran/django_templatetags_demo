@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('screen/', include('screen.urls')),
+    path('templatetags/', include('_Extract_Tags.urls')),
 ]

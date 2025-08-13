@@ -1,0 +1,53 @@
+{% load static %}
+<!doctype html>
+
+<html
+  lang="en"
+  class="layout-navbar-fixed layout-menu-fixed layout-compact"
+  dir="ltr"
+  data-skin="default"
+  data-bs-theme="light"
+  data-assets-path="{% static 'vendor/' %}"
+  data-template="vertical-menu-template">
+
+  {% include 'base/control/head.html' %}
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Sidebar -->
+        {% include 'base/control/sidebar.html' %}
+        <div class="layout-page">
+          <!-- Header -->
+          {% include 'base/control/header.html' %}
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+             {% block content %} {% endblock %}
+
+            <!-- Footer -->
+              {% include 'base/control/footer.html' %}
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
+      </div>
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
+
+      <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+      <div class="drag-target"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/theme.js  -->
+    {% include 'base/control/script.html' %}
+  </body>
+</html>
