@@ -20,7 +20,20 @@ class DataHandle():
       }
     }
     return column
+  
+  def get_object_column_values(self, objects, column_key):
+    column_data = []
+    for item in objects:
+      #1) Trường hợp là dictionary
+      if isinstance(item, dict):
+        column_data.append(item.get(column_key))
+      else:
+      #2) Trường hợp là object
+        column_data.append(getattr(item, column_key, None))
+
+    return column_data
 
   def get_table_column_text(self, column_id, label='', width=-1, align="left"):
     column = self._get_table_column_base(column_id, label, width, align) 
+    column['setting']['type'] = 'text'
     return column

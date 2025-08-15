@@ -1,0 +1,24 @@
+{% load extract_tags %}
+<table class="datatables-ajax table table-bordered">
+  <thead>
+    <tr>
+      {% for key_col, data_col in data.columns.items %}
+        <th>{{ data_col.setting.label }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+
+  <tbody class="table-border-bottom-0">
+    {% for row_index in data.total %}
+      <tr>
+        {% for key_column, data_column in data.columns.items %}
+          {% with type=data_column.setting.type %}
+            {% if type == "text" %}
+              {% table_td_text data_column row_index key_column %}
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
