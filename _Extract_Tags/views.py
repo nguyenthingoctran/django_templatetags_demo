@@ -28,6 +28,7 @@ class DataTable(TemplateView):
     
       table_data = {
         'options': {
+          'table_id': 'table_advanced_demo'
         },
         'columns': {
           'username': data_handle.get_table_column_text(column_id='username', label="User Name"),

@@ -1,5 +1,5 @@
 {% load extract_tags %}
-<table class="datatables-ajax table table-bordered">
+<table id='{{ data.options.table_id }}' class="datatables-ajax table table-bordered">
   <thead>
     <tr>
       {% for key_col, data_col in data.columns.items %}
@@ -22,3 +22,12 @@
     {% endfor %}
   </tbody>
 </table>
+
+<script type="text/javascript">
+  // Variable
+  var table_id = '{{ data.options.table_id }}';
+
+  // Setting Data Table
+
+  var table = new DataTable(`#${table_id}`)
+</script>
