@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('screen/', include('screen.urls')),
     path('templatetags/', include('_Extract_Tags.urls')),
+    path('research_doc/', include('research_doc.urls')),
 ]

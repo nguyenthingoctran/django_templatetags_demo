@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    '_Extract_Tags'
+    '_Extract_Tags',
+    'research_doc'
 ]
 
 MIDDLEWARE = [

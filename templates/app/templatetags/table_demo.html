@@ -2,20 +2,15 @@
 {% load extract_tags %}
 
 {% block content %}
-<div class="content-wrapper">
-  <div class="container-xxl flex-grow-1 container-p-y">
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <div class="card-datatable text-nowrap">
-              {% table_advanced table_data %}
-            </div>
-          </div>
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <div class="card-datatable text-nowrap">
+          {% table_advanced table_data %}
         </div>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}
