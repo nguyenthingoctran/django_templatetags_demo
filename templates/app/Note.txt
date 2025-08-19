@@ -1,0 +1,5 @@
+============ Get language list ===========
+  <script>
+    let supportedLanguages = hljs.listLanguages();
+    console.log(supportedLanguages);
+  </script>

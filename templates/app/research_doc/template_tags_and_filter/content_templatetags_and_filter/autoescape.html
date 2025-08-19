@@ -1,0 +1,109 @@
+  <div class="tab-pane fade show active" id="template-tag-autoescape" role="tabpanel">
+    <div class="card mb-6">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Autoescape</h5>
+        <small class="mb-4 d-inline-block">Dùng để show đoạn text chứa HTML</small>
+
+        <!-- ============== -->
+        <!-- Demo 1 ======= -->
+        <!-- ============== -->
+        <div class="border rounded px-5 pt-5 pb-0 mb-5">
+          <!-- Demo -->
+          <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 1</div>
+          {% autoescape on %}
+            <h3>{{ autoescape }}</h3>
+          {% endautoescape %}
+
+          <!-- BE -->
+          <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
+          <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
+          <pre class="chroma rounded mb-0">
+            <code class="language-python" data-lang="python">
+data = '{{ autoescape }}'
+            </code>
+          </pre>
+
+          <!-- FE -->
+          <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+          <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "on"</p> 
+          <div class='highlight-html+django notranslate'>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% autoescape on %}
+  <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
+{<span></span>% endautoescape %}
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <p class="mb-0">
+            <b class="text-warning">Note:</b> Trường hợp này có thể dùng cú pháp này để thay thế. Kết quả hiển thị tương tự
+          </p>
+          <div class='highlight-html+django notranslate'>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+<<span></span>h1>{<span></span>{ autoescape|escape }}</<span></span>h1>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============== -->
+        <!-- Demo 2 ======= -->
+        <!-- ============== -->
+        <div class="border rounded px-5 pt-5 pb-0 mb-5">
+          <!-- Demo -->
+          <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 2</div>
+          {% autoescape off %}
+            <h3>{{ autoescape }}</h3>
+          {% endautoescape %}
+
+          <!-- BE -->
+          <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
+          <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
+          <pre class="chroma rounded">
+            <code class="language-python" data-lang="python">
+data = '{{ autoescape }}'
+            </code>
+          </pre>
+
+          <!-- FE -->
+          <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+          <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "off"</p> 
+          <div class='highlight-html+django notranslate'>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% autoescape off %}
+  <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
+{<span></span>% endautoescape %}
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <p class="mb-0">
+            <b class="text-warning">Note:</b> Trường hợp này có thể dùng cú pháp này để thay thế. Kết quả hiển thị tương tự
+          </p>
+          <div class='highlight-html+django notranslate'>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+<<span></span>h1>{<span></span>{ autoescape|safe }}</<span></span>h1>
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let supportedLanguages = hljs.listLanguages();
+    console.log(supportedLanguages);
+  </script>
