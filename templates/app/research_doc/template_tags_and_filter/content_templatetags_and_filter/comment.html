@@ -1,0 +1,32 @@
+  <div class="tab-pane fade show" id="template-tag-comment" role="tabpanel">
+    <div class="card mb-6">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Block</h5>
+        <small class="mb-4 d-inline-block">Dùng để comment đoạn code <b>django-template</b></small>
+
+        <!-- ============== -->
+        <!-- Demo 1 ======= -->
+        <!-- ============== -->
+        <div class="border rounded px-5 pt-5 pb-0 mb-5">
+
+          <!-- FE -->
+          <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+          <div class='highlight-html+django notranslate'>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% comment "Optional note" %<span></span>}
+    <<span></span>p>Commented code here<<span></span>/p>
+{<span></span>% endcomment %<span></span>}
+                </code>
+              </pre>
+            </div>
+
+            <p>
+              <b class="text-warning">Note:</b> Không dùng comment lồng comment
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
