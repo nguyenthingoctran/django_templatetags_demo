@@ -8,9 +8,9 @@
       <!-- Demo 1 ======= -->
       <!-- ============== -->
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
-        <!-- Demo -->
         <div class="row">
-          <div class="col-6">
+          <div class="col-12">
+            <!-- Demo -->
             <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 1</div>
             <ul>
             {% for x in cycle %}
@@ -19,36 +19,32 @@
               </li>
             {% endfor %}
             </ul>
-          </div>
 
-          <div class="col-6">
-            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 2</div>
-            <ul>
-            {% for x in cycle %}
-              <li style="color: {{cycle_color}} ">
-                {{ x }}
-              </li>
-            {% endfor %}
-            </ul>
-          </div>
-        </div>
-
-        <!-- BE -->
-        <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
-        <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
-        <pre class="chroma rounded mb-0">
-          <code class="language-python" data-lang="python">
-data = ['Apple', 'Banana', 'Cherry', 'Orange']
-          </code>
-        </pre>
-
-        <!-- FE -->
-        <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
-        <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "on"</p> 
-        <div class='highlight-html+django notranslate'>
-          <div class="highlight">
+            <!-- BE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
+            <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
             <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
+              <code class="language-python pb-0" data-lang="python">
+class Research_Doc(TemplateView):
+    ...
+    def research_doc_cycle(seft):
+      data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
+      return data
+      
+    def get_context_data(self, **kwargs):
+      ...
+      data['cycle'] = self.research_doc_cycle()
+      return data
+              </code>
+            </pre>
+
+
+            <!-- FE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <div class='highlight-html+django notranslate'>
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
 <<span></span>ul>
 {<span></span>% for x in cycle %<span></span>}
   <<span></span>li style="color:{<span></span>% cycle 'red' 'green' 'blue' 'pink' %<span></span>}"<span></span>>
@@ -56,8 +52,11 @@ data = ['Apple', 'Banana', 'Cherry', 'Orange']
   <<span></span>/li>
 {<span></span>% endfor %}
 <<span></span>/ul>
-              </code>
-            </pre>
+                  </code>
+                </pre>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -65,9 +64,71 @@ data = ['Apple', 'Banana', 'Cherry', 'Orange']
           <b class="text-warning">Note:</b> 
           <ul>
             <li>List <b>cycle</b> có thể sẽ quay lặp lại từ đầu khi đến cuối chuỗi </li>
-            <li></li>
           </ul>
         </p>
+      </div>
+
+      <!-- ============== -->
+      <!-- Demo 2 ======= -->
+      <!-- ============== -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <div class="row">
+          <div class="col-12">
+            <!-- Demo -->
+            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 2</div>
+            <ul>
+            {% for x in cycle %}
+              <li style="color: {% cycle 'red' cycle_color 'blue' 'pink' %}">
+                {{ x }}
+              </li>
+            {% endfor %}
+            </ul>
+
+            <!-- BE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
+            <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
+            <pre class="chroma rounded mb-0">
+              <code class="language-python pb-0" data-lang="python">
+class Research_Doc(TemplateView):
+    ...
+    def research_doc_cycle_color(seft):
+      data = 'springgreen'
+      return data
+      
+    def get_context_data(self, **kwargs):
+      ...
+      data['cycle_color'] = self.research_doc_cycle_color()
+      return data
+              </code>
+            </pre>
+
+            <!-- FE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <div class='highlight-html+django notranslate'>
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
+<<span></span>ul>
+{<span></span>% for x in cycle %<span></span>}
+  <<span></span>li style="color: {<span></span>% cycle 'red' cycle_color 'blue' 'pink' %<span></span>}"<span></span>>
+    {<span></span>{ x }<span></span>}
+  </<span></span>li>
+{<span></span>% endfor %<span></span>}
+<<span></span>/ul>
+                  </code>
+                </pre>
+              </div>
+            </div>
+
+          <p class="mb-0">
+            <b class="text-warning">Note:</b> 
+            <ul>
+              <li>Có thể truyền biến vào <b>cycle</b></li>
+            </ul>
+          </p>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>

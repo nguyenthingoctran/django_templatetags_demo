@@ -14,7 +14,7 @@ class Research_Doc(TemplateView):
       return data
     
     def research_doc_cycle_color(seft):
-      data = ['crimson', 'fuchsia', 'springgreen', 'aqua']
+      data = 'springgreen'
       return data
       
     def get_context_data(self, **kwargs):
