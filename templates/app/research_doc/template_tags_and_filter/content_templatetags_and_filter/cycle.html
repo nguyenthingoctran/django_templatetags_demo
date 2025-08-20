@@ -1,4 +1,4 @@
-<div class="tab-pane fade show active" id="template-tag-cycle" role="tabpanel">
+<div class="tab-pane fade show" id="template-tag-cycle" role="tabpanel">
   <div class="card mb-6">
     <div class="card-body">
       <h5 class="card-title mb-1">cycle</h5>
@@ -126,6 +126,77 @@ class Research_Doc(TemplateView):
               <li>Có thể truyền biến vào <b>cycle</b></li>
             </ul>
           </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================ -->
+      <!-- Demo 4 - Reset cycle ======= -->
+      <!-- ============================ -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <div class="row">
+          <div class="col-12">
+            <!-- Demo -->
+            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 3 - Reset cycle</div>
+            <ul>
+              {% for x in cycle %}
+                {% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' as bgcolor silent %}
+                {% if forloop.counter == 3 %}
+                  {% resetcycle %}
+                {% endif %}
+                <li style='background-color:{{ bgcolor }}'>
+                  {{ x }}
+                </li>
+              {% endfor %}
+            </ul> 
+
+            <!-- BE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
+            <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
+            <pre class="chroma rounded mb-0">
+              <code class="language-python pb-0" data-lang="python">
+class Research_Doc(TemplateView):
+    ...
+    def research_doc_cycle(seft):
+      data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
+      return data
+      
+    def get_context_data(self, **kwargs):
+      ...
+      data['cycle'] = self.research_doc_cycle()
+      return data
+              </code>
+            </pre>
+
+            <!-- FE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <div class='highlight-html+django notranslate'>
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
+<<span></span>ul>
+  {<span></span>% for x in cycle %<span></span>}
+    {<span></span>% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' as bgcolor silent %<span></span>}
+    {<span></span>% if forloop.counter == 3 %<span></span>}
+      {<span></span>% resetcycle %<span></span>}
+    {<span></span>% endif %<span></span>}
+    <<span></span>li style='background-color:{{ bgcolor }}'<span></span>>
+      {<span></span>{ x }<span></span>}
+    <<span></span>/li>
+  {<span></span>% endfor %}
+<<span></span>/ul>
+                  </code>
+                </pre>
+              </div>
+            </div>
+
+            <p class="mb-0">
+              <b class="text-warning">Note:</b> 
+              <ul>
+                <li>Sử dụng <b>resetcycle</b> nếu muốn reset lại list cycle</li>
+              </ul>
+            </p>
 
           </div>
         </div>
