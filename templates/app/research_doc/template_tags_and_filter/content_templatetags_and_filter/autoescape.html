@@ -26,29 +26,25 @@ data = '{{ autoescape }}'
           <!-- FE -->
           <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
           <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "on"</p> 
-          <div class='highlight-html+django notranslate'>
-            <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
+          <div class="highlight">
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
 {<span></span>% autoescape on %}
   <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
 {<span></span>% endautoescape %}
-                </code>
-              </pre>
-            </div>
+              </code>
+            </pre>
           </div>
 
           <p class="mb-0">
             <b class="text-warning">Note:</b> Trường hợp này có thể dùng cú pháp này để thay thế. Kết quả hiển thị tương tự
           </p>
-          <div class='highlight-html+django notranslate'>
-            <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
+          <div class="highlight">
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
 <<span></span>h1>{<span></span>{ autoescape|escape }}</<span></span>h1>
-                </code>
-              </pre>
-            </div>
+              </code>
+            </pre>
           </div>
         </div>
 
@@ -74,29 +70,25 @@ data = '{{ autoescape }}'
           <!-- FE -->
           <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
           <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "off"</p> 
-          <div class='highlight-html+django notranslate'>
-            <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
+          <div class="highlight">
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
 {<span></span>% autoescape off %}
   <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
 {<span></span>% endautoescape %}
-                </code>
-              </pre>
-            </div>
+              </code>
+            </pre>
           </div>
 
           <p class="mb-0">
             <b class="text-warning">Note:</b> Trường hợp này có thể dùng cú pháp này để thay thế. Kết quả hiển thị tương tự
           </p>
-          <div class='highlight-html+django notranslate'>
-            <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
+          <div class="highlight">
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
 <<span></span>h1>{<span></span>{ autoescape|safe }}</<span></span>h1>
-                </code>
-              </pre>
-            </div>
+              </code>
+            </pre>
           </div>
         </div>
       </div>

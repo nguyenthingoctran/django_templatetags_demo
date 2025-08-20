@@ -3,3 +3,9 @@
     let supportedLanguages = hljs.listLanguages();
     console.log(supportedLanguages);
   </script>
+
+==========================================
+Hiển thị ra thẻ HTML ra ngoài trang, ko cần <span>
+{% filter force_escape|lower %}
+  <b>This text will be HTML-escaped, and will appear in all lowercase.</b>
+{% endfilter %}

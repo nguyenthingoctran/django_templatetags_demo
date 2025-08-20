@@ -1,0 +1,121 @@
+<div class="modal fade" id="modalAdd" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Filter - Add</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col mb-4">
+            <!-- FE -->
+            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <p class='pt-2 mb-0'>Cú pháp</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>{ value|add:valuetoadd }}
+                </code>
+              </pre>
+            </div>
+
+            <!-- Number -->
+            <p class="mb-0">Đối với number thì + thêm vào như 1 phép toán</p>
+            <div class="row">
+              <div class="col-6">
+                <div class="p-3 bg-label-primary mt-4">
+                  <span class="d-block">Demo:</span>
+                  {% with x=10 %}
+                    {{ x|add:"10" }}
+                  {% endwith %}
+                </div>
+
+              </div>
+              <div class="col-6">
+                <div class="highlight">
+                  <pre class="chroma rounded mb-0">
+                    <code class="language-html" data-lang="html">
+{<span></span>% with x=10 %}
+{<span></span>{ x|add:"10" }}
+{<span></span>% endwith %} 
+                    </code>
+                  </pre>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- String -->
+            <p class="mb-0">Đối với string/character thì nối vào</p>
+            <div class="row">
+              <div class="col-6">
+                <div class="p-3 bg-label-primary mt-4">
+                  <span class="d-block">Demo:</span>
+                  {% with x='Hello ' %}
+                    {{ x|add:"Kitty" }}
+                  {% endwith %}
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="highlight">
+                  <pre class="chroma rounded mb-0">
+                    <code class="language-html" data-lang="html">
+{<span></span>% with x='Hello ' %}
+{<span></span>{ x|add:"Kitty" }}
+{<span></span>% endwith %}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- String -->
+            <p class="mb-0">Đối với <b>list</b> thì <b>append</b> vào</p>
+            <div class="row">
+              <div class="col-6">
+                <div class="p-3 bg-label-primary mt-4">
+                  <span class="d-block">Demo:</span>
+                  {{ filter_add.fruits|add:filter_add.vegetables }}
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="highlight">
+                  <pre class="chroma rounded mb-0">
+                    <code class="language-python" data-lang="python">
+class Research_Doc(TemplateView):
+    ...
+    
+    def research_doc_filter_add(self):
+      context = {
+        'fruits': ['Apple', 'Banana', 'Cherry'],   
+        'vegetables': ['Asparagus', 'Broccoli', 'Carrot'],
+      }
+      return context
+      
+    def get_context_data(self, **kwargs):
+      ...
+      data['filter_add'] = self.research_doc_filter_add()
+      return data
+                    </code>
+                  </pre>
+                </div>
+                <div class="highlight">
+                  <pre class="chroma rounded mb-0">
+                    <code class="language-html" data-lang="html">
+{<span></span>{ filter_add.fruits|add:filter_add.vegetables }}
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

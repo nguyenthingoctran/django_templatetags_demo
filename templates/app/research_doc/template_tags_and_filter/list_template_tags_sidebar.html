@@ -7,7 +7,8 @@
     {
       'data_bs_target': 'template-tag-autoescape',
       'icon_name': 'code',
-      'name': 'autoescape'
+      'name': 'autoescape',
+      'active': 'active'
     },
     {
       'data_bs_target': 'template-tag-block',
@@ -39,16 +40,22 @@
       'icon_name': 'code',
       'name': 'extends'
     },
+    {
+      'data_bs_target': 'template-tag-filter',
+      'icon_name': 'code',
+      'name': 'filter'
+    },
   ]
 
   for (var item_sidebar of list_sidebar) {
-    data_bs_target = item_sidebar['data_bs_target']
-    icon_name = item_sidebar['icon_name']
-    name = item_sidebar['name']
+    var data_bs_target = item_sidebar['data_bs_target']
+    var icon_name = item_sidebar['icon_name']
+    var name = item_sidebar['name']
+    var active = item_sidebar['active'] ? item_sidebar['active'] : ''
 
     var html_item_sidebar = `
           <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#${data_bs_target}">
+            <button class="nav-link ${active}" data-bs-toggle="tab" data-bs-target="#${data_bs_target}">
               <i class="icon-base ti tabler-${icon_name} icon-sm me-1_5"></i>
               <span class="align-middle">${name}</span>
             </button>
