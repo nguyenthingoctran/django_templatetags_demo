@@ -201,6 +201,100 @@ class Research_Doc(TemplateView):
           </div>
         </div>
       </div>
+
+      <!-- ============================== -->
+      <!-- Demo 5 - Cycle with as ======= -->
+      <!-- ============================== -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <div class="row">
+          <div class="col-12">
+            <!-- Demo -->
+            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 5 - Cycle with us</div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+
+              <tbody class="table-border-bottom-0">
+                <tr>
+                    <td class="{% cycle 'row1' 'row2' as rowcolors %}">Hà Nội - {{ rowcolors }}</td>
+                    <td class="{{ rowcolors }}">Sài Gòn - {{ rowcolors }}</td>
+                </tr>
+                <tr>
+                    <td class="{% cycle rowcolors %}">Đà Nẵng - {{ rowcolors }}</td>
+                    <td class="{{ rowcolors }}">Quảng Nam- {{ rowcolors }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- FE -->
+            <div class="badge text-bg-light rounded-pill ms-auto mt-3">FE</div> 
+            <div class='highlight-html+django notranslate'>
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
+<<span></span>table class="table">
+  <<span></span>thead>
+    <<span></span>tr>
+      <<span></span>th>Column 1<<span></span>/th>
+      <<span></span>th>Column 2<<span></span>/th>
+    <<span></span>/tr>
+  <<span></span>/thead>
+
+  <<span></span>tbody class="table-border-bottom-0">
+    <<span></span>tr>
+        <<span></span>td class="{<span></span>% cycle 'row1' 'row2' as rowcolors %<span></span>}">Hà Nội - {<span></span>{ rowcolors }<span></span>}<<span></span>/td>
+        <<span></span>td class="{<span></span>{ rowcolors }}">Sài Gòn - {<span></span>{ rowcolors }}<<span></span>/td>
+    <<span></span>/tr>
+    <<span></span>tr>
+        <<span></span>td class="{<span></span>% cycle rowcolors %}">Đà Nẵng - {<span></span>{ rowcolors }}<<span></span>/td>
+        <<span></span>td class="{<span></span>{ rowcolors }}">Quảng Nam- {<span></span>{ rowcolors }}<<span></span>/td>
+    <<span></span>/tr>
+  <<span></span>/tbody>
+<<span></span>/table>
+                  </code>
+                </pre>
+              </div>
+            </div>
+
+            <!-- FE - Output -->
+            <div class="badge text-bg-light rounded-pill ms-auto mt-3">FE - Output</div> 
+            <div class='highlight-html+django notranslate'>
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
+<<span></span>table class="table">
+  <<span></span>thead>
+    <<span></span>tr>
+      <<span></span>th>Column 1</th>
+      <<span></span>th>Column 2</th>
+    <<span></span>/tr>
+  <<span></span>/thead>
+
+  <<span></span>tbody class="table-border-bottom-0">
+    <<span></span>tr>
+        <<span></span>td class="{% cycle 'row1' 'row2' as rowcolors %}">Hà Nội - {{ rowcolors }}<<span></span>/td>
+        <<span></span>td class="{{ rowcolors }}">Sài Gòn - {{ rowcolors }}<<span></span>/td>
+    <<span></span>/tr>
+    <<span></span>tr>
+        <<span></span>td class="{% cycle rowcolors %}">Đà Nẵng - {{ rowcolors }}<<span></span>/td>
+        <<span></span>td class="{{ rowcolors }}">Quảng Nam- {{ rowcolors }}<<span></span>/td>
+    <<span></span>/tr>
+  <<span></span>/tbody>
+<<span></span>/table>
+                  </code>
+                </pre>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
