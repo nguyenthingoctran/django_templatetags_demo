@@ -1,34 +1,54 @@
 <div class="nav-align-left">
-  <ul class="nav nav-pills flex-column w-100">
-    <li class="nav-item">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#template-tag-autoescape">
-        <i class="icon-base ti tabler-code icon-sm me-1_5"></i>
-        <span class="align-middle">autoescape</span>
-      </button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#template-tag-block">
-        <i class="icon-base ti tabler-code icon-sm me-1_5"></i>
-        <span class="align-middle">block</span>
-      </button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#template-tag-comment">
-        <i class="icon-base ti tabler-code icon-sm me-1_5"></i>
-        <span class="align-middle">Comment</span>
-      </button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#template-tag-csrf-token">
-        <i class="icon-base ti tabler-code icon-sm me-1_5"></i>
-        <span class="align-middle">csrf_token</span>
-      </button>
-    </li>
-    <li class="nav-item">
-      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#template-tag-cycle">
-        <i class="icon-base ti tabler-code icon-sm me-1_5"></i>
-        <span class="align-middle">cycle</span>
-      </button>
-    </li>
-  </ul>
+  <ul class="nav nav-pills flex-column w-100" id="list_sidebar"></ul>
 </div>
+
+<script>
+  var list_sidebar = [
+    {
+      'data_bs_target': 'template-tag-autoescape',
+      'icon_name': 'code',
+      'name': 'autoescape'
+    },
+    {
+      'data_bs_target': 'template-tag-block',
+      'icon_name': 'code',
+      'name': 'block'
+    },
+    {
+      'data_bs_target': 'template-tag-comment',
+      'icon_name': 'code',
+      'name': 'Comment'
+    },
+    {
+      'data_bs_target': 'template-tag-csrf-token',
+      'icon_name': 'code',
+      'name': 'csrf_token'
+    },
+    {
+      'data_bs_target': 'template-tag-cycle',
+      'icon_name': 'code',
+      'name': 'cycle'
+    },
+    {
+      'data_bs_target': 'template-tag-debug',
+      'icon_name': 'code',
+      'name': 'debug'
+    },
+  ]
+
+  for (var item_sidebar of list_sidebar) {
+    data_bs_target = item_sidebar['data_bs_target']
+    icon_name = item_sidebar['icon_name']
+    name = item_sidebar['name']
+
+    var html_item_sidebar = `
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#${data_bs_target}">
+              <i class="icon-base ti tabler-${icon_name} icon-sm me-1_5"></i>
+              <span class="align-middle">${name}</span>
+            </button>
+          </li>
+      `
+    $(html_item_sidebar).appendTo("#list_sidebar")
+  }
+</script>
