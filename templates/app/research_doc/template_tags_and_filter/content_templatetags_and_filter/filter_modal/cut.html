@@ -1,0 +1,38 @@
+<div class="modal fade" id="modalCut" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Filter - cut</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">Xoá bất kỳ ký tự hoặc cụm từ nào được chỉ định. Lưu ý là có phân biệt chữ hoa chữ thường.</p>
+        <div class="row">
+          <div class="col-6">
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% with account="TranNTN" %<span></span>}
+  <<span></span>h3>{<span></span>{ account|cut:"NTN" }<span></span>}<<span></span>/h3>
+{<span></span>% endwith %<span></span>}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 bg-label-primary mt-4">
+              <span class="d-block">Kết quả:</span>
+              {% with account="TranNTN" %}
+                <h3>{{ account|cut:"NTN" }}</h3>
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

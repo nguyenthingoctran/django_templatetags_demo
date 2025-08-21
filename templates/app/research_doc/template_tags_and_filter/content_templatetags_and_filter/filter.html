@@ -98,6 +98,21 @@
                     {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/center.html' %}
                   </td>
                 </tr>
+                <tr>
+                  <td>cut</td>
+                  <td>Xoá bất kỳ ký tự hoặc cụm từ nào được chỉ định.</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalCut">
+                      Detail
+                    </button>
+                    <!-- modalCapfirst -->
+                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/cut.html' %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
