@@ -1,0 +1,91 @@
+{% extends 'base/main_layout.html' %}
+{% load extract_tags %}
+
+{% block breadcrumbs %} 
+  <!-- Basic Breadcrumb -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="javascript:void(0);">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="{% url '_Extract_Tag:list_guide' %}">Template Tags Guide</a>
+      </li>
+      <li class="breadcrumb-item active">Title</li>
+    </ol>
+  </nav>
+{% endblock %}              
+ 
+{% block content %}
+  {% main_title text="Title" className="mb-3" %}
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Main title</h5>
+      <h6 class="card-subtitle mb-3">Sử dụng làm title chính của page</h6>
+      <div class="nav-align-top nav-tabs-shadow">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link active"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-main-title-demo"
+              aria-controls="navs-main-title-demo"
+              aria-selected="true">
+              Demo
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-main-title-be"
+              aria-controls="navs-main-title-be"
+              aria-selected="false">
+              BE
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-main-title-fe"
+              aria-controls="navs-main-title-fe"
+              aria-selected="false">
+              FE
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane show active" id="navs-main-title-demo" role="tabpanel">
+            {% main_title text="Main Title Demo" className="mb-3" %}
+          </div>
+          <div class="tab-pane" id="navs-main-title-be" role="tabpanel">
+            <p></p>
+          </div>
+          <div class="tab-pane" id="navs-main-title-fe" role="tabpanel">
+            <p class="mb-0">Tại trang HTML import:</p>
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
+{<span></span>% main_title text="Main Title Demo" className="mb-3" %}
+              </code>
+            </pre>
+
+            <p class="mb-0">Trong đó với các option như sau:</p>
+            <ul>
+              <li>
+                <b>text:</b> Truyền vào content text của title.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

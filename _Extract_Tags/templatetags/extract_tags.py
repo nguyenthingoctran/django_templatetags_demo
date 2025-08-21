@@ -2,6 +2,14 @@ from django import template
 
 register = template.Library()
 
+@register.inclusion_tag('app/templatetags/tags/title/main_title.html')
+def main_title(text="", className=""):
+  data = {
+    "text": text,
+    "className": className
+  }
+  return data
+
 @register.inclusion_tag('app/templatetags/tags/table/table_advanced.html')
 def table_advanced(data_table):
   data = {

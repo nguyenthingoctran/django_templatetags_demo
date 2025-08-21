@@ -25,8 +25,11 @@
           <!-- Content wrapper -->
           <div class="content-wrapper">
             <div class="container-xxl flex-grow-1 container-p-y">
+              <!-- Breadcrumb -->
+              {% block breadcrumbs %} {% endblock %}
+
               <!-- Content -->
-             {% block content %} {% endblock %}
+              {% block content %} {% endblock %}
             </div>
 
             <!-- Footer -->

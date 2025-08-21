@@ -113,6 +113,21 @@
                     {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/cut.html' %}
                   </td>
                 </tr>
+                <tr>
+                  <td>date</td>
+                  <td>Trả về ngày tháng theo định đã chỉ định.</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDate">
+                      Detail
+                    </button>
+                    <!-- modalCapfirst -->
+                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html' %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

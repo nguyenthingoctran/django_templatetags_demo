@@ -4,6 +4,7 @@ from _Extract_Tags import views
 app_name = '_Extract_Tag'
 
 urlpatterns = [
-    path("index/", views.index),
     path("table_demo/", views.DataTable.as_view(), name='table_advanced_demo'),
+    path("guide/", views.ListGuide.as_view(), name='list_guide'),
+    path("title/", views.Title.as_view(), name='title'),
 ]

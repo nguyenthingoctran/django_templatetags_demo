@@ -20,6 +20,20 @@ def table_demo(request):
     
     return render(request, "app/templatetags/table_demo.html", data)
 
+class ListGuide(TemplateView):
+  template_name = "app/templatetags/index_guide.html"
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    return data
+  
+class Title(TemplateView):
+  template_name = "app/templatetags_guide/title/index.html"
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    return data
+
 class DataTable(TemplateView):
     template_name = "app/templatetags/table_demo.html"
 
