@@ -27,15 +27,6 @@
             <p class="mb-0">Đối với number thì + thêm vào như 1 phép toán</p>
             <div class="row">
               <div class="col-6">
-                <div class="p-3 bg-label-primary mt-4">
-                  <span class="d-block">Demo:</span>
-                  {% with x=10 %}
-                    {{ x|add:"10" }}
-                  {% endwith %}
-                </div>
-
-              </div>
-              <div class="col-6">
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
                     <code class="language-html" data-lang="html">
@@ -46,20 +37,19 @@
                   </pre>
                 </div>
               </div>
-
+              <div class="col-6">
+                <div class="p-3 bg-label-primary mt-4">
+                  <span class="d-block">Kết quả:</span>
+                  {% with x=10 %}
+                    {{ x|add:"10" }}
+                  {% endwith %}
+                </div>
+              </div>
             </div>
 
             <!-- String -->
             <p class="mb-0">Đối với string/character thì nối vào</p>
             <div class="row">
-              <div class="col-6">
-                <div class="p-3 bg-label-primary mt-4">
-                  <span class="d-block">Demo:</span>
-                  {% with x='Hello ' %}
-                    {{ x|add:"Kitty" }}
-                  {% endwith %}
-                </div>
-              </div>
               <div class="col-6">
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
@@ -71,17 +61,19 @@
                   </pre>
                 </div>
               </div>
+              <div class="col-6">
+                <div class="p-3 bg-label-primary mt-4">
+                  <span class="d-block">Kết quả:</span>
+                  {% with x='Hello ' %}
+                    {{ x|add:"Kitty" }}
+                  {% endwith %}
+                </div>
+              </div>
             </div>
 
             <!-- String -->
             <p class="mb-0">Đối với <b>list</b> thì <b>append</b> vào</p>
             <div class="row">
-              <div class="col-6">
-                <div class="p-3 bg-label-primary mt-4">
-                  <span class="d-block">Demo:</span>
-                  {{ filter_add.fruits|add:filter_add.vegetables }}
-                </div>
-              </div>
               <div class="col-6">
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
@@ -111,8 +103,13 @@ class Research_Doc(TemplateView):
                   </pre>
                 </div>
               </div>
+              <div class="col-6">
+                <div class="p-3 bg-label-primary mt-4">
+                  <span class="d-block">Kết quả:</span>
+                  {{ filter_add.fruits|add:filter_add.vegetables }}
+                </div>
+              </div>
             </div>
-            
           </div>
         </div>
       </div>

@@ -47,10 +47,26 @@
                       class="btn btn-secondary btn-sm"
                       data-bs-toggle="modal"
                       data-bs-target="#modalAdd">
-                      Detail</button>
-                      <!-- modalAdd -->
-                      {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/add.html' %}
-                    </tr>
+                      Detail
+                    </button>
+                    <!-- modalAdd -->
+                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/add.html' %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>addslashes</td>
+                  <td>Thêm ký tự gạch chéo (\) trước bất kỳ dấu nháy (') nào.</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalAddslashes">
+                      Detail
+                    </button>
+                    <!-- modalAddslashes -->
+                     {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/addslashes.html' %}
+                  </td>
                 </tr>
               </tbody>
             </table>
