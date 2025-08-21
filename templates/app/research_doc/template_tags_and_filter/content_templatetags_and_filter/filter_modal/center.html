@@ -1,0 +1,64 @@
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Filter - center</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">Đối với trường hợp thẻ H sẽ không thấy thay đổi, tuy nhiên khi 
+          inspect và trỏ vào text sẽ thấy chữ được căn giữa theo số lượng ký tự
+          đã định.
+        </p>
+        <div class="row">
+          <div class="col-6">
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% with account="TranNTN" %<span></span>}
+  <<span></span>h3>{<span></span>{ account|center:20 }<span></span>}<<span></span>/h3>
+{<span></span>% endwith %<span></span>}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 bg-label-primary mt-4">
+              <span class="d-block">Kết quả:</span>
+              {% with account="TranNTN" %}
+                <h3>{{ account|center:20 }}</h3>
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+
+        <p class="mb-0">Một trường hợp khác với thẻ <b>textarea</b></p>
+        <div class="row">
+          <div class="col-6">
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% with account="TranNTN" %<span></span>}
+  <<span></span>textarea>{<span></span>{ account|center:20 }<span></span>}<<span></span>/textarea>
+{<span></span>% endwith %<span></span>}
+                </code>
+              </pre>
+            </div>            
+          </div>
+          <div class="col-6">
+            <div class="p-3 bg-label-primary mt-4">
+              <span class="d-block">Kết quả:</span>
+              {% with account="TranNTN" %}
+                <textarea>{{ account|center:20 }}</textarea>
+              {% endwith %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
