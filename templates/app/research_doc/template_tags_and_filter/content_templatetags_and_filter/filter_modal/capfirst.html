@@ -1,8 +1,8 @@
-<div class="modal fade" id="modalAddslashes" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modalCapfirst" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel1">Filter - Addslashes</h5>
+        <h5 class="modal-title" id="exampleModalLabel1">Filter - capfirst</h5>
         <button
           type="button"
           class="btn-close"
@@ -10,16 +10,14 @@
           aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- FE -->
-        <p class='pt-2 mb-0'>Thêm ký tự gạch chéo (\) trước bất kỳ dấu nháy (') nào.</p> 
         <div class="row">
           <div class="col-6">
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
-{<span></span>% with name="Tran's Airpod" %}
-  <<span></span>h3>{<span></span>{ name|addslashes }<span></span>}<<span></span>/h3>
-{<span></span>% endwith %}
+{<span></span>% with account="tran" %<span></span>}
+  <<span></span>h3>{<span></span>{ account|capfirst }<span></span>}<<span></span>/h3>
+{<span></span>% endwith %<span></span>}
                 </code>
               </pre>
             </div>
@@ -27,8 +25,8 @@
           <div class="col-6">
             <div class="p-3 bg-label-primary mt-4">
               <span class="d-block">Kết quả:</span>
-              {% with name="Tran's Airpod" %}
-                <h3>{{ name|addslashes }}</h3>
+              {% with account="tran" %}
+                <h3>{{ account|capfirst }}</h3>
               {% endwith %}
             </div>
           </div>

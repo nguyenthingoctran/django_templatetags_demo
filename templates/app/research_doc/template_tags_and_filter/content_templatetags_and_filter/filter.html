@@ -65,7 +65,22 @@
                       Detail
                     </button>
                     <!-- modalAddslashes -->
-                     {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/addslashes.html' %}
+                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/addslashes.html' %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>capfirst</td>
+                  <td>Trả về chữ cái đầu tiên ở dạng in hoa</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalCapfirst">
+                      Detail
+                    </button>
+                    <!-- modalCapfirst -->
+                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/capfirst.html' %}
                   </td>
                 </tr>
               </tbody>
