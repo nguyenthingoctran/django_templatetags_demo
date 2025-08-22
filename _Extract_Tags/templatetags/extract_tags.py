@@ -3,9 +3,9 @@ from django import template
 register = template.Library()
 
 @register.inclusion_tag('app/templatetags/tags/title/main_title.html')
-def main_title(text="", className=""):
+def main_title(value="", className=""):
   data = {
-    "text": text,
+    "value": value,
     "className": className
   }
   return data

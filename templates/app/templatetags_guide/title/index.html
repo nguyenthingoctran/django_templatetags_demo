@@ -17,7 +17,7 @@
 {% endblock %}              
  
 {% block content %}
-  {% main_title text="Title" className="mb-3" %}
+  {% main_title value="Title" className="mb-3" %}
 
   <div class="card">
     <div class="card-body">
@@ -43,18 +43,6 @@
               class="nav-link"
               role="tab"
               data-bs-toggle="tab"
-              data-bs-target="#navs-main-title-be"
-              aria-controls="navs-main-title-be"
-              aria-selected="false">
-              BE
-            </button>
-          </li>
-          <li class="nav-item">
-            <button
-              type="button"
-              class="nav-link"
-              role="tab"
-              data-bs-toggle="tab"
               data-bs-target="#navs-main-title-fe"
               aria-controls="navs-main-title-fe"
               aria-selected="false">
@@ -64,25 +52,41 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane show active" id="navs-main-title-demo" role="tabpanel">
-            {% main_title text="Main Title Demo" className="mb-3" %}
-          </div>
-          <div class="tab-pane" id="navs-main-title-be" role="tabpanel">
-            <p></p>
+            {% main_title value="Main Title Demo" className="mb-3" %}
           </div>
           <div class="tab-pane" id="navs-main-title-fe" role="tabpanel">
             <p class="mb-0">Tại trang HTML import:</p>
             <pre class="chroma rounded mb-0">
               <code class="language-html" data-lang="html">
-{<span></span>% main_title text="Main Title Demo" className="mb-3" %}
+{<span></span>% main_title value="Main Title Demo" className="mb-3" %}
               </code>
             </pre>
 
-            <p class="mb-0">Trong đó với các option như sau:</p>
-            <ul>
-              <li>
-                <b>text:</b> Truyền vào content text của title.
-              </li>
-            </ul>
+            <p>Option List</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Type data</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>value</td>
+                  <td>Truyền đoạn text cần hiển thị</td>
+                  <td>text</td>
+                  <td><code>value="Main Title Demo"</code></td>
+                </tr>
+                <tr>
+                  <td>className</td>
+                  <td>Truyền class vào option này</td>
+                  <td>text</td>
+                  <td><code>className="mb-3"</code></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
