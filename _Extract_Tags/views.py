@@ -32,10 +32,10 @@ class Title(TemplateView):
   template_name = "app/templatetags_guide/title/index.html"
 
   def get_data_breadcrumbs(self):
-    data = [
+    breadcrumb_data = [
         {
           'label': 'Home',
-          'url': reverse("_Extract_Tag:list_guide")
+          'url': reverse("Screen:home")
         },
         {
           'label': 'Template Tags Guide',
@@ -45,21 +45,21 @@ class Title(TemplateView):
           'label': 'Title'
         }
     ]
-    return data
+    return breadcrumb_data
 
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
-    data['breadcrumbs'] = self.get_data_breadcrumbs()
+    data['breadcrumb_data'] = self.get_data_breadcrumbs()
     return data
   
 class Breadcrumbs(TemplateView):
   template_name = "app/templatetags_guide/breadcrumbs/index.html"
 
   def get_data_breadcrumbs(self):
-    data = [
+    breadcrumb_data = [
         {
           'label': 'Home',
-          'url': "javascript:void(0);"
+          'url': reverse("Screen:home")
         },
         {
           'label': 'Template Tags Guide',
@@ -69,11 +69,11 @@ class Breadcrumbs(TemplateView):
           'label': 'Breadcrumbs'
         }
     ]
-    return data
+    return breadcrumb_data
 
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
-    data['breadcrumbs'] = self.get_data_breadcrumbs()
+    data['breadcrumb_data'] = self.get_data_breadcrumbs()
     return data
 
 class DataTable(TemplateView):

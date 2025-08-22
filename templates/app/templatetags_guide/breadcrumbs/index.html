@@ -2,7 +2,7 @@
 {% load extract_tags %}
 
 {% block breadcrumbs %}
-  {% breadcrumb breadcrumb_list=breadcrumbs %}
+  {% breadcrumb breadcrumb_list=breadcrumb_data %}
 {% endblock %}
 
 {% block content %}
@@ -53,45 +53,70 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane show active" id="navs-breadcrumbs-demo" role="tabpanel">
-            {% breadcrumb breadcrumb_list=breadcrumbs %}
+            {% breadcrumb breadcrumb_list=breadcrumb_data %}
           </div>
           <div class="tab-pane" id="navs-breadcrumbs-be" role="tabpanel">
-            <p class="mb-0">Truyền data vào trang HTML như sau:</p>
+            <p class="mb-0">Mẫu data truyền vào option <code>breadcrumb_list</code>:</p>
             <pre class="chroma rounded mb-0">
               <code class="language-python" data-lang="python">
-from django.urls import reverse
-
-class Breadcrumbs(TemplateView):
-  template_name = "app/templatetags_guide/breadcrumbs/index.html"
-
-  def get_data_breadcrumbs(self):
-    data = [
-        {
-          'label': 'Home',
-          'url': "javascript:void(0);"
-        },
-        {
-          'label': 'Template Tags Guide',
-          'url': reverse("_Extract_Tag:list_guide")
-        },
-        {
-          'label': 'Breadcrumbs'
-        }
-    ]
-    return data
-
-  def get_context_data(self, **kwargs):
-    data = super().get_context_data(**kwargs)
-    data['breadcrumbs'] = self.get_data_breadcrumbs()
-    return data
+breadcrumb_data = [
+    {
+      'label': 'Home',
+      'url': reverse("Screen:home")
+    },
+    {
+      'label': 'Template Tags Guide',
+      'url': reverse("_Extract_Tag:list_guide")
+    },
+    {
+      'label': 'Breadcrumbs'
+    }
+]
               </code>
             </pre>
+
+            <p>Mô tả cho data</p>
+            <table class="table table-bordered">
+              <tr class="text-nowrap">
+                <th>Name data</th>
+                <th>Description</th>
+                <th>Type Data</th>
+                <th>Example</th>
+                <th style="width: 450px;">Lưu ý</th>
+              </tr>
+              <tr>
+                <td>label</td>
+                <td>Nội dung text hiển thị của mỗi item Breadcrumbs</td>
+                <td>text</td>
+                <td><code>'label': 'Home'</code></td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td>Truyền vào URL muốn điều hướng</td>
+                <td>URL text</td>
+                <td>
+                  <code class="text-nowrap">'url': reverse("Screen:home")</code>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      Cần import plugin <code>reverse</code> để render URL sang HTML đúng chuẩn <br/>
+                      <code>from django.urls import reverse</code>
+                    </li>
+                    <li>
+                      Khi không truyền <code>url</code> default item đó được active. Khi active thì 
+                      không click và điều hướng sang page khác được.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
           </div>
           <div class="tab-pane" id="navs-breadcrumbs-fe" role="tabpanel">
             <p class="mb-0">Tại trang HTML import:</p>
             <pre class="chroma rounded mb-0">
               <code class="language-html" data-lang="html">
-{<span></span>% main_title value="Main Title Demo" className="mb-3" %}
+{<span></span>% breadcrumb breadcrumb_list=breadcrumb_data %<span></span>}
               </code>
             </pre>
 
@@ -107,16 +132,10 @@ class Breadcrumbs(TemplateView):
               </thead>
               <tbody>
                 <tr>
-                  <td>value</td>
-                  <td>Truyền đoạn text cần hiển thị</td>
-                  <td>text</td>
-                  <td><code>value="Main Title Demo"</code></td>
-                </tr>
-                <tr>
-                  <td>className</td>
-                  <td>Truyền class vào option này</td>
-                  <td>text</td>
-                  <td><code>className="mb-3"</code></td>
+                  <td>breadcrumb_list</td>
+                  <td>List data item breadcrumbs. Xem format data ở Tab BE</td>
+                  <td>list</td>
+                  <td><code>breadcrumb_list=breadcrumb_data</code></td>
                 </tr>
               </tbody>
             </table>
