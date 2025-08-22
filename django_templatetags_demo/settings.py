@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     '_Extract_Tags',
-    'research_doc'
+    'research_doc',
+    'screen'
 ]
 
 MIDDLEWARE = [

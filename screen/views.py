@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
-def index(request):
-    context = {"val": 10}
-    return render(request, "base/index.html", context)
+class Home(TemplateView):
+  template_name = "app/screen/home.html"
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    return data
 
 # from django.http import HttpResponse
 

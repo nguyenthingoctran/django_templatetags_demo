@@ -1,7 +1,8 @@
 from django.urls import path
+from screen import views
 
-from . import views
+app_name = 'Screen'
 
 urlpatterns = [
-    path("dashboard/", views.index),
+    path("home/", views.Home.as_view(), name="home"),
 ]

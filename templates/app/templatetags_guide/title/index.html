@@ -2,19 +2,7 @@
 {% load extract_tags %}
 
 {% block breadcrumbs %} 
-  <!-- Basic Breadcrumb -->
   {% breadcrumb breadcrumb_list=breadcrumbs %}
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="javascript:void(0);">Home</a>
-      </li>
-      <li class="breadcrumb-item">
-        <a href="{% url '_Extract_Tag:list_guide' %}">Template Tags Guide</a>
-      </li>
-      <li class="breadcrumb-item active">Title</li>
-    </ol>
-  </nav>
 {% endblock %}              
  
 {% block content %}

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from _Extract_Tags.templatetags.utils.data_handle import DataHandle
 from django.views.generic.base import TemplateView
 from _Extract_Tags.data_hardcode.data_table import DataTableHardCode
+from django.urls import reverse
 
 def index(request):
     context = {"val": 10}
@@ -34,11 +35,11 @@ class Title(TemplateView):
     data = [
         {
           'label': 'Home',
-          'url': "javascript:void(0);"
+          'url': reverse("_Extract_Tag:list_guide")
         },
         {
           'label': 'Template Tags Guide',
-          'url': "{% url '_Extract_Tag:list_guide' %}"
+          'url': reverse("_Extract_Tag:list_guide")
         },
         {
           'label': 'Title'
@@ -54,8 +55,25 @@ class Title(TemplateView):
 class Breadcrumbs(TemplateView):
   template_name = "app/templatetags_guide/breadcrumbs/index.html"
 
+  def get_data_breadcrumbs(self):
+    data = [
+        {
+          'label': 'Home',
+          'url': "javascript:void(0);"
+        },
+        {
+          'label': 'Template Tags Guide',
+          'url': reverse("_Extract_Tag:list_guide")
+        },
+        {
+          'label': 'Breadcrumbs'
+        }
+    ]
+    return data
+
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
+    data['breadcrumbs'] = self.get_data_breadcrumbs()
     return data
 
 class DataTable(TemplateView):

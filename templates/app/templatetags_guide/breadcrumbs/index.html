@@ -1,4 +1,128 @@
 {% extends 'base/main_layout.html' %}
+{% load extract_tags %}
+
+{% block breadcrumbs %}
+  {% breadcrumb breadcrumb_list=breadcrumbs %}
+{% endblock %}
+
 {% block content %}
-  <h1>Breadcrumbs</h1>
+  {% main_title value="Breadcrumbs" className="mb-3" %}
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Breadcrumb</h5>
+      <h6 class="card-subtitle mb-3">Hiển thị luồng đi của page</h6>
+      <div class="nav-align-top nav-tabs-shadow">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link active"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-breadcrumbs-demo"
+              aria-controls="navs-breadcrumbs-demo"
+              aria-selected="true">
+              Demo
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-breadcrumbs-be"
+              aria-controls="navs-breadcrumbs-be"
+              aria-selected="false">
+              BE
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-breadcrumbs-fe"
+              aria-controls="navs-breadcrumbs-fe"
+              aria-selected="false">
+              FE
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane show active" id="navs-breadcrumbs-demo" role="tabpanel">
+            {% breadcrumb breadcrumb_list=breadcrumbs %}
+          </div>
+          <div class="tab-pane" id="navs-breadcrumbs-be" role="tabpanel">
+            <p class="mb-0">Truyền data vào trang HTML như sau:</p>
+            <pre class="chroma rounded mb-0">
+              <code class="language-python" data-lang="python">
+from django.urls import reverse
+
+class Breadcrumbs(TemplateView):
+  template_name = "app/templatetags_guide/breadcrumbs/index.html"
+
+  def get_data_breadcrumbs(self):
+    data = [
+        {
+          'label': 'Home',
+          'url': "javascript:void(0);"
+        },
+        {
+          'label': 'Template Tags Guide',
+          'url': reverse("_Extract_Tag:list_guide")
+        },
+        {
+          'label': 'Breadcrumbs'
+        }
+    ]
+    return data
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    data['breadcrumbs'] = self.get_data_breadcrumbs()
+    return data
+              </code>
+            </pre>
+          </div>
+          <div class="tab-pane" id="navs-breadcrumbs-fe" role="tabpanel">
+            <p class="mb-0">Tại trang HTML import:</p>
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
+{<span></span>% main_title value="Main Title Demo" className="mb-3" %}
+              </code>
+            </pre>
+
+            <p>Option List</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Type data</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>value</td>
+                  <td>Truyền đoạn text cần hiển thị</td>
+                  <td>text</td>
+                  <td><code>value="Main Title Demo"</code></td>
+                </tr>
+                <tr>
+                  <td>className</td>
+                  <td>Truyền class vào option này</td>
+                  <td>text</td>
+                  <td><code>className="mb-3"</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
