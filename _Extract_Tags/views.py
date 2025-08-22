@@ -21,7 +21,7 @@ def table_demo(request):
     return render(request, "app/templatetags/table_demo.html", data)
 
 class ListGuide(TemplateView):
-  template_name = "app/templatetags/index_guide.html"
+  template_name = "app/templatetags_guide/index_guide.html"
 
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
@@ -29,6 +29,30 @@ class ListGuide(TemplateView):
   
 class Title(TemplateView):
   template_name = "app/templatetags_guide/title/index.html"
+
+  def get_data_breadcrumbs(self):
+    data = [
+        {
+          'label': 'Home',
+          'url': "javascript:void(0);"
+        },
+        {
+          'label': 'Template Tags Guide',
+          'url': "{% url '_Extract_Tag:list_guide' %}"
+        },
+        {
+          'label': 'Title'
+        }
+    ]
+    return data
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    data['breadcrumbs'] = self.get_data_breadcrumbs()
+    return data
+  
+class Breadcrumbs(TemplateView):
+  template_name = "app/templatetags_guide/breadcrumbs/index.html"
 
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)

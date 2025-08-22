@@ -1,0 +1,49 @@
+{% extends 'base/main_layout.html' %}
+{% load extract_tags %}
+{% load static %}
+
+{% block content %}
+  {% main_title value="Template Tag Guide" %}
+
+  <div id="guideline_list" class="row"></div>
+
+  <script>
+    var guideline_list = [
+      {
+        'name': 'Title',
+        'url': "{% url '_Extract_Tag:title' %}",
+        'image': "{% static 'img/templatetags_guide/list_guide/title.png' %}"
+      },
+      {
+        'name': 'Breadcrumbs',
+        'url': "{% url '_Extract_Tag:breadcrumbs' %}",
+        'image': "{% static 'img/templatetags_guide/list_guide/breadcrumbs.png' %}"
+      }
+    ]
+
+    for (var guideline of guideline_list) {
+      var name = guideline['name'];
+      var url = guideline['url'];
+      var image = guideline['image'];
+
+      var html_guideline = `
+        <div class="col-3">
+          <div class="card p-2 h-100 shadow-none border">
+            <div class="rounded-2 text-center mb-4">
+              <a href=${url}
+                ><img
+                  class="img-fluid"
+                  src="${image}"
+                  alt="tutor image 1"
+              /></a>
+            </div>
+            <div class="card-body p-4 pt-2">
+              <a href=${url} class="h5">${name}</a>
+            </div>
+          </div>
+        </div>
+      `
+      $(html_guideline).appendTo($("#guideline_list"))
+    }
+  </script>
+{% endblock %}

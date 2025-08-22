@@ -10,6 +10,13 @@ def main_title(value="", className=""):
   }
   return data
 
+@register.inclusion_tag('app/templatetags/tags/breadcrumb/breadcrumb.html')
+def breadcrumb(breadcrumb_list=[]):
+  data = {
+    'breadcrumb_list': breadcrumb_list
+  }
+  return data
+
 @register.inclusion_tag('app/templatetags/tags/table/table_advanced.html')
 def table_advanced(data_table):
   data = {
