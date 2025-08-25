@@ -127,7 +127,27 @@
                       Detail
                     </button>
                     <!-- modalCapfirst -->
-                    {% modal id="modalDate" title="Filter - date" data=filter_date backdrop="true" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html" %}
+                    {% modal id="modalDate" title="Filter - date" data=filter_date template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html" %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>default</td>
+                  <td>Trả về giá trị cụ thể nếu giá trị là False</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDefault">
+                      Detail
+                    </button>
+                    <!-- modalCapfirst -->
+                    <div class="d-none">
+                      {% for x in colors %}
+                        <h6>{{ x|default:"-nocolor-" }}</h6>
+                      {% endfor %}
+                    </div>
+                    {% modal id="modalDefault" title="Filter - Default" data=colors template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/default.html" %}
                   </td>
                 </tr>
               </tbody>

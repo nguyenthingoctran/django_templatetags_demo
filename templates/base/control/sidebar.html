@@ -41,41 +41,7 @@
           <div class="menu-inner-shadow"></div>
 
           <ul class="menu-inner py-1">
-            <!-- Dashboards -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon icon-base ti tabler-smart-home"></i>
-                <div data-i18n="Extract Tags">Extract Tag</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{% url '_Extract_Tag:list_guide' %}" class="menu-link">
-                    <div data-i18n="Template Tags List">Template Tags List</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="{% url '_Extract_Tag:table_advanced_demo' %}" class="menu-link">
-                    <div data-i18n="Data Table">Data Table</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
 
-            <!-- Layouts -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon icon-base ti tabler-layout-sidebar"></i>
-                <div data-i18n="Doc Template Tag">Doc Template Tag</div>
-              </a>
-
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="{% url 'Research_Doc:research_doc_index' %}" class="menu-link">
-                    <div data-i18n="Template Tags & Filters">Template Tags & Filters</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
           </ul>
         </aside>
 
@@ -85,3 +51,87 @@
                 <i class="ti tabler-chevron-right icon-base"></i>
             </a>
         </div>
+
+  <script>
+    var sidebar_list = [
+      {
+        'label': 'Extract Tag',
+        'icon': "smart-home",
+        'sb_child': [
+          {
+            'label': "Template Tags List",
+            'url': "{% url '_Extract_Tag:list_guide' %}"
+          },
+          {
+            'label': 'Data Table',
+            'url': "{% url '_Extract_Tag:table_advanced_demo' %}"
+          }
+        ]
+      },
+      {
+        'label': 'Doc Template Tag',
+        'icon': "layout-sidebar",
+        'sb_child': [
+          {
+            'label': 'Template Tags & Filters',
+            'url': "{% url 'Research_Doc:research_doc_index' %}"
+          }
+        ]
+      },
+      {
+        'label': 'Tables',
+        'icon': "table",
+        'url': "{% url '_Extract_Tag:table_advanced_demo' %}"
+      }
+    ]
+
+    var html_sidebar = ``;
+    
+    for (var item of sidebar_list) {
+
+      var html_sub_menu = ``;
+      var menu_toggle = 'menu-toggle';
+      var open_menu = ''
+      var url_item_single = 'javascript:void(0);'
+
+      if (item['sb_child']) {
+
+        for (var submenu of item['sb_child']) {
+          var active_item = ''
+        
+          // Xử lý đóng mở sidebar
+          if (submenu['url'] == location.pathname) {
+            active_item = 'active'
+            open_menu = 'active open'
+          }
+
+          html_item_sub_menu = `
+          <li class="menu-item ${active_item}">
+            <a href="${submenu['url']}" class="menu-link">
+              <div data-i18n="${submenu['label']}">${submenu['label']}</div>
+            </a>
+          </li>`
+          html_sub_menu += html_item_sub_menu
+        }
+      } else {
+        menu_toggle = ''
+        url_item_single = item['url']
+      }
+
+      var html_item_sidebar = `
+      <li class="menu-item ${open_menu}">
+        <a href=${url_item_single} class="menu-link ${menu_toggle}">
+          <i class="menu-icon icon-base ti tabler-${item['icon']}"></i>
+          <div data-i18n="${item['label']}">${item['label']}</div>
+        </a>
+        <ul class="menu-sub">
+          ${html_sub_menu}
+        </ul>
+      </li>
+      `
+      
+      html_sidebar += html_item_sidebar
+    } 
+
+    $(html_sidebar).appendTo($("#layout-menu ul.menu-inner"))
+  </script>

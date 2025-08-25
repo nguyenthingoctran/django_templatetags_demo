@@ -27,6 +27,10 @@ class Research_Doc(TemplateView):
     def research_doc_filter_date(self):
       data = datetime.now()
       return data
+    
+    def dict_color(self):
+      colors = ['Red', 'Green', 'Blue', '', 'Yellow']
+      return colors
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -35,4 +39,5 @@ class Research_Doc(TemplateView):
       data['cycle_color'] = self.research_doc_cycle_color()
       data['filter_add'] = self.research_doc_filter_add()
       data['filter_date'] = self.research_doc_filter_date()
+      data['colors'] = self.dict_color()
       return data
