@@ -1,4 +1,5 @@
 from django.views.generic.base import TemplateView
+from datetime import datetime
 
 # Create your views here.
 class Research_Doc(TemplateView):
@@ -22,6 +23,10 @@ class Research_Doc(TemplateView):
         'vegetables': ['Asparagus', 'Broccoli', 'Carrot'],
       }
       return context
+    
+    def research_doc_filter_date(self):
+      data = datetime.now()
+      return data
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -29,4 +34,5 @@ class Research_Doc(TemplateView):
       data['cycle'] = self.research_doc_cycle()
       data['cycle_color'] = self.research_doc_cycle_color()
       data['filter_add'] = self.research_doc_filter_add()
+      data['filter_date'] = self.research_doc_filter_date()
       return data

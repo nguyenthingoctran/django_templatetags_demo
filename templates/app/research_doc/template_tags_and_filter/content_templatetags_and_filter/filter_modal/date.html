@@ -1,1 +1,26 @@
-<h1>ABC</h1>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Get data từ view:</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = datetime.now()
+        </code>
+      </pre>
+    </div>
+    <p class="mb-0">Show data trong template:</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ data|date }<span></span>}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="p-3 bg-label-primary mt-4">
+      <span class="d-block">Kết quả:</span>
+      {{ data|date }}
+    </div>
+  </div>
+</div>
