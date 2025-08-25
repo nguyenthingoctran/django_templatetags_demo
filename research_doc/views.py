@@ -31,6 +31,11 @@ class Research_Doc(TemplateView):
     def dict_color(self):
       colors = ['Red', 'Green', 'Blue', '', 'Yellow']
       return colors
+    
+    def dict_none_color(seft):
+      colors = ['Red', None, 'Blue', '', 'Yellow']
+      return colors
+
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -40,4 +45,5 @@ class Research_Doc(TemplateView):
       data['filter_add'] = self.research_doc_filter_add()
       data['filter_date'] = self.research_doc_filter_date()
       data['colors'] = self.dict_color()
+      data['colors_none'] = self.dict_none_color()
       return data

@@ -14,3 +14,12 @@ Hiển thị ra thẻ HTML ra ngoài trang, ko cần <span>
 Sử dụng URL trong file view
 from django.urls import reverse
 reverse("_Extract_Tag:list_guide")
+
+==========================================
+Values that evaluates to False are:
+
+Empty Strings ""
+Any numeric 0
+Any empty object [], (), {}, set(), range(0)
+None
+False
