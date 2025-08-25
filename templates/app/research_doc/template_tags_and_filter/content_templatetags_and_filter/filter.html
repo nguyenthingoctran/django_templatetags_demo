@@ -1,3 +1,5 @@
+{% load extract_tags %}
+
 <div class="tab-pane fade show" id="template-tag-filter" role="tabpanel">
   <div class="card mb-6">
     <div class="card-body">
@@ -50,7 +52,7 @@
                       Detail
                     </button>
                     <!-- modalAdd -->
-                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/add.html' %}
+                    {% modal id="modalAdd" title="Filter - Add" data=filter_add template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/add.html" %}
                   </td>
                 </tr>
                 <tr>
@@ -115,7 +117,7 @@
                 </tr>
                 <tr>
                   <td>date</td>
-                  <td>Trả về ngày tháng theo định đã chỉ định.</td>
+                  <td>Trả về ngày tháng theo format đã chỉ định.</td>
                   <td>
                     <button 
                       type="button" 
@@ -125,7 +127,7 @@
                       Detail
                     </button>
                     <!-- modalCapfirst -->
-                    {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html' %}
+                    {% modal id="modalDate" title="Filter - date" backdrop="true" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html" %}
                   </td>
                 </tr>
               </tbody>

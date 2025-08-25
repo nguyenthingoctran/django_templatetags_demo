@@ -17,6 +17,17 @@ def breadcrumb(breadcrumb_list=[]):
   }
   return data
 
+@register.inclusion_tag('app/templatetags/tags/modal/modal.html')
+def modal(id="", title="", data=None, backdrop="static", template_name=""):
+  data = {
+    'id': id,
+    'title': title,
+    'data': data,
+    'backdrop': backdrop,
+    'template_name': template_name
+  }
+  return data
+
 @register.inclusion_tag('app/templatetags/tags/table/table_advanced.html')
 def table_advanced(data_table):
   data = {
