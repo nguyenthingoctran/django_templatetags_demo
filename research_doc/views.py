@@ -46,6 +46,12 @@ class Research_Doc(TemplateView):
         ]
       }
       return dict_cars
+    
+    def escapejs(self):
+      data = {
+        'var1': 'John\nDoe'
+      }
+      return data
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -57,4 +63,5 @@ class Research_Doc(TemplateView):
       data['colors'] = self.dict_color()
       data['colors_none'] = self.dict_none_color()
       data['dict_cars'] = self.dict_sort()
+      data['escapejs'] = self.escapejs()
       return data
