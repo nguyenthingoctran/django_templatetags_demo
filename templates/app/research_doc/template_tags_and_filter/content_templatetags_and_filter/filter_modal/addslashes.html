@@ -1,7 +1,7 @@
         <!-- FE -->
-        <p class='pt-2 mb-0'>Thêm ký tự gạch chéo (\) trước bất kỳ dấu nháy (') nào.</p> 
         <div class="row">
           <div class="col-6">
+            <p class="mb-0">Render HTML</p>
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
@@ -13,8 +13,8 @@
             </div>
           </div>
           <div class="col-6">
+            <p class="mb-0">Kết quả</p>
             <div class="p-3 bg-label-primary mt-4">
-              <span class="d-block">Kết quả:</span>
               {% with name="Tran's Airpod" %}
                 <h3>{{ name|addslashes }}</h3>
               {% endwith %}
