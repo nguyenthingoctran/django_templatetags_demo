@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-6">
-    <p class="mb-0">Data file view</p>
+    <p class="mb-0">Data mẫu</p>
     <div class="highlight">
       <pre class="chroma rounded mb-0">
         <code class="language-python" data-lang="python">
@@ -8,7 +8,7 @@ colors = ['Red', None, 'Blue', '', 'Yellow']
         </code>
       </pre>
     </div>
-    <p class="mb-0">Show data</p>
+    <p class="mb-0">Render HTML</p>
     <div class="highlight">
       <pre class="chroma rounded mb-0">
         <code class="language-html" data-lang="html">
@@ -20,8 +20,8 @@ colors = ['Red', None, 'Blue', '', 'Yellow']
     </div>
   </div>
   <div class="col-6">
+    <p class="mb-0">Kết quả</p>
     <div class="p-3 bg-label-primary mt-4">
-      <span class="d-block mb-4">Kết quả:</span>
 {% for x in data %}
   <h6>{{ x|default_if_none:"-nocolor-" }}</h6>
 {% endfor %}
