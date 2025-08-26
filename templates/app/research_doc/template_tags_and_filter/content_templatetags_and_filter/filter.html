@@ -82,7 +82,7 @@
                       Detail
                     </button>
                     <!-- modalCapfirst -->
-                    {% modal id="modalCapfirst" title="Filter - capfirst" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/capfirst.html" %}
+                    {% modal id="modalCapfirst" title="Filter - Capfirst" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/capfirst.html" %}
                   </td>
                 </tr>
                 <tr>
@@ -97,7 +97,7 @@
                       Detail
                     </button>
                     <!-- modalCenter -->
-                    {% modal id="modalCenter" title="Filter - center" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/center.html" %}
+                    {% modal id="modalCenter" title="Filter - Center" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/center.html" %}
                   </td>
                 </tr>
                 <tr>
@@ -112,7 +112,7 @@
                       Detail
                     </button>
                     <!-- modalCut -->
-                    {% modal id="modalCut" title="Filter - cut" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/cut.html" %}
+                    {% modal id="modalCut" title="Filter - Cut" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/cut.html" %}
                   </td>
                 </tr>
                 <tr>
@@ -127,7 +127,7 @@
                       Detail
                     </button>
                     <!-- modalCapfirst -->
-                    {% modal id="modalDate" title="Filter - date" data=filter_date template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html" %}
+                    {% modal id="modalDate" title="Filter - Date" data=filter_date template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html" %}
                   </td>
                 </tr>
                 <tr>
@@ -188,6 +188,26 @@
                       {% endfor %}
                     </div>
                     {% modal id="modalDictsort" title="Filter - Dictsort" data=dict_cars template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/dictsort.html" %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>dictsortreversed</td>
+                  <td>Sắp xếp một dict theo chiều ngược lại, theo giá trị đã cho.</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDictsortreversed">
+                      Detail
+                    </button>
+                    <!-- modalDictsort -->
+                    <div class="d-none">
+                      {% for x in dict_cars.cars|dictsortreversed:"year" %}
+                        <p>{{ x.year }} {{ x.brand }} {{ x.model }}</p>
+                      {% endfor %}
+                    </div>
+                    {% modal id="modalDictsortreversed" title="Filter - Dictsortreversed" data=dict_cars template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/dictsortreversed.html" %}
                   </td>
                 </tr>
               </tbody>
