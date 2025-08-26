@@ -170,6 +170,26 @@
                     {% modal id="modalDefaultIfNone" title="Filter - Default If None" data=colors_none template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/default_if_none.html" %}
                   </td>
                 </tr>
+                <tr>
+                  <td>dictsort</td>
+                  <td>Sắp xếp xếp 1 dict bởi giá trị cho trước</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDictsort">
+                      Detail
+                    </button>
+                    <!-- modalDictsort -->
+                    <div class="d-none">
+                      {% for x in dict_cars.cars|dictsort:"year" %}
+                        <p>{{ x.year }} {{ x.brand }} {{ x.model }}</p>
+                      {% endfor %}
+                    </div>
+                    {% modal id="modalDictsort" title="Filter - Dictsort" data=dict_cars template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/dictsort.html" %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

@@ -1,0 +1,38 @@
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-0">Data từ file view</p>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
+dict_cars = {
+  'cars': [
+    {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
+    {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
+    {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
+    {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
+  ]
+}
+                </code>
+              </pre>
+            </div>
+
+            <p class="mb-0">Render HTML</p>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% for x in dict_cars.cars|dictsort:"year" %<span></span>}
+  <<span></span>p>{<span></span>{ x.year }<span></span>} {<span></span>{ x.brand }<span></span>} {<span></span>{ x.model }<span></span>}<<span></span>/p>
+{<span></span>% endfor %<span></span>}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-6">
+            <p class="mb-0">Kết quả</p>
+            <div class="p-3 bg-label-primary mt-4">
+              {% for x in data.cars|dictsort:"year" %}
+                <p>{{ x.year }} {{ x.brand }} {{ x.model }}</p>
+              {% endfor  %}
+            </div>
+          </div>
+        </div>

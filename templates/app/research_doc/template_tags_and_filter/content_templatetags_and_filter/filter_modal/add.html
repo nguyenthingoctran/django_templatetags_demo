@@ -1,7 +1,6 @@
         <div class="row">
           <div class="col mb-4">
             <!-- FE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
             <p class='pt-2 mb-0'>Cú pháp</p> 
             <div class="highlight">
               <pre class="chroma rounded mb-0">
@@ -12,9 +11,10 @@
             </div>
 
             <!-- Number -->
-            <p class="mb-0">Đối với number thì + thêm vào như 1 phép toán</p>
+            <h5>1. Đối với number thì + thêm vào như 1 phép toán</h5>
             <div class="row">
               <div class="col-6">
+                <p class="mb-0">Render HTML</p>
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
                     <code class="language-html" data-lang="html">
@@ -26,8 +26,8 @@
                 </div>
               </div>
               <div class="col-6">
-                <div class="p-3 bg-label-primary mt-4">
-                  <span class="d-block">Kết quả:</span>
+                <p class="mb-4">Kết quả</p>
+                <div class="p-3 bg-label-primary">
                   {% with x=10 %}
                     {{ x|add:"10" }}
                   {% endwith %}
@@ -35,10 +35,13 @@
               </div>
             </div>
 
+            <hr class="mt-0"/>
+
             <!-- String -->
-            <p class="mb-0">Đối với string/character thì nối vào</p>
+            <h5>2. Đối với string/character thì nối vào</h5>
             <div class="row">
               <div class="col-6">
+                <p class="mb-0">Render HTML</p>
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
                     <code class="language-html" data-lang="html">
@@ -50,8 +53,8 @@
                 </div>
               </div>
               <div class="col-6">
+                <p class="mb-0">Kết quả</p>
                 <div class="p-3 bg-label-primary mt-4">
-                  <span class="d-block">Kết quả:</span>
                   {% with x='Hello ' %}
                     {{ x|add:"Kitty" }}
                   {% endwith %}
@@ -59,10 +62,13 @@
               </div>
             </div>
 
+            <hr class="mt-0"/>
+
             <!-- String -->
-            <p class="mb-0">Đối với <b>list</b> thì <b>append</b> vào</p>
+            <h5>3. Đối với <b>list</b> thì <b>append</b> vào</h5>
             <div class="row">
               <div class="col-6">
+                <p class="mb-0">Mẫu data</p>
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
                     <code class="language-python" data-lang="python">
@@ -73,6 +79,8 @@ context = {
                     </code>
                   </pre>
                 </div>
+
+                <p class="mb-0">Render HTML</p>
                 <div class="highlight">
                   <pre class="chroma rounded mb-0">
                     <code class="language-html" data-lang="html">
@@ -82,8 +90,8 @@ context = {
                 </div>
               </div>
               <div class="col-6">
+                <p class="mb-0">Kết quả</p>
                 <div class="p-3 bg-label-primary mt-4">
-                  <span class="d-block">Kết quả:</span>
                   {{ data.fruits|add:data.vegetables }}
                 </div>
               </div>

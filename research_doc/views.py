@@ -32,10 +32,20 @@ class Research_Doc(TemplateView):
       colors = ['Red', 'Green', 'Blue', '', 'Yellow']
       return colors
     
-    def dict_none_color(seft):
+    def dict_none_color(self):
       colors = ['Red', None, 'Blue', '', 'Yellow']
       return colors
 
+    def dict_sort(self):
+      dict_cars = {
+        'cars': [
+          {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
+          {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
+          {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
+          {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
+        ]
+      }
+      return dict_cars
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -46,4 +56,5 @@ class Research_Doc(TemplateView):
       data['filter_date'] = self.research_doc_filter_date()
       data['colors'] = self.dict_color()
       data['colors_none'] = self.dict_none_color()
+      data['dict_cars'] = self.dict_sort()
       return data
