@@ -10,6 +10,20 @@ Hiển thị ra thẻ HTML ra ngoài trang, ko cần <span>
   <b>This text will be HTML-escaped, and will appear in all lowercase.</b>
 {% endfilter %}
 
+<pre class="chroma rounded mb-0">
+  <code class="language-html" data-lang="html">
+{% filter force_escape %}
+  <button 
+    type="button" 
+    class="btn btn-primary btn-lg"
+    data-bs-toggle="modal"
+    data-bs-target="#modalDemo">
+    Demo
+  </button>
+{% endfilter %}
+  </code>
+</pre>
+
 ==========================================
 Sử dụng URL trong file view
 from django.urls import reverse
@@ -23,3 +37,7 @@ Any numeric 0
 Any empty object [], (), {}, set(), range(0)
 None
 False
+
+==========================================
+Cho text URL xuống dòng
+overflow-wrap: anywhere

@@ -1,0 +1,60 @@
+{% extends 'base/main_layout.html' %}
+{% load extract_tags %}
+
+{% block breadcrumbs %}
+  {% breadcrumb breadcrumb_list=breadcrumb_data %}
+{% endblock %}
+
+{% block content %}
+  {% main_title value="Modals" className="mb-3" %}
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Modals</h5>
+      <div class="nav-align-top nav-tabs-shadow">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link active"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-modal-demo"
+              aria-controls="navs-modal-demo"
+              aria-selected="true">
+              Demo
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-modal-fe"
+              aria-controls="navs-modal-fe"
+              aria-selected="true">
+              FE
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane show active" id="navs-modal-demo" role="tabpanel">
+            <button 
+              type="button" 
+              class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#modalDemo">
+              Demo
+            </button>
+          </div>
+          <div class="tab-pane" id="navs-modal-fe" role="tabpanel">
+            {% include 'app/templatetags_guide/modals/fe.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% modal id="modalDemo" title="Modal Demo" data=data_modals template_name="app/templatetags_guide/modals/modal_demo_body.html" %}
+{% endblock %}

@@ -8,4 +8,5 @@ urlpatterns = [
     path("guide/", views.ListGuide.as_view(), name='list_guide'),
     path("title/", views.Title.as_view(), name='title'),
     path("breadcrumbs/", views.Breadcrumbs.as_view(), name='breadcrumbs'),
+    path("modals/", views.Modals.as_view(), name='modals'),
 ]

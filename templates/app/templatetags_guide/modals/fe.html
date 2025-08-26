@@ -1,0 +1,80 @@
+<p class="mb-0">Tại trang HTML import:</p>
+<pre class="chroma rounded mb-0">
+  <code class="language-html" data-lang="html">
+{% filter force_escape %}
+  <button 
+    type="button" 
+    class="btn btn-primary btn-lg"
+    data-bs-toggle="modal"
+    data-bs-target="#modalDemo">
+    Demo
+  </button>
+{% endfilter %}
+  </code>
+</pre>
+
+<pre class="chroma rounded mb-0">
+  <code class="language-html" data-lang="html">
+{<span></span>% modal id="modalDemo" title="Modal Demo" data=data_modals template_name="app/templatetags_guide/modals/modal_demo_body.html" %}
+  </code>
+</pre>
+
+<div class="alert alert-warning alert-dismissible d-flex" role="alert">
+  <span class="alert-icon rounded">
+    <i class="icon-base ti tabler-code icon-md w-px-30"></i>
+  </span>
+  <div class="d-flex flex-column ps-1">
+    <h5 class="alert-heading mb-2">Lưu ý!</h5>
+    <p class="mb-0">
+      Đối với trường hợp modal trong màn hình có chứa Tab thì đặt Modal phía ngoài tag Tab. Nếu đặt trong sẽ bị lỗi.
+    </p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+</div>
+
+<br/>
+<p class="mt-5">Option List</p>
+<table class="table table-bordered">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Type data</th>
+    <th style="width: 350px;">Example</th>
+    <th style="width: 350px;">Note</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>id</td>
+    <td>Truyền <code>id</code> vào modal</td>
+    <td>text</td>
+    <td><code>id="modalDemo"</code></td>
+    <td><b>id</b> ở <b>modal</b> phải trùng với property <b>data-bs-target</b> ở <b>button</b> call đến nó.
+      <br/>
+      <code>data-bs-target="#modalDemo"</code>
+    </td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>Truyền vào title của modals</td>
+    <td>text</td>
+    <td><code>title="Modal Demo"</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>Truyền data vào modals</td>
+    <td>Bất kỳ</td>
+    <td><code>data=data_modals</code></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>template_name</td>
+    <td>Truyền vào content của modals</td>
+    <td>URL</td>
+    <td><code style="overflow-wrap: anywhere">template_name="app/templatetags_guide/modals/modal_demo_body.html"</code></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
