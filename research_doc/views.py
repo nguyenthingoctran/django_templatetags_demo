@@ -52,6 +52,12 @@ class Research_Doc(TemplateView):
         'var1': 'John\nDoe'
       }
       return data
+    
+    def filesizeformat(self):
+      data = {
+        'size': 26214400
+      }
+      return data
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -64,4 +70,5 @@ class Research_Doc(TemplateView):
       data['colors_none'] = self.dict_none_color()
       data['dict_cars'] = self.dict_sort()
       data['escapejs'] = self.escapejs()
+      data['filesizeformat'] = self.filesizeformat()
       return data

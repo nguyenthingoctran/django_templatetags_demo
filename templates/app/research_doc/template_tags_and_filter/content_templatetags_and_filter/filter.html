@@ -255,7 +255,7 @@
                 </tr>
                 <tr>
                   <td>escapejs</td>
-                  <td>Thoát mã HTML khỏi chuỗi</td>
+                  <td>Thoát mã JS khỏi chuỗi</td>
                   <td>
                     <button 
                       type="button" 
@@ -270,6 +270,24 @@
                       {{ escapejs.var1 }}
                     </div>
                     {% modal id="modalEscapejs" title="Filter - Escapejs" data=escapejs template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/escapejs.html" %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>filesizeformat</td>
+                  <td>Trả về file size format</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalFilesizeformat">
+                      Detail
+                    </button>
+                    <!-- modalEscapejs -->
+                    <div class="d-none">
+                      {{ filesizeformat.size|filesizeformat }}
+                    </div>
+                    {% modal id="modalFilesizeformat" title="Filter - Filesizeformat" data=filesizeformat template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/filesizeformat.html" %}
                   </td>
                 </tr>
               </tbody>
