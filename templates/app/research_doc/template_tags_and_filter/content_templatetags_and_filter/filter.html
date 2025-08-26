@@ -290,6 +290,24 @@
                     {% modal id="modalFilesizeformat" title="Filter - Filesizeformat" data=filesizeformat template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/filesizeformat.html" %}
                   </td>
                 </tr>
+                <tr>
+                  <td>first</td>
+                  <td>Trả về phần tử đầu tiên trong 1 object</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalFirst">
+                      Detail
+                    </button>
+                    <!-- modalFirst -->
+                    <div class="d-none">
+                      {{ colors|first }}
+                    </div>
+                    {% modal id="modalFirst" title="Filter - modalFirst" data=colors template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/first.html" %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
