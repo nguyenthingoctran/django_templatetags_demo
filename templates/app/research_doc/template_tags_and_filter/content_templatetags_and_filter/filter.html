@@ -232,6 +232,27 @@
                     {% modal id="modalDivisibleby" title="Filter - Divisibleby" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/divisibleby.html" %}
                   </td>
                 </tr>
+                <tr>
+                  <td>escape</td>
+                  <td>Thoát mã HTML khỏi chuỗi</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEscape">
+                      Detail
+                    </button>
+                    <!-- modalEscape -->
+                    <div class="d-none">
+                      {% autoescape off %}
+                        <p>{{ autoescape|escape }}</p>
+                        <p>{{ autoescape }}</p>
+                      {% endautoescape %}
+                    </div>
+                    {% modal id="modalEscape" title="Filter - Escape" data=autoescape template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/escape.html" %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
