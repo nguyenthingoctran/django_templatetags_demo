@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-6">
-    <p class="mb-0">Get data từ view:</p>
+    <p class="mb-0">Data mẫu</p>
     <div class="highlight">
       <pre class="chroma rounded mb-0">
         <code class="language-python" data-lang="python">
@@ -8,7 +8,7 @@ data = datetime.now()
         </code>
       </pre>
     </div>
-    <p class="mb-0">Show data trong template:</p>
+    <p class="mb-0">Render HTML</p>
     <div class="highlight">
       <pre class="chroma rounded mb-0">
         <code class="language-html" data-lang="html">
@@ -18,8 +18,8 @@ data = datetime.now()
     </div>
   </div>
   <div class="col-6">
+    <p class="mb-0">Kết quả</p>
     <div class="p-3 bg-label-primary mt-4">
-      <span class="d-block">Kết quả:</span>
       {{ data|date }}
     </div>
   </div>
