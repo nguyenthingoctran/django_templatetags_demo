@@ -210,6 +210,28 @@
                     {% modal id="modalDictsortreversed" title="Filter - Dictsortreversed" data=dict_cars template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/dictsortreversed.html" %}
                   </td>
                 </tr>
+                <tr>
+                  <td>divisibleby</td>
+                  <td>Trả về True nếu giá trị có thể chia cho số được chỉ đinh, nếu không thì trả về False</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalDivisibleby">
+                      Detail
+                    </button>
+                    <!-- modalDivisibleby -->
+                    <div class="d-none">
+                      {% with totalsum=5 %}
+                        {% if totalsum|divisibleby:5 %}
+                          <h6>Chia hết cho 5</h6>
+                        {% endif %}
+                      {% endwith %}
+                    </div>
+                    {% modal id="modalDivisibleby" title="Filter - Divisibleby" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/divisibleby.html" %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

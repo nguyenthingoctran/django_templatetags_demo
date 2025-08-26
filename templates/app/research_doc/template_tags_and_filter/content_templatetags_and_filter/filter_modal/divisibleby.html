@@ -1,0 +1,26 @@
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-0">Render HTML</p>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% with totalsum=5 %<span></span>}
+  {<span></span>% if totalsum|divisibleby:5 %<span></span>}
+    <<span></span>h6>Chia hết cho 5<<span></span>/h6>
+  {<span></span>% endif %<span></span>}
+{<span></span>% endwith %<span></span>}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-6">
+            <p class="mb-0">Kết quả</p>
+            <div class="p-3 bg-label-primary mt-4">
+              {% with totalsum=5 %}
+                {% if totalsum|divisibleby:5 %}
+                  <h6>Chia hết cho 5</h6>
+                {% endif %}
+              {% endwith %}
+            </div>
+          </div>
+        </div>
