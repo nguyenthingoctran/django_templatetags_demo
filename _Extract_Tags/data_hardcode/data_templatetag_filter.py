@@ -210,6 +210,24 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().text_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linebreaks.html'
         }
+      },{
+        'filter_name': 'linebreaksbr',
+        'description': "Trả về text với thẻ <br/> thay thế cho xuống dòng",
+        'id_modal': 'modalLinebreaksBr',
+        'modal': {
+          'title': 'Filter - Line Breaks Br',
+          'data': views.Research_Doc().text_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linebreaksbr.html'
+        }
+      },{
+        'filter_name': 'linenumbers',
+        'description': "Trả về text và số đếm mỗi dòng.",
+        'id_modal': 'modalLinenumbers',
+        'modal': {
+          'title': 'Filter - Line Numbers',
+          'data': views.Research_Doc().text_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linenumbers.html'
+        }
       }
     ]
     return data
