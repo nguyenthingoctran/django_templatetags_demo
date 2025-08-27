@@ -165,6 +165,15 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Iriencode',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/iriencode.html'
         }
+      },{
+        'filter_name': 'join',
+        'description': "Nối các element của một list thành một chuỗi",
+        'id_modal': 'modalJoin',
+        'modal': {
+          'title': 'Filter - Join',
+          'data': views.Research_Doc().research_doc_cycle(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/join.html'
+        }
       }
     ]
     return data
