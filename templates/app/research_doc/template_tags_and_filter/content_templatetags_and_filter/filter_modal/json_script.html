@@ -1,0 +1,53 @@
+{% load static %}
+<div class="row">
+  <div class="col-12">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+dict_cars = {
+  'cars': [
+    {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
+    {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
+    {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
+    {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
+  ]
+}
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ data|json_script:"mycars" }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-12 mb-3">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      <p>Inspect vào đây để xem đoạn data render ra</p>
+      {{ data|json_script:"mycars" }}
+      <img class="w-100" src="{% static 'img/templatetags_guide/guide/json_script.png' %}"/>
+    </div>
+  </div>
+
+  <p class="mb-0 mt-5">Cách lấy data JSON từ tag script kết quả ở trên trong JS</p>
+  <div class="col-12">
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-javascript" data-lang="javascript">
+var get_json = JSON.parse(document.getElementById('mycars').textContent);
+        </code>
+      </pre>
+    </div>
+  </div>
+</div>
+
+<script>
+  var get_json = JSON.parse(document.getElementById('mycars').textContent);
+  console.log(get_json, "get_json")
+</script>

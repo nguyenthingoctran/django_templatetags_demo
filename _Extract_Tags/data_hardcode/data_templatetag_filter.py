@@ -174,6 +174,15 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/join.html'
         }
+      },{
+        'filter_name': 'json_script',
+        'description': "Trả về chuỗi object thành chuỗi JSON",
+        'id_modal': 'modalJsonScript',
+        'modal': {
+          'title': 'Filter - Json Script',
+          'data': views.Research_Doc().dict_sort(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/json_script.html'
+        }
       }
     ]
     return data
