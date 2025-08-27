@@ -308,6 +308,24 @@
                     {% modal id="modalFirst" title="Filter - modalFirst" data=colors template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/first.html" %}
                   </td>
                 </tr>
+                <tr>
+                  <td>floatformat</td>
+                  <td>Làm tròn số thập phân được chỉ định, mặc định là một số thập phân</td>
+                  <td>
+                    <button 
+                      type="button" 
+                      class="btn btn-secondary btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalFloatformat">
+                      Detail
+                    </button>
+                    <!-- modalFloatformat -->
+                    <div class="d-none">
+                      
+                    </div>
+                    {% modal id="modalFloatformat" title="Filter - Floatformat" template_name="app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/floatformat.html" %}
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
