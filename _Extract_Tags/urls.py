@@ -9,4 +9,5 @@ urlpatterns = [
     path("title/", views.Title.as_view(), name='title'),
     path("breadcrumbs/", views.Breadcrumbs.as_view(), name='breadcrumbs'),
     path("modals/", views.Modals.as_view(), name='modals'),
+    path("alert/", views.Alert.as_view(), name='alert'),
 ]

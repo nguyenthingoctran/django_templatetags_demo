@@ -155,3 +155,10 @@ class DataTable(TemplateView):
       data['table_data'] = self._get_table_data(users)
 
       return data
+    
+class Alert(TemplateView):
+  template_name = "app/templatetags_guide/alert/index.html"
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    return data
