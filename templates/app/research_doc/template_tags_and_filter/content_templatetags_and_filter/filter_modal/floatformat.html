@@ -1,3 +1,4 @@
+<h5>1. Đối số dương</h5>
 <div class="row">
   <div class="col-6">
     <p class="mb-0">Render HTML</p>
@@ -17,6 +18,58 @@
       {{ 7.122489|floatformat:2 }} <br/>
       {{ 7.1|floatformat:2 }} <br/>
       {{ 7|floatformat:2 }}
+    </div>
+  </div>
+</div>
+
+<hr class="mt-0"/>
+
+<h5>2. Đối số âm</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Render HTML với float format là số âm</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ 7.122489|floatformat:-2 }} <<span></span>br/>
+{<span></span>{ 7.1|floatformat:-2 }} <<span></span>br/>
+{<span></span>{ 7|floatformat:-2 }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {{ 7.122489|floatformat:-2 }} <br/>
+      {{ 7.1|floatformat:-2 }} <br/>
+      {{ 7|floatformat:-2 }}
+    </div>
+  </div>
+</div>
+
+<hr class="mt-0"/>
+
+<h5>3. Đối số dương và thêm dấu phân cách mỗi hàng ngàn.</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Render HTML với float format là số âm</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ 7.122489|floatformat:-2 }} <<span></span>br/>
+{<span></span>{ 7.1|floatformat:-2 }} <<span></span>br/>
+{<span></span>{ 7|floatformat:-2 }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {% with mynumber=981358286 %}
+        {{ mynumber|floatformat:"2g" }}
+      {% endwith %}
     </div>
   </div>
 </div>
