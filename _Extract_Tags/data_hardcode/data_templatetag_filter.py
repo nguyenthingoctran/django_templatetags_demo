@@ -157,6 +157,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Get Digit',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/get_digit.html'
         }
+      },{
+        'filter_name': 'iriencode',
+        'description': "Chuyển IRI thành URL",
+        'id_modal': 'modalIriencode',
+        'modal': {
+          'title': 'Filter - Iriencode',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/iriencode.html'
+        }
       }
     ]
     return data
