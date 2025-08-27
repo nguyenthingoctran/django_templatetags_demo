@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from datetime import datetime
+from _Extract_Tags.data_hardcode.data_templatetag_filter import DataResearchTemplateTagFilter
 
 # Create your views here.
 class Research_Doc(TemplateView):
@@ -61,14 +62,5 @@ class Research_Doc(TemplateView):
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
-      data['autoescape'] = self.research_doc_autoescape()
-      data['cycle'] = self.research_doc_cycle()
-      data['cycle_color'] = self.research_doc_cycle_color()
-      data['filter_add'] = self.research_doc_filter_add()
-      data['filter_date'] = self.research_doc_filter_date()
-      data['colors'] = self.dict_color()
-      data['colors_none'] = self.dict_none_color()
-      data['dict_cars'] = self.dict_sort()
-      data['escapejs'] = self.escapejs()
-      data['filesizeformat'] = self.filesizeformat()
+      data['list_filter'] = DataResearchTemplateTagFilter().data_filter()
       return data

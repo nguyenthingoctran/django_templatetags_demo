@@ -1,0 +1,22 @@
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-0">Render HTML</p>
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% with mynumber=75641 %}
+  {<span></span>{ mynumber|get_digit:3 }}
+{<span></span>% endwith %}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-6">
+            <p class="mb-0">Kết quả</p>
+            <div class="p-3 bg-label-primary mt-4">
+              {% with mynumber=75641 %}
+                {{ mynumber|get_digit:3 }}
+              {% endwith %}
+            </div>
+          </div>
+        </div>

@@ -41,3 +41,10 @@ False
 ==========================================
 Cho text URL xuống dòng
 overflow-wrap: anywhere
+
+==========================================
+Python
+
+Thêm () vào class để call không bị lỗi thiếu argment self
+from research_doc import views
+views.Research_Doc().research_doc_filter_add()
