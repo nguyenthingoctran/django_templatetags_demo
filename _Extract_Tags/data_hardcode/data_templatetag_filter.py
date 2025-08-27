@@ -192,6 +192,24 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/last.html'
         }
+      },{
+        'filter_name': 'length',
+        'description': "Trả về số lượng item của một Object, số lượng ký tự trong một String",
+        'id_modal': 'modalLength',
+        'modal': {
+          'title': 'Filter - Length',
+          'data': views.Research_Doc().research_doc_cycle(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/length.html'
+        }
+      },{
+        'filter_name': 'linebreaks',
+        'description': "Trả về text với thẻ <br/> thay thế cho xuống dòng, và thẻ <p> bao quanh 1 dòng",
+        'id_modal': 'modalLinebreaks',
+        'modal': {
+          'title': 'Filter - Line Breaks',
+          'data': views.Research_Doc().text_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linebreaks.html'
+        }
       }
     ]
     return data
