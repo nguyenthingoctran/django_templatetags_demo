@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>% with name="Tran" %}
+  <<span></span>pre>Nguyen Thi {<span></span>{ name|ljust:20 }}Ngoc<<span></span>/pre>
+{<span></span>% endwith %}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {% with name="Ngoc" %}
+        <pre>Nguyen Thi {{ name|ljust:20 }}Tran</pre>
+      {% endwith %}
+    </div>
+  </div>
+  <div class="col-12">
+    Lưu ý: Đặt code vào trong thẻ <code>pre</code> để thấy rõ kết quả.
+  </div>
+</div>

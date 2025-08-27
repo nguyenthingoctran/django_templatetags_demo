@@ -221,12 +221,20 @@ class DataResearchTemplateTagFilter():
         }
       },{
         'filter_name': 'linenumbers',
-        'description': "Trả về text và số đếm mỗi dòng.",
+        'description': "Viết tên, căn lề trái của trường 20 ký tự",
         'id_modal': 'modalLinenumbers',
         'modal': {
           'title': 'Filter - Line Numbers',
           'data': views.Research_Doc().text_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linenumbers.html'
+        }
+      },{
+        'filter_name': 'ljust',
+        'description': "Căn trái value với with chỉ định",
+        'id_modal': 'modalLJust',
+        'modal': {
+          'title': 'Filter - LJust',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/ljust.html'
         }
       }
     ]
