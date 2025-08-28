@@ -159,6 +159,23 @@ class DataTable(TemplateView):
 class Alert(TemplateView):
   template_name = "app/templatetags_guide/alert/index.html"
 
+  def get_data_breadcrumbs(self):
+    breadcrumb_data = [
+        {
+          'label': 'Home',
+          'url': reverse("Screen:home")
+        },
+        {
+          'label': 'Template Tags Guide',
+          'url': reverse("_Extract_Tag:list_guide")
+        },
+        {
+          'label': 'Alert'
+        }
+    ]
+    return breadcrumb_data
+
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
+    data['breadcrumb_data'] = self.get_data_breadcrumbs()
     return data

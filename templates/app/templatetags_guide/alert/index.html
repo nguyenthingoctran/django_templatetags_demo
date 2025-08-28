@@ -1,1 +1,123 @@
-<h1>Alert</h1>
+{% extends 'base/main_layout.html' %}
+{% load extract_tags %}
+{% load static %}
+
+{% block breadcrumbs %}
+  {% breadcrumb breadcrumb_list=breadcrumb_data %}
+{% endblock %}
+
+{% block content %}
+  {% main_title value="Alert" className="mb-3" %}
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Alert</h5>
+      <div class="nav-align-top nav-tabs-shadow">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link active"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-alert-demo"
+              aria-controls="navs-alert-demo"
+              aria-selected="true">
+              Demo
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-alert-fe"
+              aria-controls="navs-alert-fe"
+              aria-selected="true">
+              FE
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane show active" id="navs-alert-demo" role="tabpanel">
+            {% alert color="primary" dismissible='True' icon='code' title="This is a primary alert — check it out!" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="danger" dismissible='False' icon='code' title="This is a primary alert — check it out!" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="warning" dismissible='False' icon='code' title="This is a primary alert — check it out!" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="secondary" dismissible='False' icon='code' title="This is a primary alert — check it out!" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="primary" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="danger" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="warning" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+            {% alert color="secondary" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %}
+          </div>
+          <div class="tab-pane" id="navs-alert-fe" role="tabpanel">
+            <p class="mb-0">Tại trang HTML import:</p>
+            <pre class="chroma rounded mb-0">
+              <code class="language-html" data-lang="html">
+{<span></span>% alert color="danger" dismissible='False' icon='code' title="This is a primary alert — check it out!" content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice." template="app/templatetags_guide/alert/template.html" %<span></span>}
+              </code>
+            </pre>
+
+            <p>Option List</p>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Image Minh hoạ</th>
+                  <th>Description</th>
+                  <th>Type data</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>color</td>
+                  <td></td>
+                  <td>Truyền vào màu của alert.</td>
+                  <td>Truyền vào màu text theo quy định.
+                    <ul>
+                      <li><code>primary</code></li>
+                      <li><code>secondary</code></li>
+                      <li><code>success</code></li>
+                      <li><code>danger</code></li>
+                      <li><code>warning</code></li>
+                    </ul>
+                  </td>
+                  <td><code>color="danger"</code></td>
+                </tr>
+                <tr>
+                  <td>dismissible</td>
+                  <td>
+                    <img src="{% static 'img/templatetags_guide/guide/alert_dismissible.png' %}" style="width: 200px;"/>
+                  </td>
+                  <td>Bật tính năng xoá Alert</td>
+                  <td>Truyền vào text theo quy định.
+                    <ul>
+                      <li><code>True</code>: Hiển thị tính năng tắt Alert</li>
+                      <li><code>False</code>: Không hiển thị tính năng tắt Alert.</li>
+                    </ul>
+                  </td>
+                  <td><code>dismissible='False'</code></td>
+                </tr>
+                <tr>
+                  <td>icon</td>
+                  <td>
+                    <img src="{% static 'img/templatetags_guide/guide/alert_icon.png' %}" style="width: 200px;"/>
+                  </td>
+                  <td>Bật tính năng xoá Alert</td>
+                  <td>Truyền vào text theo quy định.
+                    <ul>
+                      <li><code>True</code>: Hiển thị tính năng tắt Alert</li>
+                      <li><code>False</code>: Không hiển thị tính năng tắt Alert.</li>
+                    </ul>
+                  </td>
+                  <td><code>dismissible='False'</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

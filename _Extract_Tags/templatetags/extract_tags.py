@@ -28,6 +28,18 @@ def modal(id="", title="", data=None, backdrop="static", template_name=""):
   }
   return data
 
+@register.inclusion_tag('app/templatetags/tags/alert/alert.html')
+def alert(color="primary", dismissible="False", icon='', title='', content='', template=''):
+  data = {
+    'color': color,
+    'dismissible': dismissible,
+    'icon': icon,
+    'title': title,
+    'content': content,
+    'template': template
+  }
+  return data
+
 @register.inclusion_tag('app/templatetags/tags/table/table_advanced.html')
 def table_advanced(data_table):
   data = {
