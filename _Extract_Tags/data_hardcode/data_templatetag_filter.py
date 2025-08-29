@@ -260,6 +260,15 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Phone2numeric',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/phone2numeric.html'
         }
+      },{
+        'filter_name': 'pluralize',
+        'description': "Thêm 's' vào cuối nếu số đếm là số nhiều",
+        'id_modal': 'modalPluralize',
+        'modal': {
+          'title': 'Filter - Pluralize',
+          'data': views.Research_Doc().pluralize(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/pluralize.html'
+        }
       }
     ]
     return data

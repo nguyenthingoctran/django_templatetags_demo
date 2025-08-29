@@ -63,6 +63,10 @@ class Research_Doc(TemplateView):
     def text_1(self):
       data = 'Hello\nmy name is Leo.\n\nI am a student.'
       return data
+    
+    def pluralize(self):
+      data = [0, 1, 2]
+      return data
       
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
