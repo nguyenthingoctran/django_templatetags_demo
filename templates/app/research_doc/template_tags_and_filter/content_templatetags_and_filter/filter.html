@@ -45,14 +45,16 @@
                     <td>{{ filter.filter_name }}</td>
                     <td>{{ filter.description }}</td>
                     <td>
-                      <button 
-                        type="button" 
-                        class="btn btn-secondary btn-sm"
-                        data-bs-toggle="modal"
-                        data-bs-target="#{{ filter.id_modal }}">
-                        Detail
-                      </button>
-                      {% modal id=filter.id_modal title=filter.modal.title data=filter.modal.data template_name=filter.modal.template_name %}
+                      {% if filter.modal.template_name %}
+                        <button 
+                          type="button" 
+                          class="btn btn-secondary btn-sm"
+                          data-bs-toggle="modal"
+                          data-bs-target="#{{ filter.id_modal }}">
+                          Detail
+                        </button>
+                        {% modal id=filter.id_modal title=filter.modal.title data=filter.modal.data template_name=filter.modal.template_name %}
+                      {% endif %}
                     </td>
                   </tr>
                 {% endfor %}

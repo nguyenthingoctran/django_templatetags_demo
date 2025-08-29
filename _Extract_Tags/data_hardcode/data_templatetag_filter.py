@@ -269,6 +269,31 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().pluralize(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/pluralize.html'
         }
+      },{
+        'filter_name': 'pluralize',
+        'description': "Thêm 's' vào cuối nếu số đếm là số nhiều",
+        'id_modal': 'modalPluralize',
+        'modal': {
+          'title': 'Filter - Pluralize',
+          'data': views.Research_Doc().pluralize(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/pluralize.html'
+        }
+      },{
+        'filter_name': 'pprint',
+        'description': "Dùng để debug pprint.pprint()",
+        'id_modal': 'modalPprint',
+        'modal': {
+          'title': 'Filter - Pprint'
+        }
+      },{
+        'filter_name': 'random',
+        'description': "Trả về 1 item ngẫu nhiên của 1 object",
+        'id_modal': 'modalRandom',
+        'modal': {
+          'title': 'Filter - Random',
+          'data': views.Research_Doc().research_doc_cycle(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/random.html'
+        }
       }
     ]
     return data
