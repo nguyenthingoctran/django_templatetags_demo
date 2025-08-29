@@ -294,6 +294,14 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/random.html'
         }
+      },{
+        'filter_name': 'rjust',
+        'description': "Căn phải giá trị theo chiều rộng được chỉ định",
+        'id_modal': 'modalRjust',
+        'modal': {
+          'title': 'Filter - Rjust',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/rjust.html'
+        }
       }
     ]
     return data
