@@ -236,6 +236,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - LJust',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/ljust.html'
         }
+      },{
+        'filter_name': 'lower',
+        'description': "Trả về text với ký tự in thường",
+        'id_modal': 'modalLower',
+        'modal': {
+          'title': 'Filter - Lower',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/lower.html'
+        }
       }
     ]
     return data
