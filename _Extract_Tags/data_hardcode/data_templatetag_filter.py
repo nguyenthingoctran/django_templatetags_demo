@@ -244,6 +244,22 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Lower',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/lower.html'
         }
+      },{
+        'filter_name': 'make_list',
+        'description': "Thay đổi một value thành 1 List Object",
+        'id_modal': 'modalMakeList',
+        'modal': {
+          'title': 'Filter - MakeList',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/make_list.html'
+        }
+      },{
+        'filter_name': 'phone2numeric',
+        'description': "Chuyển đổi SĐT với những cái thành số điện thoại.",
+        'id_modal': 'modalPhone2numeric',
+        'modal': {
+          'title': 'Filter - Phone2numeric',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/phone2numeric.html'
+        }
       }
     ]
     return data
