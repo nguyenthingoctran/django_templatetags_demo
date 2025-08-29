@@ -48,3 +48,21 @@ Python
 Thêm () vào class để call không bị lỗi thiếu argment self
 from research_doc import views
 views.Research_Doc().research_doc_filter_add()
+
+==========================================
+Popover
+
+<img 
+  src="{% static 'img/templatetags_guide/guide/alert_title.png' %}" 
+  data-bs-toggle="popover"
+  data-bs-placement="right"
+  data-bs-content="<img src='{% static 'img/templatetags_guide/guide/alert_title.png' %}' width='500px'/>"
+  data-bs-html="true"
+  data-bs-trigger="hover"
+  style="width: 200px;"/>
+
+{% block script %} 
+  <script src="{% static 'vendor/js/ui-popover.js' %}"></script>
+{% endblock %}
+
+=========================================

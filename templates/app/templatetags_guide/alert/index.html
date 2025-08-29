@@ -65,8 +65,8 @@
                   <th>Name</th>
                   <th>Image Minh hoạ</th>
                   <th>Description</th>
-                  <th>Type data</th>
-                  <th>Example</th>
+                  <th style="width: 300px;">Type data</th>
+                  <th style="width: 300px;">Example</th>
                 </tr>
               </thead>
               <tbody>
@@ -104,14 +104,48 @@
                   <td>
                     <img src="{% static 'img/templatetags_guide/guide/alert_icon.png' %}" style="width: 200px;"/>
                   </td>
-                  <td>Bật tính năng xoá Alert</td>
-                  <td>Truyền vào text theo quy định.
-                    <ul>
-                      <li><code>True</code>: Hiển thị tính năng tắt Alert</li>
-                      <li><code>False</code>: Không hiển thị tính năng tắt Alert.</li>
-                    </ul>
+                  <td>Hiển thị Icon</td>
+                  <td>Truyền vào text icon .Tham khảo icon ở đây <a href="https://tabler.io/icons">Tabler Icon</a></td>
+                  <td><code>icon='code'</code></td>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>
+                    <img 
+                      src="{% static 'img/templatetags_guide/guide/alert_title.png' %}" 
+                      data-bs-toggle="popover"
+                      data-bs-placement="right"
+                      data-bs-content="<img src='{% static 'img/templatetags_guide/guide/alert_title.png' %}' width='500px'/>"
+                      data-bs-html="true"
+                      data-bs-trigger="hover"
+                      style="width: 200px;"/>
                   </td>
-                  <td><code>dismissible='False'</code></td>
+                  <td>Truyền text title muốn hiển thị vào đây</td>
+                  <td>text</td>
+                  <td><code>title="This is a primary alert — check it out!"</code></td>
+                </tr>
+                <tr>
+                  <td>content</td>
+                  <td>
+                    <img 
+                      src="{% static 'img/templatetags_guide/guide/alert_content.png' %}" 
+                      data-bs-toggle="popover"
+                      data-bs-placement="right"
+                      data-bs-content="<img src='{% static 'img/templatetags_guide/guide/alert_content.png' %}' width='500px'/>"
+                      data-bs-html="true"
+                      data-bs-trigger="hover"
+                      style="width: 200px;"/>
+                  </td>
+                  <td>Truyền content muốn hiển thị vào đây</td>
+                  <td>text</td>
+                  <td><code>content="Sugar plum apple pie sesame snaps croissant marshmallow apple pie liquorice."</code></td>
+                </tr>
+                <tr>
+                  <td>template</td>
+                  <td></td>
+                  <td>Truyền URL template </td>
+                  <td>text</td>
+                  <td><code>template="app/templatetags_guide/alert/template.html"</code></td>
                 </tr>
               </tbody>
             </table>
@@ -120,4 +154,8 @@
       </div>
     </div>
   </div>
+{% endblock %}
+
+{% block script %} 
+  <script src="{% static 'vendor/js/ui-popover.js' %}"></script>
 {% endblock %}
