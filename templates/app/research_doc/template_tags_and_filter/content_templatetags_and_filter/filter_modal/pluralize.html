@@ -1,3 +1,4 @@
+<h5>1. Thêm 's' vào nếu là số nhiều. Đây là trường hợp default khi không có có yêu cầu cụ thể text.</h5>
 <div class="row">
   <div class="col-6">
     <p class="mb-0">Data mẫu</p>
@@ -25,6 +26,76 @@ data = [0, 1, 2]
     <div class="p-3 bg-label-primary mt-4">
       {% for x in data %}
         I have {{ x }} dog{{ x|pluralize }}. <br/>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<hr class="mt-0"/>
+
+<h5>2. Thêm text "es" hoặc bất kỳ text nào vào cuối từ cần thêm.</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = [0, 1, 2]
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>% for x in data %<span></span>}
+  You have {<span></span>{ x }} kiss{<span></span>{ x|pluralize:'es' }} left<<span></span>br/>
+{<span></span>% endfor %}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {% for x in data %}
+        You have {{ x }} kiss{{ x|pluralize:'es' }} left<br/>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<hr class="mt-0"/>
+
+<h5>3. Thêm text chỉ định vào 2 trường hợp bằng 1 và lớn hơn 1.</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = [0, 1, 2]
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>% for x in data %<span></span>}
+  You have {<span></span>{ x }} butterfl{<span></span>{ x|pluralize:'y,ies' }} left.<<span></span>br/>
+{<span></span>% endfor %}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {% for x in data %}
+        You have {{ x }} butterfl{{ x|pluralize:'y,ies' }} left.<br/>
       {% endfor %}
     </div>
   </div>
