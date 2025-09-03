@@ -326,8 +326,8 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalSlice',
         'modal': {
           'title': 'Filter - Slice',
-          'data': views.Research_Doc().object_1(),
-          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/safeseq.html'
+          'data': views.Research_Doc().research_doc_cycle(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/slice.html'
         }
       }
     ]

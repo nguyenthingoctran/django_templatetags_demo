@@ -1,0 +1,38 @@
+<p class='pt-2 mb-0'>Syntax</p> 
+<p class='pt-2 mb-0'><code>from</code> bắt đầu từ 0.</p> 
+<div class="highlight">
+  <pre class="chroma rounded mb-0">
+    <code class="language-html" data-lang="html">
+{<span></span>{ list|slice:"from:to" }<span></span>}
+    </code>
+  </pre>
+</div>
+
+<h5>Example</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ data|slice:"1:4" }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {{ data|slice:"1:4" }}
+    </div>
+  </div>
+</div>
