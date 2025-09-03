@@ -374,6 +374,15 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().date_list_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/timesince.html'
         }
+      },{
+        'filter_name': 'timeuntil',
+        'description': "Trả về khoảng cách ngày tháng giữa 2 ngày cụ thể.",
+        'id_modal': 'modalTimeuntil',
+        'modal': {
+          'title': 'Filter - Timeuntil',
+          'data': views.Research_Doc().date_list_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/timeuntil.html'
+        }
       }
     ]
     return data

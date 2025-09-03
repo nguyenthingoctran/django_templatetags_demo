@@ -94,7 +94,8 @@ class Research_Doc(TemplateView):
         'mybirthdate': datetime(1994, 4, 28),   
         'mydate': datetime(2020, 10, 17),
         'date1': datetime(2022, 6, 8, 9, 30),  
-        'date2': datetime(2022, 6, 8, 13, 45)
+        'date2': datetime(2022, 6, 8, 13, 45),
+        'marslanding': datetime(2050, 5, 17)
       }
       return data
         
