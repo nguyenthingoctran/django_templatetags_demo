@@ -1,0 +1,95 @@
+<h5>1. Trả về khoảng cách giữa 2 ngày</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = {
+  'mybirthdate': datetime(2004, 11, 18),   
+  'mydate': datetime(2020, 5, 17)
+}
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ data.mybirthdate|timesince:data.mydate }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {{ data.mybirthdate|timesince:data.mydate }}
+    </div>
+  </div>
+</div>
+
+<h5>2. Trả về khoảng cách giữa hiện tại và 1 ngày khác</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = {
+  'mybirthdate': datetime(2004, 11, 18),   
+  'mydate': datetime(2020, 5, 17)
+}
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ data.mybirthdate|timesince }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {{ data.mybirthdate|timesince }}
+    </div>
+  </div>
+</div>
+
+<h5>3. Trả về khoảng cách giữa giờ của 2 ngày</h5>
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = {
+  'date1': datetime(2022, 6, 8, 9, 30),  
+  'date2': datetime(2022, 6, 8, 13, 45)
+}
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>{ data.date1|timesince:data.date2 }}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      {{ data.date1|timesince:data.date2 }}
+    </div>
+  </div>
+</div>

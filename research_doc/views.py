@@ -89,6 +89,15 @@ class Research_Doc(TemplateView):
       } 
       return data
     
+    def date_list_1(self):
+      data = {
+        'mybirthdate': datetime(1994, 4, 28),   
+        'mydate': datetime(2020, 10, 17),
+        'date1': datetime(2022, 6, 8, 9, 30),  
+        'date2': datetime(2022, 6, 8, 13, 45)
+      }
+      return data
+        
     def pluralize(self):
       data = [0, 1, 2]
       return data
