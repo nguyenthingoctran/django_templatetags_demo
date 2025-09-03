@@ -347,6 +347,15 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().number_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/stringformat.html'
         }
+      },{
+        'filter_name': 'striptags',
+        'description': "Xoá HTML khỏi text",
+        'id_modal': 'modalStriptags',
+        'modal': {
+          'title': 'Filter - Striptags',
+          'data': views.Research_Doc().text_2(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/striptags.html'
+        }
       }
     ]
     return data
