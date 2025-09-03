@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from datetime import datetime
 from _Extract_Tags.data_hardcode.data_templatetag_filter import DataResearchTemplateTagFilter
+from django.utils.html import format_html
 
 # Create your views here.
 class Research_Doc(TemplateView):
@@ -62,6 +63,19 @@ class Research_Doc(TemplateView):
     
     def text_1(self):
       data = 'Hello\nmy name is Leo.\n\nI am a student.'
+      return data
+    
+    def text_2(self):
+      data = '<h1>Hello, Kitty</h1>'
+      return data
+    
+    def object_1(self):
+      data = [
+        "Plain text item.",
+        format_html("<strong>Bold item</strong> with HTML."),
+        "Hello, Kitty",
+        format_html("<em>Emphasized item</em>.")
+      ]
       return data
     
     def pluralize(self):

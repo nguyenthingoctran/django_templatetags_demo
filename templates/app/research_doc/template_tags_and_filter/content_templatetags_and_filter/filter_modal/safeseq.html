@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+from django.utils.html import format_html
+        
+data = [
+  "Plain text item.",
+  format_html("<strong>Bold item</strong> with HTML."),
+  "Hello, Kitty",
+  format_html("<em>Emphasized item</em>.")
+]
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+<<span></span>ul>
+  {<span></span>% for item in data|safeseq %<span></span>}
+    <<span></span>li>{<span></span>{ item }<span></span>}<<span></span>/li>
+  {<span></span>% endfor %}
+<<span></span>/ul>
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      <ul>
+        {% for item in data|safeseq %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

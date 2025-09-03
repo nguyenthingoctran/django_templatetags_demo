@@ -302,6 +302,33 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Rjust',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/rjust.html'
         }
+      },{
+        'filter_name': 'safe',
+        'description': "Đoạn text này không nên thoát HTML",
+        'id_modal': 'modalSafe',
+        'modal': {
+          'title': 'Filter - Safe',
+          'data': views.Research_Doc().text_2(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/safe.html'
+        }
+      },{
+        'filter_name': 'safeseq',
+        'description': "Đánh dấu từng item trong 1 Object là safe và giữ nguyên HMTL",
+        'id_modal': 'modalSafeseq',
+        'modal': {
+          'title': 'Filter - Safeseq',
+          'data': views.Research_Doc().object_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/safeseq.html'
+        }
+      },{
+        'filter_name': 'slice',
+        'description': "Cắt một chuỗi hoặc một object được chỉ định.",
+        'id_modal': 'modalSlice',
+        'modal': {
+          'title': 'Filter - Slice',
+          'data': views.Research_Doc().object_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/safeseq.html'
+        }
       }
     ]
     return data
