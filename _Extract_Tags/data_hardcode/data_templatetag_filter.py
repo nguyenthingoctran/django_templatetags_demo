@@ -338,6 +338,15 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().text_3(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/slugify.html'
         }
+      },{
+        'filter_name': 'stringformat',
+        'description': "Chuyển đổi giá trị thành 1 format cụ thể.",
+        'id_modal': 'modalStringformat',
+        'modal': {
+          'title': 'Filter - Stringformat',
+          'data': views.Research_Doc().number_1(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/stringformat.html'
+        }
       }
     ]
     return data

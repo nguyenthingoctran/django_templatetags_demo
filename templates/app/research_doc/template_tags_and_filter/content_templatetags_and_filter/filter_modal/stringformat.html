@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = {
+  "1": 1234.5678,
+  '2': 10
+}
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+<<span></span>b>Original number<<span></span>/b>: {<span></span>{ data.1|stringformat:"s" }} <<span></span>br/>
+<<span></span>b>Formatted as integer<<span></span>/b>: {<span></span>{ data.1|stringformat:"d" }} <<span></span>br/>
+<<span></span>b>Formatted as float<<span></span>/b>: {<span></span>{ data.1|stringformat:"f" }} <<span></span>br/>
+<<span></span>b>Formatted in scientific notation</b>: {<span></span>{ data.1|stringformat:"e" }} <<span></span>br/>
+<<span></span>b>|stringformat:"o"<<span></span>/b>: {<span></span>{ data.2|stringformat:"o" }} <<span></span>br/>
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      <b>Original number</b>: {{ data.1|stringformat:"s" }} <br/>
+      <b>Formatted as integer</b>: {{ data.1|stringformat:"d" }} <br/>
+      <b>Formatted as float</b>: {{ data.1|stringformat:"f" }} <br/>
+      <b>Formatted in scientific notation</b>: {{ data.1|stringformat:"e" }} <br/>
+      <b>|stringformat:"o"</b>: {{ data.2|stringformat:"o" }} <br/>
+    </div>
+
+    <p class="mb-0 mt-4">Note</p>
+    <div class="p-3 bg-label-warning mt-4">
+      Tham khảo thêm tại đây <a href="https://docs.python.org/3/library/stdtypes.html#old-string-formatting" target="_blank">Link</a>
+    </div>
+  </div>
+</div>

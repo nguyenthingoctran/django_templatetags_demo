@@ -82,6 +82,13 @@ class Research_Doc(TemplateView):
       ]
       return data
     
+    def number_1(self):
+      data = {
+        "1": 1234.5678,
+        '2': 10
+      } 
+      return data
+    
     def pluralize(self):
       data = [0, 1, 2]
       return data
