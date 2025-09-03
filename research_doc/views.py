@@ -68,6 +68,10 @@ class Research_Doc(TemplateView):
     def text_2(self):
       data = '<h1>Hello, Kitty</h1>'
       return data
+
+    def text_3(self):
+      data = 'Hi, my name is Linus\n Hello'
+      return data
     
     def object_1(self):
       data = [

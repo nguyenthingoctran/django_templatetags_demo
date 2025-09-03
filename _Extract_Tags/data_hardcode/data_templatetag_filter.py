@@ -329,6 +329,15 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/slice.html'
         }
+      },{
+        'filter_name': 'slugify',
+        'description': "Chuyển đổi 1 text sang 1 text dài nối nhau bởi '-'",
+        'id_modal': 'modalSlugify',
+        'modal': {
+          'title': 'Filter - Slugify',
+          'data': views.Research_Doc().text_3(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/slugify.html'
+        }
       }
     ]
     return data
