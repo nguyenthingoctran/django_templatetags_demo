@@ -70,7 +70,7 @@ class Research_Doc(TemplateView):
       return data
 
     def text_3(self):
-      data = 'Hi, my name is Linus\n Hello'
+      data = '_Hi, my name is Linus\n Hello - Kitty__Hihi-'
       return data
     
     def object_1(self):

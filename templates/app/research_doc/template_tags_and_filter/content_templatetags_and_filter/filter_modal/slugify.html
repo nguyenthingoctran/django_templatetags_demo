@@ -4,7 +4,7 @@
     <div class="highlight">
       <pre class="chroma rounded mb-0">
         <code class="language-python" data-lang="python">
-data = 'Hi, my name is Linus\n Hello'
+data = '_Hi, my name is Linus\n Hello - Kitty__Hihi-'
         </code>
       </pre>
     </div>
@@ -22,6 +22,17 @@ data = 'Hi, my name is Linus\n Hello'
     <p class="mb-0">Kết quả</p>
     <div class="p-3 bg-label-primary mt-4">
       {{ data|slugify }}
+    </div>
+
+    <p class="mb-0 mt-5">Note</p>
+    <div class="p-3 bg-label-warning mt-4">
+      <ul class="mt-3">
+        <li>Tất cả khoảng trắng chuyển thành gạch ngang "-"</li>
+        <li>Xoá tất cả các ký tự không nằm trong alphanumeric, ngoại trừ gạch 
+          ngang "-" và gạch dưới "_"</li>
+        <li>Xoá bất kỳ "-", "_" ở hai đầu chuỗi.</li>
+        <li>Chuyển chữ hoa thành chữ thường.</li>
+      </ul>
     </div>
   </div>
 </div>
