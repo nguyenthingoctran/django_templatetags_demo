@@ -1,5 +1,14 @@
 <div class="row">
-  <div class="col-6">
+  <p class='pt-2 mb-0'>Cú pháp</p> 
+  <div class="highlight">
+    <pre class="chroma rounded mb-0">
+      <code class="language-html" data-lang="html">
+{<span></span>{ datetime|time:"format" }}
+      </code>
+    </pre>
+  </div>
+
+  <div class="col-12">
     <p class="mb-0">Data mẫu</p>
     <div class="highlight">
       <pre class="chroma rounded mb-0">
@@ -8,20 +17,106 @@ data = datetime.now()
         </code>
       </pre>
     </div>
-
-    <p class="mb-0">Render HTML</p>
-    <div class="highlight">
-      <pre class="chroma rounded mb-0">
-        <code class="language-html" data-lang="html">
-{<span></span>{ data|time }}
-        </code>
-      </pre>
-    </div>
   </div>
-  <div class="col-6">
-    <p class="mb-0">Kết quả</p>
-    <div class="p-3 bg-label-primary mt-4">
-      {{ data|time }}
+  <div class="col-12">
+    <p class="mb-0 mt-3">Note: Tham khảo một số format sau:</p>
+    <div class="mt-4">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Ký tự</th>
+            <th>Mô tả</th>
+            <th>Render HTML</th>
+            <th>Kết quả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <code>{<span></span>{ data }}</code>
+            </td>
+            <td>{{ data }}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <code>{<span></span>{ data|time }}</code>
+            </td>
+            <td>{{ data|time }}</td>
+          </tr>
+          <tr>
+            <td>g</td>
+            <td>Hour (1-12)</td>
+            <td><code>{<span></span>{ data|time:'g' }}</code></td>
+            <td>{{ data|time:'g' }}</td>
+          </tr>
+          <tr>
+            <td>G</td>
+            <td>Hour (0-23)</td>
+            <td><code>{<span></span>{ data|time:'G' }}</code></td>
+            <td>{{ data|time:'G' }}</td>
+          </tr>
+          <tr>
+            <td>h</td>
+            <td>Hour (01-12)</td>
+            <td><code>{<span></span>{ data|time:'h' }}</code></td>
+            <td>{{ data|time:'h' }}</td>
+          </tr>
+          <tr>
+            <td>H</td>
+            <td>Hour (00-23)</td>
+            <td><code>{<span></span>{ data|time:'H' }}</code></td>
+            <td>{{ data|time:'H' }}</td>
+          </tr>
+          <tr>
+            <td>i</td>
+            <td>Minutes (00-59)</td>
+            <td><code>{<span></span>{ data|time:'i' }}</code></td>
+            <td>{{ data|time:'i' }}</td>
+          </tr>
+          <tr>
+            <td>s</td>
+            <td>Seconds (00-59)</td>
+            <td><code>{<span></span>{ data|time:'s' }}</code></td>
+            <td>{{ data|time:'s' }}</td>
+          </tr>
+          <tr>
+            <td>u</td>
+            <td>Microseconds (000000-999999)</td>
+            <td><code>{<span></span>{ data|time:'u' }}</code></td>
+            <td>{{ data|time:'u' }}</td>
+          </tr>
+          <tr>
+            <td>a</td>
+            <td>am/pm suffix (a.m. or p.m.)</td>
+            <td><code>{<span></span>{ data|time:'a' }}</code></td>
+            <td>{{ data|time:'a' }}</td>
+          </tr>
+          <tr>
+            <td>A</td>
+            <td>AM/PM suffix (A.M. or P.M.)</td>
+            <td><code>{<span></span>{ data|time:'A' }}</code></td>
+            <td>{{ data|time:'A' }}</td>
+          </tr>
+          <tr>
+            <td>f</td>
+            <td>Time, hour and minute, but minutes are left out if they are 0</td>
+            <td><code>{<span></span>{ data|time:'f' }}</code></td>
+            <td>{{ data|time:'f' }}</td>
+          </tr>
+          <tr>
+            <td>P</td>
+            <td>Same as f, but also including a.m. or p.m. and: <br/>
+                If time is exactly "12:00 a.m." it returns "midnight". <br/>
+                If time is exactly "12:00 p.m." it returns "noon".</td>
+            <td><code>{<span></span>{ data|time:'P' }}</code></td>
+            <td>{{ data|time:'P' }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
