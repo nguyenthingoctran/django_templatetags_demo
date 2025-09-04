@@ -399,6 +399,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Truncatechars',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/truncatechars.html'
         }
+      },{
+        'filter_name': 'truncatechars_html',
+        'description': "Rút ngắn một chuỗi theo số ký tự chỉ định. Không tính độ dài của thẻ HTML",
+        'id_modal': 'modalTruncatecharsHTML',
+        'modal': {
+          'title': 'Filter - Truncatechars HTML',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/truncatechars_html.html'
+        }
       }
     ]
     return data
