@@ -432,6 +432,15 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/unordered_list.html'
         }
+      },{
+        'filter_name': 'upper',
+        'description': "Trả về tất cả các ký tự được in hoa",
+        'id_modal': 'modalUpper',
+        'modal': {
+          'title': 'Filter - Upper',
+          'data': views.Research_Doc().research_doc_cycle(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/upper.html'
+        }
       }
     ]
     return data
