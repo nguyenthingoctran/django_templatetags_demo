@@ -95,7 +95,10 @@ class Research_Doc(TemplateView):
         'mydate': datetime(2020, 10, 17),
         'date1': datetime(2022, 6, 8, 9, 30),  
         'date2': datetime(2022, 6, 8, 13, 45),
-        'marslanding': datetime(2050, 5, 17)
+        'marslanding': datetime(2050, 5, 17),
+        'moonlanding': datetime(1969, 7, 20),
+        'date3': datetime(2022, 6, 8, 17, 39),
+        'date4': datetime(2022, 6, 8, 8, 13)
       }
       return data
         
