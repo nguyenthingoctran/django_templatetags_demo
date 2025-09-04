@@ -109,4 +109,5 @@ class Research_Doc(TemplateView):
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
       data['list_filter'] = DataResearchTemplateTagFilter().data_filter()
+      data['autoescape'] = self.research_doc_autoescape()
       return data

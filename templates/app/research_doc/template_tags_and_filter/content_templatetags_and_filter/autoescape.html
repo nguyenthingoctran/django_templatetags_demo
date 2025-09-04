@@ -10,18 +10,29 @@
         <div class="border rounded px-5 pt-5 pb-0 mb-5">
           <!-- Demo -->
           <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 1</div>
-          {% autoescape on %}
-            <h3>{{ autoescape }}</h3>
-          {% endautoescape %}
+
 
           <!-- BE -->
-          <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
-          <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
-          <pre class="chroma rounded mb-0">
-            <code class="language-python" data-lang="python">
+          <div class="row">
+            <div class="col-6">
+              <p class='pt-2 mb-0'>Data mẫu</p> 
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
 data = '{{ autoescape }}'
-            </code>
-          </pre>
+                </code>
+              </pre>
+            </div>
+
+            <div class="col-6">
+              <p class='pt-2 mb-0'>Kết quả:</p> 
+              <div class="p-3 border mt-4">
+                {% autoescape on %}
+                  <h3>{{ autoescape }}</h3>
+                {% endautoescape %}
+              </div>
+            </div>
+          </div>
+
 
           <!-- FE -->
           <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
