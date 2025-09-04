@@ -280,11 +280,7 @@ class DataResearchTemplateTagFilter():
         }
       },{
         'filter_name': 'pprint',
-        'description': "Dùng để debug pprint.pprint()",
-        'id_modal': 'modalPprint',
-        'modal': {
-          'title': 'Filter - Pprint'
-        }
+        'description': "Dùng để debug pprint.pprint()"
       },{
         'filter_name': 'random',
         'description': "Trả về 1 item ngẫu nhiên của 1 object",
@@ -489,6 +485,15 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Yesno',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/yesno.html'
         }
+      },{
+        'filter_name': 'i18n',
+        'description': "Dùng để chuyển đổi dịch ngôn ngữ. Xem thêm ở phần Translate",
+      },{
+        'filter_name': 'l10n',
+        'description': "Dùng để chuyển đổi về location như datetime, currency...",
+      },{
+        'filter_name': 'tz',
+        'description': "timezone",
       }
     ]
     return data

@@ -45,7 +45,7 @@
                     <td>{{ filter.filter_name }}</td>
                     <td>{{ filter.description }}</td>
                     <td>
-                      {% if filter.modal.template_name and not filter.not_working %}
+                      {% if filter.modal and not filter.not_working %}
                         <button 
                           type="button" 
                           class="btn btn-secondary btn-sm"
