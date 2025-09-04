@@ -391,6 +391,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Timeuntil',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/title.html'
         }
+      },{
+        'filter_name': 'truncatechars',
+        'description': "Rút ngắn một chuỗi theo số ký tự chỉ định.",
+        'id_modal': 'modalTruncatechars',
+        'modal': {
+          'title': 'Filter - Truncatechars',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/truncatechars.html'
+        }
       }
     ]
     return data
