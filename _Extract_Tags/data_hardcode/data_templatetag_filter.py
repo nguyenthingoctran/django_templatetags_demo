@@ -457,6 +457,22 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Urlize',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/urlize.html'
         }
+      },{
+        'filter_name': 'urlizetrunc',
+        'description': "Trả về bất kỳ URL nào trong chuỗi dưới dạng liên kết HTML, nhưng rút ngắn liên kết theo số chỉ định.",
+        'id_modal': 'modalUrlizetrunc',
+        'modal': {
+          'title': 'Filter - Urlizetrunc',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/urlizetrunc.html'
+        }
+      },{
+        'filter_name': 'wordcount',
+        'description': "Trả về số lượng từ trong 1 text",
+        'id_modal': 'modalWordcount',
+        'modal': {
+          'title': 'Filter - Wordcount',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/wordcount.html'
+        }
       }
     ]
     return data
