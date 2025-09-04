@@ -481,6 +481,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Wordwrap',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/wordwrap.html'
         }
+      },{
+        'filter_name': 'yesno',
+        'description': "Chuyển đổi giá trị Boolean thành giá trị cụ thể.",
+        'id_modal': 'modalYesno',
+        'modal': {
+          'title': 'Filter - Yesno',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/yesno.html'
+        }
       }
     ]
     return data

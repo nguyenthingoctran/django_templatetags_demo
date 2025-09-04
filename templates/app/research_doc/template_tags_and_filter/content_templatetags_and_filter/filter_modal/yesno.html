@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-12">
+    <p class="mb-0">Syntax</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+{<span></span>{ value|yesno:"yes,no,maybe" }}
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <p class="mb-0">Example</p>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Example</th>
+          <th>Demo</th>
+          <th>Explain</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>{<span></span>{ True|yesno:"yes,no,maybe" }}</code></td>
+          <td>{{ True|yesno:"yes,no,maybe" }}</td>
+          <td>Chuỗi đầu tiên sẽ được trả về nếu input là <code>True</code></td>
+        </tr>
+        <tr>
+          <td><code>{<span></span>{ False|yesno:"yes,no,maybe" }}</code></td>
+          <td>{{ False|yesno:"yes,no,maybe" }}</td>
+          <td>Chuỗi thứ 2 sẽ được trả về nếu input là <code>False</code></td>
+        </tr>
+        <tr>
+          <td><code>{<span></span>{ None|yesno:"yes,no,maybe" }}</code></td>
+          <td>{{ None|yesno:"yes,no,maybe" }}</td>
+          <td>Chuỗi thứ 3 sẽ được trả về nếu input là <code>None</code></td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
