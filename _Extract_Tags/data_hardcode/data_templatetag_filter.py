@@ -441,6 +441,14 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/upper.html'
         }
+      },{
+        'filter_name': 'urlencode',
+        'description': "URL mã hoá một chuỗi",
+        'id_modal': 'modalUrlencode',
+        'modal': {
+          'title': 'Filter - Urlencode',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/urlencode.html'
+        }
       }
     ]
     return data
