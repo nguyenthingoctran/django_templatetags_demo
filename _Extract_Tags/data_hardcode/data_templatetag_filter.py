@@ -423,6 +423,15 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Truncatewords_html',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/truncatewords_html.html'
         }
+      },{
+        'filter_name': 'unordered_list',
+        'description': "Trả về các mục của một đối tượng dưới dạng danh sách HTML không có thứ tự.",
+        'id_modal': 'modalUnordered_list',
+        'modal': {
+          'title': 'Filter - Unordered_list',
+          'data': views.Research_Doc().research_doc_cycle(),
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/unordered_list.html'
+        }
       }
     ]
     return data

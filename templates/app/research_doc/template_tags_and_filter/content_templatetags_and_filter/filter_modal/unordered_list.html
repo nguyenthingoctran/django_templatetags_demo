@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Data mẫu</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-python" data-lang="python">
+data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
+        </code>
+      </pre>
+    </div>
+
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+<<span></span>ul>
+  {<span></span>{ data|unordered_list }}
+<<span></span>/ul>
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 bg-label-primary mt-4">
+      <ul>
+        {{ data|unordered_list }}
+      </ul>
+    </div>
+  </div>
+</div>
