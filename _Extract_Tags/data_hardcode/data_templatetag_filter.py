@@ -383,6 +383,14 @@ class DataResearchTemplateTagFilter():
           'data': views.Research_Doc().date_list_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/timeuntil.html'
         }
+      },{
+        'filter_name': 'title',
+        'description': "Chuyển đổi văn bản sang toàn bộ chữ viết hoa chữ đầu",
+        'id_modal': 'modalTitle',
+        'modal': {
+          'title': 'Filter - Timeuntil',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/title.html'
+        }
       }
     ]
     return data
