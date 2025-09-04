@@ -473,6 +473,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Wordcount',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/wordcount.html'
         }
+      },{
+        'filter_name': 'wordwrap',
+        'description': "Ngắt dòng theo số lượng ký tự chỉ định",
+        'id_modal': 'modalWordwrap',
+        'modal': {
+          'title': 'Filter - Wordwrap',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/wordwrap.html'
+        }
       }
     ]
     return data

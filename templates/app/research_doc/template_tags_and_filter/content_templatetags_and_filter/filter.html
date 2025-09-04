@@ -45,7 +45,7 @@
                     <td>{{ filter.filter_name }}</td>
                     <td>{{ filter.description }}</td>
                     <td>
-                      {% if filter.modal.template_name %}
+                      {% if filter.modal.template_name and not filter.not_working %}
                         <button 
                           type="button" 
                           class="btn btn-secondary btn-sm"
@@ -54,6 +54,10 @@
                           Detail
                         </button>
                         {% modal id=filter.id_modal title=filter.modal.title data=filter.modal.data template_name=filter.modal.template_name %}
+                      {% endif %}
+
+                      {% if filter.not_working %}
+                        <div class="badge text-bg-danger rounded-pill ms-auto">Not Working</div>
                       {% endif %}
                     </td>
                   </tr>
