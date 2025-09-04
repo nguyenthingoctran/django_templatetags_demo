@@ -449,6 +449,14 @@ class DataResearchTemplateTagFilter():
           'title': 'Filter - Urlencode',
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/urlencode.html'
         }
+      },{
+        'filter_name': 'urlize',
+        'description': "Trả về bất kỳ URL nào trong chuỗi dưới dạng liên kết HTML",
+        'id_modal': 'modalUrlize',
+        'modal': {
+          'title': 'Filter - Urlize',
+          'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/urlize.html'
+        }
       }
     ]
     return data

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-6">
+    <p class="mb-0">Render HTML</p>
+    <div class="highlight">
+      <pre class="chroma rounded mb-0">
+        <code class="language-html" data-lang="html">
+{<span></span>% with url_str='Check out www.djangoproject.com' %}
+  {<span></span>{ url_str|urlize }}
+{<span></span>% endwith %}
+        </code>
+      </pre>
+    </div>
+  </div>
+  <div class="col-6">
+    <p class="mb-0">Kết quả</p>
+    <div class="p-3 mt-4 border">
+      {% with url_str='Check out www.djangoproject.com' %}
+        {{ url_str|urlize }}
+      {% endwith %}
+    </div>
+  </div>
+</div>
