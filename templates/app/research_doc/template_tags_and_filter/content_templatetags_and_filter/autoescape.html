@@ -9,18 +9,28 @@
         <!-- ============== -->
         <div class="border rounded px-5 pt-5 pb-0 mb-5">
           <!-- Demo -->
-          <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 1</div>
-
-
-          <!-- BE -->
+          <h5>1. Trường hợp khi bật ở chế độ "on"</h5>
           <div class="row">
             <div class="col-6">
+              <!-- BE -->
               <p class='pt-2 mb-0'>Data mẫu</p> 
               <pre class="chroma rounded mb-0">
                 <code class="language-python" data-lang="python">
 data = '{{ autoescape }}'
                 </code>
               </pre>
+
+              <!-- FE -->
+              <p class='pt-2 mb-0'>Render HTML. </p> 
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
+{<span></span>% autoescape on %}
+  <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
+{<span></span>% endautoescape %}
+                  </code>
+                </pre>
+              </div>
             </div>
 
             <div class="col-6">
@@ -31,20 +41,6 @@ data = '{{ autoescape }}'
                 {% endautoescape %}
               </div>
             </div>
-          </div>
-
-
-          <!-- FE -->
-          <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
-          <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "on"</p> 
-          <div class="highlight">
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
-{<span></span>% autoescape on %}
-  <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
-{<span></span>% endautoescape %}
-              </code>
-            </pre>
           </div>
 
           <p class="mb-0">
@@ -63,32 +59,38 @@ data = '{{ autoescape }}'
         <!-- Demo 2 ======= -->
         <!-- ============== -->
         <div class="border rounded px-5 pt-5 pb-0 mb-5">
-          <!-- Demo -->
-          <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 2</div>
-          {% autoescape off %}
-            <h3>{{ autoescape }}</h3>
-          {% endautoescape %}
-
-          <!-- BE -->
-          <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
-          <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
-          <pre class="chroma rounded">
-            <code class="language-python" data-lang="python">
+          <h5>2. Trường hợp khi bật ở chế độ "off"</h5>
+          <div class="row">
+            <div class="col-6">
+              <!-- BE -->
+              <p class='pt-2 mb-0'>Data mẫu</p> 
+              <pre class="chroma rounded">
+                <code class="language-python" data-lang="python">
 data = '{{ autoescape }}'
-            </code>
-          </pre>
+                </code>
+              </pre>
 
-          <!-- FE -->
-          <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
-          <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "off"</p> 
-          <div class="highlight">
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
+              <!-- FE -->
+              <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "off"</p> 
+              <div class="highlight">
+                <pre class="chroma rounded mb-0">
+                  <code class="language-html" data-lang="html">
 {<span></span>% autoescape off %}
   <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
 {<span></span>% endautoescape %}
-              </code>
-            </pre>
+                  </code>
+                </pre>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <p class='pt-2 mb-0'>Kết quả:</p> 
+              <div class="p-3 border mt-4">
+                {% autoescape off %}
+                  <h3>{{ autoescape }}</h3>
+                {% endautoescape %}
+              </div>
+            </div>
           </div>
 
           <p class="mb-0">
