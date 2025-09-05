@@ -2,6 +2,7 @@ from django.views.generic.base import TemplateView
 from datetime import datetime
 from _Extract_Tags.data_hardcode.data_templatetag_filter import DataResearchTemplateTagFilter
 from django.utils.html import format_html
+from django.contrib.auth.models import User
 
 # Create your views here.
 class Research_Doc(TemplateView):
@@ -113,6 +114,14 @@ class Research_Doc(TemplateView):
     def firstof_1(self):
       firstof_1 = [0, "", 0]
       return firstof_1
+    
+    def get_user_list(self):
+      users = User.objects.all()
+      return users
+    
+    def emptytestobject(self):
+      emptytestobject = []
+      return emptytestobject
 
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -121,4 +130,8 @@ class Research_Doc(TemplateView):
       data['cycle'] = self.research_doc_cycle()
       data['firstof'] = self.firstof()
       data['firstof_1'] = self.firstof_1()
+      data['fruits'] = self.research_doc_cycle()
+      data['cars'] = self.dict_sort()
+      data['users'] = self.get_user_list()
+      data['emptytestobject'] = self.emptytestobject()
       return data

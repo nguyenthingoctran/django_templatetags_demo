@@ -52,7 +52,7 @@ firstof = [0, "", 'Hello', 'Kitty']
       </div>
 
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
-        <h5>2. Trả về kết quả đặc biệt nếu tất cả giá trị đều False.</h5>
+        <h5>2. Trả về kết quả dự phòng nếu tất cả giá trị đều False.</h5>
         <div class="row">
           <div class="col-6">
             <p class='pt-2 mb-0'>Data mẫu</p> 
@@ -113,7 +113,7 @@ firstof_1 = [0, "", 0]
             <pre class="chroma rounded mb-0">
               <code class="language-html" data-lang="html">
 {<span></span>% autoescape off %}
-  {<span></span>% firstof firstof_1.0 firstof_1.1 firstof_1.2 "<<span></span>i>fallback value<<span></span>/i>" %}
+  {<span></span>% firstof firstof_1.0 firstof_1.1 firstof_1.2 "<<span></span>strong>fallback value<<span></span>/strong>" %}
 {<span></span>% endautoescape %}
               </code>
             </pre>

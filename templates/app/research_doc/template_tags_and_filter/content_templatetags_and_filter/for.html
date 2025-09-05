@@ -1,0 +1,248 @@
+<div class="tab-pane fade" id="template-tag-for" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">For</h5>
+
+      <!-- ================ -->
+      <!-- TH 1 =========== -->
+      <!-- ================ -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>1. Vòng lặp for được sử dụng để lặp qua một chuỗi, giống như lặp qua các 
+        mục trong một array, một list</h5>
+
+        <div class="row">
+          <div class="col-8">
+            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
+data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
+                </code>
+              </pre>
+            </div>
+
+            <p class='pt-2 mb-0'>Render HTML</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+<<span></span>ul>
+  {<span></span>% for x in fruits %}
+    <<span></span>li>{<span></span>{ x }}<<span></span>/li>
+  {<span></span>% endfor %}
+<<span></span>/ul>
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-4">
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border rounded mt-4">
+              <ul>
+                {% for x in fruits %}
+                  <li>{{ x }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================ -->
+      <!-- TH 2 =========== -->
+      <!-- ================ -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>2. Vòng lặp for với dict</h5>
+
+        <div class="row">
+          <div class="col-8">
+            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
+dict_cars = {
+  'cars': [
+    {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
+    {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
+    {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
+    {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
+  ]
+}
+                </code>
+              </pre>
+            </div>
+
+            <p class='pt-2 mb-0'>Render HTML</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% for x in cars.cars %}
+  <<span></span>h3 class="mb-0">{<span></span>{ x.brand }}<<span></span>/h3>
+  <<span></span>p>{<span></span>{ x.model }}<<span></span>/p>
+  <<span></span>p>{<span></span>{ x.year }}<<span></span>/p>
+{<span></span>% endfor %}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-4">
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border rounded my-4">
+              {% for x in cars.cars %}
+                <h3 class="mb-0">{{ x.brand }}</h3>
+                <p>{{ x.model }}</p>
+                <p>{{ x.year }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================ -->
+      <!-- TH 3 =========== -->
+      <!-- ================ -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>3. Vòng lặp từ database</h5>
+
+        <div class="row">
+          <div class="col-8">
+            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
+from django.contrib.auth.models import User
+users = User.objects.all()
+                </code>
+              </pre>
+            </div>
+
+            <p class='pt-2 mb-0'>Render HTML</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% for x in users %}
+  <<span></span>p>{<span></span>{ x.id }}) {<span></span>{ x.first_name }} {<span></span>{ x.last_name }}<<span></span>/p>
+{<span></span>% endfor %}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-4">
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border rounded my-4">
+              {% for x in users %}
+                <p>{{ x.id }}) {{ x.first_name }} {{ x.last_name }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================ -->
+      <!-- TH 4 Reversed == -->
+      <!-- ================ -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>4. Vòng lặp ngược</h5>
+
+        <div class="row">
+          <div class="col-8">
+            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
+from django.contrib.auth.models import User
+users = User.objects.all()
+                </code>
+              </pre>
+            </div>
+
+            <p class='pt-2 mb-0'>Render HTML</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% for x in users reversed %}
+  <<span></span>p>{<span></span>{ x.id }}) {<span></span>{ x.first_name }} {<span></span>{ x.last_name }}<<span></span>/p>
+{<span></span>% endfor %}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-4">
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border rounded my-4">
+              {% for x in users reversed %}
+                <p>{{ x.id }}) {{ x.first_name }} {{ x.last_name }}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================ -->
+      <!-- TH 5 Empty Array -->
+      <!-- ================ -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>5. Empty Array</h5>
+
+        <div class="row">
+          <div class="col-8">
+            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-python" data-lang="python">
+emptytestobject = []
+                </code>
+              </pre>
+            </div>
+
+            <p class='pt-2 mb-0'>Render HTML</p> 
+            <div class="highlight">
+              <pre class="chroma rounded mb-0">
+                <code class="language-html" data-lang="html">
+{<span></span>% for x in emptytestobject %}
+  <<span></span>h3>Not Empty<<span></span>/h3>
+{<span></span>% empty %}
+  <<span></span>h3>Empty<<span></span>/h3>
+{<span></span>% endfor %}
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div class="col-4">
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border rounded my-4">
+              {% for x in emptytestobject %}
+                <h3>Not Empty</h3>
+              {% empty %}
+                <h3>Empty</h3>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="col-12">
+            <b class="text-warning">Note:</b> Từ khoá empty cũng được sử dụng nếu đối tượng không tồn tại
+            <div class="col-8">
+              <p class='pt-2 mb-0'>Data mẫu</p> 
+                <div class="highlight">
+                  <pre class="chroma rounded mb-0">
+                    <code class="language-python" data-lang="python">
+    
+                    </code>
+                  </pre>
+                </div>
+
+                <p class='pt-2 mb-0'>Render HTML</p> 
+                <div class="highlight">
+                  <pre class="chroma rounded mb-0">
+                    <code class="language-html" data-lang="html">
+
+                    </code>
+                  </pre>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
