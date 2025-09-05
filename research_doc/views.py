@@ -105,9 +105,20 @@ class Research_Doc(TemplateView):
     def pluralize(self):
       data = [0, 1, 2]
       return data
-      
+    
+    def firstof(self):
+      firstof = [0, "", 'Hello', 'Kitty']
+      return firstof
+    
+    def firstof_1(self):
+      firstof_1 = [0, "", 0]
+      return firstof_1
+
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
       data['list_filter'] = DataResearchTemplateTagFilter().data_filter()
       data['autoescape'] = self.research_doc_autoescape()
+      data['cycle'] = self.research_doc_cycle()
+      data['firstof'] = self.firstof()
+      data['firstof_1'] = self.firstof_1()
       return data

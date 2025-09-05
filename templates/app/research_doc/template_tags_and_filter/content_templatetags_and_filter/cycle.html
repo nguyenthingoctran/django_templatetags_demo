@@ -8,21 +8,11 @@
       <!-- Demo 1 ======= -->
       <!-- ============== -->
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>1. Truyền data thông thường</h5>
         <div class="row">
-          <div class="col-12">
-            <!-- Demo -->
-            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 1</div>
-            <ul>
-            {% for x in cycle %}
-              <li style="color:{% cycle 'red' 'green' 'blue' 'pink' %}">
-                {{ x }}
-              </li>
-            {% endfor %}
-            </ul>
-
+          <div class="col-7">
             <!-- BE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
-            <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
+            <p class='pt-2 mb-0'>Data mẫu</p> 
             <pre class="chroma rounded mb-0">
               <code class="language-python pb-0" data-lang="python">
 class Research_Doc(TemplateView):
@@ -38,9 +28,8 @@ class Research_Doc(TemplateView):
               </code>
             </pre>
 
-
             <!-- FE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <p class='pt-2 mb-0'>Render HTML</p> 
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
@@ -54,7 +43,20 @@ class Research_Doc(TemplateView):
                 </code>
               </pre>
             </div>
+          </div>
 
+          <div class="col-5">
+            <!-- Demo -->
+            <p class='pt-2 mb-0'>Kết quả</p> 
+            <div class="p-3 border mt-4 rounded">
+              <ul>
+              {% for x in cycle %}
+                <li style="color:{% cycle 'red' 'green' 'blue' 'pink' %}">
+                  {{ x }}
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -70,21 +72,11 @@ class Research_Doc(TemplateView):
       <!-- Demo 2 ======= -->
       <!-- ============== -->
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>2. Truyền biến vào cycle</h5>
         <div class="row">
-          <div class="col-12">
-            <!-- Demo -->
-            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 2</div>
-            <ul>
-            {% for x in cycle %}
-              <li style="color: {% cycle 'red' cycle_color 'blue' 'pink' %}">
-                {{ x }}
-              </li>
-            {% endfor %}
-            </ul>
-
+          <div class="col-7">
             <!-- BE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
-            <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
+            <p class='pt-2 mb-0'>Mẫu data</p> 
             <pre class="chroma rounded mb-0">
               <code class="language-python pb-0" data-lang="python">
 class Research_Doc(TemplateView):
@@ -101,7 +93,7 @@ class Research_Doc(TemplateView):
             </pre>
 
             <!-- FE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <p class='pt-2 mb-0'>Render HTML</p> 
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
@@ -115,40 +107,33 @@ class Research_Doc(TemplateView):
                 </code>
               </pre>
             </div>
+          </div>
 
-          <p class="mb-0">
-            <b class="text-warning">Note:</b> 
-            <ul>
-              <li>Có thể truyền biến vào <b>cycle</b></li>
-            </ul>
-          </p>
-
+          <div class="col-5">
+            <!-- Demo -->
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border mt-4 rounded">
+              <ul>
+              {% for x in cycle %}
+                <li style="color: {% cycle 'red' cycle_color 'blue' 'pink' %}">
+                  {{ x }}
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- ============================ -->
-      <!-- Demo 4 - Reset cycle ======= -->
+      <!-- Demo 3 - Reset cycle ======= -->
       <!-- ============================ -->
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>3. Reset cycle</h5>
+        Sử dụng <b>resetcycle</b> nếu muốn reset lại list cycle
         <div class="row">
-          <div class="col-12">
-            <!-- Demo -->
-            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 3 - Reset cycle</div>
-            <ul>
-              {% for x in cycle %}
-                {% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' as bgcolor silent %}
-                {% if forloop.counter == 3 %}
-                  {% resetcycle %}
-                {% endif %}
-                <li style='background-color:{{ bgcolor }}'>
-                  {{ x }}
-                </li>
-              {% endfor %}
-            </ul> 
-
+          <div class="col-7"> 
             <!-- BE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">BE</div>    
             <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
             <pre class="chroma rounded mb-0">
               <code class="language-python pb-0" data-lang="python">
@@ -166,7 +151,7 @@ class Research_Doc(TemplateView):
             </pre>
 
             <!-- FE -->
-            <div class="badge text-bg-light rounded-pill ms-auto">FE</div> 
+            <p class='pt-2 mb-0'>Render HTML. </p> 
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
@@ -184,26 +169,37 @@ class Research_Doc(TemplateView):
                 </code>
               </pre>
             </div>
+          </div>
 
-            <p class="mb-0">
-              <b class="text-warning">Note:</b> 
+          <div class="col-5">
+            <!-- Demo -->
+            <p class='pt-2 mb-0'>Kết quả:</p> 
+            <div class="p-3 border mt-4">
               <ul>
-                <li>Sử dụng <b>resetcycle</b> nếu muốn reset lại list cycle</li>
+                {% for x in cycle %}
+                  {% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' as bgcolor silent %}
+                  {% if forloop.counter == 3 %}
+                    {% resetcycle %}
+                  {% endif %}
+                  <li style='background-color:{{ bgcolor }}'>
+                    {{ x }}
+                  </li>
+                {% endfor %}
               </ul>
-            </p>
-
+            </div>
           </div>
         </div>
       </div>
 
       <!-- ============================== -->
-      <!-- Demo 5 - Cycle with as ======= -->
+      <!-- Demo 4 - Cycle with as ======= -->
       <!-- ============================== -->
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>4. Cycle with as</h5>
+        <p class='pt-2'>Kết quả</p> 
         <div class="row">
           <div class="col-12">
             <!-- Demo -->
-            <div class="badge text-bg-warning rounded-pill ms-auto mb-3">Demo 5 - Cycle with us</div>
             <table class="table">
               <thead>
                 <tr>
@@ -225,7 +221,7 @@ class Research_Doc(TemplateView):
             </table>
 
             <!-- FE -->
-            <div class="badge text-bg-light rounded-pill ms-auto mt-3">FE</div> 
+            <p class='pt-2 mb-0'>Render HTML</p> 
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
@@ -253,7 +249,7 @@ class Research_Doc(TemplateView):
             </div>
 
             <!-- FE - Output -->
-            <div class="badge text-bg-light rounded-pill ms-auto mt-3">FE - Output</div> 
+            <p class='pt-2 mb-0'>HTML - Output</p>
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
