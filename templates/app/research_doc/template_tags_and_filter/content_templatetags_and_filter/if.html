@@ -1,0 +1,47 @@
+<div class="tab-pane fade" id="template-tag-if" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">if</h5>
+      <small class="mb-4 d-inline-block">
+        Tag if đánh giá 1 biến, nếu đúng như điều kiện thì output sẽ là content trong block if
+      </small>
+
+      <div class="border rounded p-5 mb-5">
+        <h5>1. Mẫu if thường dùng</h5>
+        <div class="row">
+          <div class="col-6">
+            <p class='mb-2'>Render HTML</p> 
+  <pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if athlete_list %}
+      Number of athletes: {<span></span>{ athlete_list|length }}
+  {<span></span>% elif athlete_in_locker_room_list %}
+      Athletes should be out of the locker room soon!
+  {<span></span>% else %}
+      No athletes.
+  {<span></span>% endif %}</code></pre>
+          </div>
+
+          <div class="col-6">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+  {% if athlete_list %}
+      Number of athletes: {{ athlete_list|length }}
+  {% elif athlete_in_locker_room_list %}
+      Athletes should be out of the locker room soon!
+  {% else %}
+      No athletes.
+  {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-6">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
