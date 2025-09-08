@@ -2,33 +2,23 @@
   <div class="card mb-6">
     <div class="card-body">
       <h5 class="card-title mb-1">Firstof</h5>
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>1. Phần này Output sẽ cho kết quả là giá trị đầu tiên tồn tại, không rỗng, khác False, khác 0.</h5>
         <div class="row">
           <div class="col-6">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <p class='mb-2'>Data mẫu</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-firstof = [0, "", 'Hello', 'Kitty']
-                </code>
-              </pre>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">firstof = [0, "", 'Hello', 'Kitty']</code></pre>
             </div>
 
-            <p class="mb-0">Render HTML</p>
+            <p class="mb-2 mt-5">Render HTML</p>
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% firstof firstof.0 firstof.1 firstof.2 firstof.3 %}
-                </code>
-              </pre>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% firstof firstof.0 firstof.1 firstof.2 firstof.3 %}</code></pre>
             </div>
 
-            <p class="mb-0">Phần render HTML tương đương như</p>
+            <p class="mb-2 mt-5">Phần render HTML tương đương như</p>
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% if firstof.0 %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% if firstof.0 %}
     {<span></span>{ firstof.0 }}
 {<span></span>% elif firstof.1 %}
     {<span></span>{ firstof.1 }}
@@ -36,70 +26,56 @@ firstof = [0, "", 'Hello', 'Kitty']
     {<span></span>{ firstof.2 }}
 {<span></span>% elif firstof.3 %}
     {<span></span>{ firstof.3 }}
-{<span></span>% endif %}
-                </code>
-              </pre>
+{<span></span>% endif %}</code></pre>
             </div>
 
           </div>
           <div class="col-6">
-            <p class='pt-2 mb-0'>Kết quả</p> 
-            <div class="p-3 border rounded mt-4">
+            <p class='mb-2'>Kết quả</p> 
+            <div class="p-3 border rounded">
               {% firstof firstof.0 firstof.1 firstof.2 firstof.3 %}
             </div>
           </div>
         </div>
       </div>
 
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>2. Trả về kết quả dự phòng nếu tất cả giá trị đều False.</h5>
         <div class="row">
           <div class="col-6">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
-            <pre class="chroma rounded mb-0">
-              <code class="language-python" data-lang="python">
-firstof_1 = [0, "", 0]
-              </code>
-            </pre>
+            <p class='mb-2'>Data mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">firstof_1 = [0, "", 0]</code></pre>
           </div>
 
           <div class="col-6">
-            <p class="mb-0">Kết quả</p>
-            <div class="p-3 border mt-4">
+            <p class="mb-2">Kết quả</p>
+            <div class="p-3 border rounded">
               {% firstof firstof_1.0 firstof_1.1 firstof_1.2 "fallback value" %}
             </div>
           </div>
 
           <div class="col-12">
             <!-- FE -->
-            <p class='pt-2 mb-0'>Render HTML. </p> 
+            <p class='mt-5 mb-2'>Render HTML. </p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% firstof firstof_1.0 firstof_1.1 firstof_1.2 "fallback value" %}
-                </code>
-              </pre>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% firstof firstof_1.0 firstof_1.1 firstof_1.2 "fallback value" %}</code></pre>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded p-5">
         <h5>3. Một số cách render phần data dự phòng như HTML</h5>
         <div class="row">
           <div class="col-8">
-            <p class='pt-2 mb-0'>Cách 1: Render HTML với giá trị dự phòng là HTML và tag autoescape </p> 
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
-{<span></span>% autoescape off %}
+            <p class='mb-2'>Cách 1: Render HTML với giá trị dự phòng là HTML và tag autoescape </p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% autoescape off %}
   {<span></span>% firstof firstof_1.0 firstof_1.1 firstof_1.2 "<<span></span>i>fallback value<<span></span>/i>" %}
-{<span></span>% endautoescape %}
-              </code>
-            </pre>
+{<span></span>% endautoescape %}</code></pre>
           </div>
           <div class="col-4 mb-5">
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border rounded mt-4">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
               {% autoescape off %}
                 {% firstof firstof_1.0 firstof_1.1 firstof_1.2 "<i>fallback value</i>" %}
               {% endautoescape %}
@@ -109,26 +85,20 @@ firstof_1 = [0, "", 0]
           <br/>
 
           <div class="col-8">
-            <p class='pt-2 mb-0'>Cách 2: Render HTML với giá trị dự phòng là HTML cùng filter</p> 
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
-{<span></span>% autoescape off %}
+            <p class='mt-5 mb-2'>Cách 2: Render HTML với giá trị dự phòng là HTML cùng filter</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% autoescape off %}
   {<span></span>% firstof firstof_1.0 firstof_1.1 firstof_1.2 "<<span></span>strong>fallback value<<span></span>/strong>" %}
-{<span></span>% endautoescape %}
-              </code>
-            </pre>
-            <br/>
+{<span></span>% endautoescape %}</code></pre>
           </div>
 
           <div class="col-4">
-            <p class='pt-2 mb-0'>Kết quả</p> 
-            <div class="p-3 border rounded mt-4">
+            <p class='mt-5 mb-2'>Kết quả</p> 
+            <div class="p-3 border rounded">
               {% firstof firstof_1.0 firstof_1.1 firstof_1.2 "<strong>fallback value</strong>"|safe %}
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
