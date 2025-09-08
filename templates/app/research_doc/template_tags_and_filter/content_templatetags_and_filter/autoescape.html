@@ -7,35 +7,27 @@
         <!-- ============== -->
         <!-- Demo 1 ======= -->
         <!-- ============== -->
-        <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <div class="border rounded px-5 py-5 mb-5">
           <!-- Demo -->
           <h5>1. Trường hợp khi bật ở chế độ "on"</h5>
           <div class="row">
             <div class="col-6">
               <!-- BE -->
-              <p class='pt-2 mb-0'>Data mẫu</p> 
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-data = '{{ autoescape }}'
-                </code>
-              </pre>
+              <p class="mb-2">Data mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">data = '{{ autoescape }}'</code></pre>
 
               <!-- FE -->
-              <p class='pt-2 mb-0'>Render HTML. </p> 
+              <p class="mt-5 mb-2">Render HTML. </p> 
               <div class="highlight">
-                <pre class="chroma rounded mb-0">
-                  <code class="language-html" data-lang="html">
-{<span></span>% autoescape on %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% autoescape on %}
   <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
-{<span></span>% endautoescape %}
-                  </code>
-                </pre>
+{<span></span>% endautoescape %}</code></pre>
               </div>
             </div>
 
             <div class="col-6">
-              <p class='pt-2 mb-0'>Kết quả:</p> 
-              <div class="p-3 border mt-4">
+              <p class='mb-2'>Kết quả:</p> 
+              <div class="p-3 border">
                 {% autoescape on %}
                   <h3>{{ autoescape }}</h3>
                 {% endautoescape %}
@@ -43,49 +35,35 @@ data = '{{ autoescape }}'
             </div>
           </div>
 
-          <p class="mb-0">
+          <p class="mt-5 mb-2">
             <b class="text-warning">Note:</b> Trường hợp này có thể dùng cú pháp này để thay thế. Kết quả hiển thị tương tự
           </p>
-          <div class="highlight">
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
-<<span></span>h1>{<span></span>{ autoescape|escape }}</<span></span>h1>
-              </code>
-            </pre>
-          </div>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>h1>{<span></span>{ autoescape|escape }}<<span></span>/h1></code></pre>
         </div>
 
         <!-- ============== -->
         <!-- Demo 2 ======= -->
         <!-- ============== -->
-        <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <div class="border rounded px-5 py-5">
           <h5>2. Trường hợp khi bật ở chế độ "off"</h5>
           <div class="row">
             <div class="col-6">
               <!-- BE -->
-              <p class='pt-2 mb-0'>Data mẫu</p> 
-              <pre class="chroma rounded">
-                <code class="language-python" data-lang="python">
-data = '{{ autoescape }}'
-                </code>
-              </pre>
+              <p class='mb-2'>Data mẫu</p> 
+<pre class="chroma rounded"><code class="language-python" data-lang="python">data = '{{ autoescape }}'</code></pre>
 
               <!-- FE -->
-              <p class='pt-2 mb-0'>Trường hợp khi bật ở chế độ "off"</p> 
+              <p class='mt-5 mb-2'>Trường hợp khi bật ở chế độ "off"</p> 
               <div class="highlight">
-                <pre class="chroma rounded mb-0">
-                  <code class="language-html" data-lang="html">
-{<span></span>% autoescape off %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% autoescape off %}
   <<span></span>h3>{<span></span>{ autoescape }}<<span></span>/h3>
-{<span></span>% endautoescape %}
-                  </code>
-                </pre>
+{<span></span>% endautoescape %}</code></pre>
               </div>
             </div>
 
             <div class="col-6">
-              <p class='pt-2 mb-0'>Kết quả:</p> 
-              <div class="p-3 border mt-4 rounded">
+              <p class='mb-2'>Kết quả:</p> 
+              <div class="p-3 border rounded">
                 {% autoescape off %}
                   <h3>{{ autoescape }}</h3>
                 {% endautoescape %}
@@ -93,15 +71,11 @@ data = '{{ autoescape }}'
             </div>
           </div>
 
-          <p class="mb-0">
+          <p class="mb-2 mt-5">
             <b class="text-warning">Note:</b> Trường hợp này có thể dùng cú pháp này để thay thế. Kết quả hiển thị tương tự
           </p>
           <div class="highlight">
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
-<<span></span>h1>{<span></span>{ autoescape|safe }}</<span></span>h1>
-              </code>
-            </pre>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>h1>{<span></span>{ autoescape|safe }}</<span></span>h1></code></pre>
           </div>
         </div>
       </div>

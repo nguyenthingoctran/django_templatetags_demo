@@ -122,6 +122,17 @@ class Research_Doc(TemplateView):
     def emptytestobject(self):
       emptytestobject = []
       return emptytestobject
+    
+    
+    def mycar(self):
+      mycar = {
+        'car1': {
+          'brand': 'Ford',
+          'model': 'Mustang',
+          'year': '1964'
+        }
+      }
+      return mycar
 
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -134,4 +145,6 @@ class Research_Doc(TemplateView):
       data['cars'] = self.dict_sort()
       data['users'] = self.get_user_list()
       data['emptytestobject'] = self.emptytestobject()
+      data['mycar'] = self.mycar()
+      data['two_loop'] = self.research_doc_filter_add()
       return data

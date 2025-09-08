@@ -178,10 +178,10 @@ users = User.objects.all()
       </div>
 
       <!-- ================ -->
-      <!-- TH 5 Empty Array -->
+      <!-- TH 5 Reversed == -->
       <!-- ================ -->
       <div class="border rounded px-5 pt-5 pb-0 mb-5">
-        <h5>5. Empty Array</h5>
+        <h5>5. For với key và value</h5>
 
         <div class="row">
           <div class="col-8">
@@ -189,7 +189,13 @@ users = User.objects.all()
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-python" data-lang="python">
-emptytestobject = []
+mycar = {
+  'car1': {
+    'brand': 'Ford',
+    'model': 'Mustang',
+    'year': '1964'
+  }
+}
                 </code>
               </pre>
             </div>
@@ -198,10 +204,8 @@ emptytestobject = []
             <div class="highlight">
               <pre class="chroma rounded mb-0">
                 <code class="language-html" data-lang="html">
-{<span></span>% for x in emptytestobject %}
-  <<span></span>h3>Not Empty<<span></span>/h3>
-{<span></span>% empty %}
-  <<span></span>h3>Empty<<span></span>/h3>
+{<span></span>% for x, y in mycar.car1.items %}
+  <<span></span>p>The {<span></span>{ x }} is {<span></span>{ y }}.<<span></span>/p>
 {<span></span>% endfor %}
                 </code>
               </pre>
@@ -210,39 +214,168 @@ emptytestobject = []
           <div class="col-4">
             <p class='pt-2 mb-0'>Kết quả:</p> 
             <div class="p-3 border rounded my-4">
-              {% for x in emptytestobject %}
-                <h3>Not Empty</h3>
-              {% empty %}
-                <h3>Empty</h3>
+              {% for x, y in mycar.car1.items %}
+                <p>The {{ x }} is {{ y }}.</p>
               {% endfor %}
             </div>
-          </div>
-
-          <div class="col-12">
-            <b class="text-warning">Note:</b> Từ khoá empty cũng được sử dụng nếu đối tượng không tồn tại
-            <div class="col-8">
-              <p class='pt-2 mb-0'>Data mẫu</p> 
-                <div class="highlight">
-                  <pre class="chroma rounded mb-0">
-                    <code class="language-python" data-lang="python">
-    
-                    </code>
-                  </pre>
-                </div>
-
-                <p class='pt-2 mb-0'>Render HTML</p> 
-                <div class="highlight">
-                  <pre class="chroma rounded mb-0">
-                    <code class="language-html" data-lang="html">
-
-                    </code>
-                  </pre>
-                </div>
-              </div>
           </div>
         </div>
       </div>
 
+      <!-- ============== -->
+      <!-- Demo 1 ======= -->
+      <!-- ============== -->
+      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <h5>Một số biến được tích hợp sẵn</h5>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Variable</th>
+                  <th style="width: 250px;">Mô tả</th>
+                  <th>Code mẫu</th>
+                  <th style="width: 200px;">Kết quả</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>forloop.counter</td>
+                  <td>Trả về index của vòng lặp hiện tại với index bắt đầu bằng 1</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in fruits %}
+  {<span></span>{ forloop.counter }}
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in fruits %}
+                      {{ forloop.counter }}
+                    {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>forloop.counter0</td>
+                  <td>Trả về index của vòng lặp hiện tại với index bắt đầu bằng 0</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in fruits %}
+  {<span></span>{ forloop.counter0 }}
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in fruits %}
+                      {{ forloop.counter0 }}
+                    {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>forloop.first</td>
+                  <td>Kiểm tra xem lần lặp này có phải lần đầu tiên không.</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in fruits %}
+  <p>{<span></span>{ forloop.first }}</p>
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in fruits %}
+                      <p>{{ forloop.first }}</p>
+                    {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>forloop.last</td>
+                  <td>Kiểm tra xem lần lặp này có phải lần cuối cùng không.</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in fruits %}
+  <p>{<span></span>{ forloop.last }}</p>
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in fruits %}
+                      <p>{{ forloop.last }}</p>
+                    {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>forloop.parentloop</td>
+                  <td>Tham chiếu đến vòng lặp cha.</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>context = {
+  'fruits': ['Apple', 'Banana', 'Cherry'],   
+  'vegetables': ['Asparagus', 'Broccoli', 'Carrot'],
+}</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in two_loop.fruits %}
+  <<span></span>li>{<span></span>{ x }}:<<span></span>/li>
+  <<span></span>ul>
+    {<span></span>% for y in two_loop.vegetables %}
+      <<span></span>li>{<span></span>{ forloop.parentloop.counter }} {<span></span>{ y }}<<span></span>/li>
+    {<span></span>% endfor %}
+  <<span></span>/ul>
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in two_loop.fruits %}
+                      <li>{{ x }}:</li>
+                      <ul>
+                        {% for y in two_loop.vegetables %}
+                          <li>{{ forloop.parentloop.counter }} {{ y }}</li>
+                        {% endfor %}
+                      </ul>
+                    {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>forloop.revcounter</td>
+                  <td>Trả về vòng lặp ngược kết thúc bằng 1</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in fruits %}
+  {<span></span>{ forloop.revcounter }}
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in fruits %}
+                      {{ forloop.revcounter }}
+                    {% endfor %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>forloop.revcounter0</td>
+                  <td>Trả về vòng lặp ngược kết thúc bằng 0</td>
+                  <td>
+                    <p>Data mẫu</p>
+<pre><code>data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
+                    <p class="mt-3">Render HTML</p>
+<pre><code>{<span></span>% for x in fruits %}
+  {<span></span>{ forloop.revcounter0 }}
+{<span></span>% endfor %}</code></pre>
+                  </td>
+                  <td>
+                    {% for x in fruits %}
+                      {{ forloop.revcounter0 }}
+                    {% endfor %}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
