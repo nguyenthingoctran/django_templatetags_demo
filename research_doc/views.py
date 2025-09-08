@@ -119,9 +119,9 @@ class Research_Doc(TemplateView):
       users = User.objects.all()
       return users
     
-    def emptytestobject(self):
-      emptytestobject = []
-      return emptytestobject
+    def athlete_list(self):
+      athlete_list = []
+      return athlete_list
     
     
     def mycar(self):
@@ -144,7 +144,7 @@ class Research_Doc(TemplateView):
       data['fruits'] = self.research_doc_cycle()
       data['cars'] = self.dict_sort()
       data['users'] = self.get_user_list()
-      data['emptytestobject'] = self.emptytestobject()
+      data['athlete_list'] = self.athlete_list()
       data['mycar'] = self.mycar()
       data['two_loop'] = self.research_doc_filter_add()
       return data

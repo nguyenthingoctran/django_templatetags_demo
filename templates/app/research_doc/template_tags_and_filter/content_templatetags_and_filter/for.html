@@ -6,37 +6,29 @@
       <!-- ================ -->
       <!-- TH 1 =========== -->
       <!-- ================ -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>1. Vòng lặp for được sử dụng để lặp qua một chuỗi, giống như lặp qua các 
         mục trong một array, một list</h5>
 
         <div class="row">
           <div class="col-8">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <p class='mb-2'>Data mẫu</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
-                </code>
-              </pre>
+<pre class="chroma rounded"><code class="language-python" data-lang="python">data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']</code></pre>
             </div>
 
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mb-2 mt-5'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-<<span></span>ul>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>ul>
   {<span></span>% for x in fruits %}
     <<span></span>li>{<span></span>{ x }}<<span></span>/li>
   {<span></span>% endfor %}
-<<span></span>/ul>
-                </code>
-              </pre>
+<<span></span>/ul></code></pre>
             </div>
           </div>
           <div class="col-4">
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border rounded mt-4">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
               <ul>
                 {% for x in fruits %}
                   <li>{{ x }}</li>
@@ -50,47 +42,39 @@ data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
       <!-- ================ -->
       <!-- TH 2 =========== -->
       <!-- ================ -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>2. Vòng lặp for với dict</h5>
 
         <div class="row">
           <div class="col-8">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <p class='mb-2'>Data mẫu</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-dict_cars = {
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">dict_cars = {
   'cars': [
     {'brand': 'Ford', 'model': 'Mustang', 'year': 1964},
     {'brand': 'Volvo', 'model': 'XC90', 'year': 2022},
     {'brand': 'Volvo', 'model': 'P1800', 'year': 1962},
     {'brand': 'Ford', 'model': 'Focus', 'year': 2004}
   ]
-}
-                </code>
-              </pre>
+}</code></pre>
             </div>
 
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mb-2 mt-5'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% for x in cars.cars %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% for x in cars.cars %}
   <<span></span>h3 class="mb-0">{<span></span>{ x.brand }}<<span></span>/h3>
-  <<span></span>p>{<span></span>{ x.model }}<<span></span>/p>
-  <<span></span>p>{<span></span>{ x.year }}<<span></span>/p>
-{<span></span>% endfor %}
-                </code>
-              </pre>
+  <<span></span>span>{<span></span>{ x.model }}<<span></span>/span>
+  <<span></span>span>{<span></span>{ x.year }}<<span></span>/span>
+{<span></span>% endfor %}</code></pre>
             </div>
           </div>
           <div class="col-4">
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border rounded my-4">
+            <p class="mb-2">Kết quả:</p> 
+            <div class="p-3 border rounded">
               {% for x in cars.cars %}
                 <h3 class="mb-0">{{ x.brand }}</h3>
-                <p>{{ x.model }}</p>
-                <p>{{ x.year }}</p>
+                <span>{{ x.model }}</span>
+                <span>{{ x.year }}</span>
               {% endfor %}
             </div>
           </div>
@@ -100,35 +84,27 @@ dict_cars = {
       <!-- ================ -->
       <!-- TH 3 =========== -->
       <!-- ================ -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>3. Vòng lặp từ database</h5>
 
         <div class="row">
           <div class="col-8">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <p class='mb-2'>Data mẫu</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-from django.contrib.auth.models import User
-users = User.objects.all()
-                </code>
-              </pre>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">from django.contrib.auth.models import User
+users = User.objects.all()</code></pre>
             </div>
 
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mt-5 mb-2'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% for x in users %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% for x in users %}
   <<span></span>p>{<span></span>{ x.id }}) {<span></span>{ x.first_name }} {<span></span>{ x.last_name }}<<span></span>/p>
-{<span></span>% endfor %}
-                </code>
-              </pre>
+{<span></span>% endfor %}</code></pre>
             </div>
           </div>
           <div class="col-4">
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border rounded my-4">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
               {% for x in users %}
                 <p>{{ x.id }}) {{ x.first_name }} {{ x.last_name }}</p>
               {% endfor %}
@@ -140,35 +116,27 @@ users = User.objects.all()
       <!-- ================ -->
       <!-- TH 4 Reversed == -->
       <!-- ================ -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>4. Vòng lặp ngược</h5>
 
         <div class="row">
           <div class="col-8">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <p class='mb-2'>Data mẫu</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-from django.contrib.auth.models import User
-users = User.objects.all()
-                </code>
-              </pre>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">from django.contrib.auth.models import User
+users = User.objects.all()</code></pre>
             </div>
 
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mt-5 mb-2'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% for x in users reversed %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% for x in users reversed %}
   <<span></span>p>{<span></span>{ x.id }}) {<span></span>{ x.first_name }} {<span></span>{ x.last_name }}<<span></span>/p>
-{<span></span>% endfor %}
-                </code>
-              </pre>
+{<span></span>% endfor %}</code></pre>
             </div>
           </div>
           <div class="col-4">
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border rounded my-4">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
               {% for x in users reversed %}
                 <p>{{ x.id }}) {{ x.first_name }} {{ x.last_name }}</p>
               {% endfor %}
@@ -180,40 +148,32 @@ users = User.objects.all()
       <!-- ================ -->
       <!-- TH 5 Reversed == -->
       <!-- ================ -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>5. For với key và value</h5>
 
         <div class="row">
           <div class="col-8">
-            <p class='pt-2 mb-0'>Data mẫu</p> 
+            <p class='mb-2'>Data mẫu</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-python" data-lang="python">
-mycar = {
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">mycar = {
   'car1': {
     'brand': 'Ford',
     'model': 'Mustang',
     'year': '1964'
   }
-}
-                </code>
-              </pre>
+}</code></pre>
             </div>
 
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mt-5 mb-2'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% for x, y in mycar.car1.items %}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% for x, y in mycar.car1.items %}
   <<span></span>p>The {<span></span>{ x }} is {<span></span>{ y }}.<<span></span>/p>
-{<span></span>% endfor %}
-                </code>
-              </pre>
+{<span></span>% endfor %}</code></pre>
             </div>
           </div>
           <div class="col-4">
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border rounded my-4">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
               {% for x, y in mycar.car1.items %}
                 <p>The {{ x }} is {{ y }}.</p>
               {% endfor %}
