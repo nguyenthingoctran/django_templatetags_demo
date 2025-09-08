@@ -7,29 +7,21 @@
         <!-- ============== -->
         <!-- Demo 1 ======= -->
         <!-- ============== -->
-        <div class="border rounded px-5 pt-5 pb-0 mb-5">
+        <div class="border rounded px-5 py-5">
 
           <!-- FE -->
-          <p class='pt-2 mb-0'>Tại trang <b>main_layout.html</b> đặt 1 block giữ chỗ để tuỳ thay đổi content. Với <b>blockname</b> đặt tuỳ chỉnh</p> 
+          <p class='mb-2'>Tại trang <b>main_layout.html</b> đặt 1 block giữ chỗ để tuỳ thay đổi content. Với <b>blockname</b> đặt tuỳ chỉnh</p> 
           <div class="highlight">
-            <pre class="chroma rounded mb-0">
-              <code class="language-html" data-lang="html">
-{<span></span>% block blockname %<span></span>}{<span></span>% endblock %<span></span>}
-              </code>
-            </pre>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% block blockname %<span></span>}{<span></span>% endblock %<span></span>}</code></pre>
           </div>
 
-          <p class='pt-2 mb-0'>Tại trang extend main_layout ghi đè bằng content tuỳ biến</p> 
+          <p class='mt-5 mb-2'>Tại trang extend main_layout ghi đè bằng content tuỳ biến</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-{<span></span>% extends 'main_layout.html' %<span></span>}
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% extends 'main_layout.html' %<span></span>}
 {<span></span>% block userinfo %<span></span>}
   <<span></span>h2>John Doe</<span></span>h2>
   <<span></span>p>Explorer of life.<<span></span>/p>
-{<span></span>% endblock %<span></span>}
-                </code>
-              </pre>
+{<span></span>% endblock %<span></span>}</code></pre>
             </div>
         </div>
       </div>
