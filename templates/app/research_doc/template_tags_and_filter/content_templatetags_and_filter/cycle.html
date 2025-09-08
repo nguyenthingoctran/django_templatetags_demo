@@ -12,10 +12,8 @@
         <div class="row">
           <div class="col-7">
             <!-- BE -->
-            <p class='pt-2 mb-0'>Data mẫu</p> 
-            <pre class="chroma rounded mb-0">
-              <code class="language-python pb-0" data-lang="python">
-class Research_Doc(TemplateView):
+            <p class='mb-2'>Data mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">class Research_Doc(TemplateView):
     ...
     def research_doc_cycle(seft):
       data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
@@ -24,31 +22,25 @@ class Research_Doc(TemplateView):
     def get_context_data(self, **kwargs):
       ...
       data['cycle'] = self.research_doc_cycle()
-      return data
-              </code>
-            </pre>
+      return data</code></pre>
 
             <!-- FE -->
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mt-5 mb-2'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-<<span></span>ul>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>ul>
 {<span></span>% for x in cycle %<span></span>}
   <<span></span>li style="color:{<span></span>% cycle 'red' 'green' 'blue' 'pink' %<span></span>}"<span></span>>
     {<span></span>{ x }}
   <<span></span>/li>
 {<span></span>% endfor %}
-<<span></span>/ul>
-                </code>
-              </pre>
+<<span></span>/ul></code></pre>
             </div>
           </div>
 
           <div class="col-5">
             <!-- Demo -->
-            <p class='pt-2 mb-0'>Kết quả</p> 
-            <div class="p-3 border mt-4 rounded">
+            <p class='mb-2'>Kết quả</p> 
+            <div class="p-3 border rounded">
               <ul>
               {% for x in cycle %}
                 <li style="color:{% cycle 'red' 'green' 'blue' 'pink' %}">
@@ -60,7 +52,7 @@ class Research_Doc(TemplateView):
           </div>
         </div>
 
-        <p class="mb-0">
+        <p class="mb-0 mt-5">
           <b class="text-warning">Note:</b> 
           <ul>
             <li>List <b>cycle</b> có thể sẽ quay lặp lại từ đầu khi đến cuối chuỗi </li>
@@ -71,15 +63,13 @@ class Research_Doc(TemplateView):
       <!-- ============== -->
       <!-- Demo 2 ======= -->
       <!-- ============== -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>2. Truyền biến vào cycle</h5>
         <div class="row">
           <div class="col-7">
             <!-- BE -->
-            <p class='pt-2 mb-0'>Mẫu data</p> 
-            <pre class="chroma rounded mb-0">
-              <code class="language-python pb-0" data-lang="python">
-class Research_Doc(TemplateView):
+            <p class='mb-2'>Mẫu data</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">class Research_Doc(TemplateView):
     ...
     def research_doc_cycle_color(seft):
       data = 'springgreen'
@@ -88,31 +78,25 @@ class Research_Doc(TemplateView):
     def get_context_data(self, **kwargs):
       ...
       data['cycle_color'] = self.research_doc_cycle_color()
-      return data
-              </code>
-            </pre>
+      return data</code></pre>
 
             <!-- FE -->
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mt-5 mb-2'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-<<span></span>ul>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>ul>
 {<span></span>% for x in cycle %<span></span>}
   <<span></span>li style="color: {<span></span>% cycle 'red' cycle_color 'blue' 'pink' %<span></span>}"<span></span>>
     {<span></span>{ x }<span></span>}
   </<span></span>li>
 {<span></span>% endfor %<span></span>}
-<<span></span>/ul>
-                </code>
-              </pre>
+<<span></span>/ul></code></pre>
             </div>
           </div>
 
           <div class="col-5">
             <!-- Demo -->
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border mt-4 rounded">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
               <ul>
               {% for x in cycle %}
                 <li style="color: {% cycle 'red' cycle_color 'blue' 'pink' %}">
@@ -128,16 +112,14 @@ class Research_Doc(TemplateView):
       <!-- ============================ -->
       <!-- Demo 3 - Reset cycle ======= -->
       <!-- ============================ -->
-      <div class="border rounded px-5 pt-5 pb-0 mb-5">
+      <div class="border rounded px-5 py-5 mb-5">
         <h5>3. Reset cycle</h5>
         Sử dụng <b>resetcycle</b> nếu muốn reset lại list cycle
         <div class="row">
           <div class="col-7"> 
             <!-- BE -->
-            <p class='pt-2 mb-0'>Truyền data vào HTML như này</p> 
-            <pre class="chroma rounded mb-0">
-              <code class="language-python pb-0" data-lang="python">
-class Research_Doc(TemplateView):
+            <p class='mb-2 mt-3'>Truyền data vào HTML như này</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">class Research_Doc(TemplateView):
     ...
     def research_doc_cycle(seft):
       data = ['Apple', 'Banana', 'Cherry', 'Orange', 'Durian']
@@ -146,16 +128,12 @@ class Research_Doc(TemplateView):
     def get_context_data(self, **kwargs):
       ...
       data['cycle'] = self.research_doc_cycle()
-      return data
-              </code>
-            </pre>
+      return data</code></pre>
 
             <!-- FE -->
-            <p class='pt-2 mb-0'>Render HTML. </p> 
+            <p class='mt-5 mb-2'>Render HTML. </p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-<<span></span>ul>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>ul>
   {<span></span>% for x in cycle %<span></span>}
     {<span></span>% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' as bgcolor silent %<span></span>}
     {<span></span>% if forloop.counter == 3 %<span></span>}
@@ -165,16 +143,14 @@ class Research_Doc(TemplateView):
       {<span></span>{ x }<span></span>}
     <<span></span>/li>
   {<span></span>% endfor %}
-<<span></span>/ul>
-                </code>
-              </pre>
+<<span></span>/ul></code></pre>
             </div>
           </div>
 
           <div class="col-5">
             <!-- Demo -->
-            <p class='pt-2 mb-0'>Kết quả:</p> 
-            <div class="p-3 border mt-4">
+            <p class='mt-3 mb-2'>Kết quả:</p> 
+            <div class="p-3 border">
               <ul>
                 {% for x in cycle %}
                   {% cycle 'lightblue' 'pink' 'yellow' 'coral' 'grey' as bgcolor silent %}
@@ -221,11 +197,9 @@ class Research_Doc(TemplateView):
             </table>
 
             <!-- FE -->
-            <p class='pt-2 mb-0'>Render HTML</p> 
+            <p class='mt-5 mb-2'>Render HTML</p> 
             <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-<<span></span>table class="table">
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>table class="table">
   <<span></span>thead>
     <<span></span>tr>
       <<span></span>th>Column 1<<span></span>/th>
@@ -243,17 +217,13 @@ class Research_Doc(TemplateView):
         <<span></span>td class="{<span></span>{ rowcolors }}">Quảng Nam- {<span></span>{ rowcolors }}<<span></span>/td>
     <<span></span>/tr>
   <<span></span>/tbody>
-<<span></span>/table>
-                </code>
-              </pre>
+<<span></span>/table></code></pre>
             </div>
 
             <!-- FE - Output -->
-            <p class='pt-2 mb-0'>HTML - Output</p>
-            <div class="highlight">
-              <pre class="chroma rounded mb-0">
-                <code class="language-html" data-lang="html">
-<<span></span>table class="table">
+            <p class='mt-5 mb-2'>HTML - Output</p>
+            <div class="highlight mb-5">
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>table class="table">
   <<span></span>thead>
     <<span></span>tr>
       <<span></span>th>Column 1</th>
@@ -271,16 +241,11 @@ class Research_Doc(TemplateView):
         <<span></span>td class="{{ rowcolors }}">Quảng Nam- {{ rowcolors }}<<span></span>/td>
     <<span></span>/tr>
   <<span></span>/tbody>
-<<span></span>/table>
-                </code>
-              </pre>
+<<span></span>/table></code></pre>
             </div>
-
-
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
