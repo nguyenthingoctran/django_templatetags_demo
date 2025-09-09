@@ -158,6 +158,21 @@ class Research_Doc(TemplateView):
         'The precedence of the operators',
       ]
       return messages
+    
+    def language_program_list(self):
+      value = ['Python', 'Python', 'Python', 'Ruby', 'Java', 'Java', 'Javascript', 'Javascript']
+      return value
+    
+    def coder_list(self):
+      coder_list = [
+        {'name': 'Nguyen', 'language': 'Python'},
+        {'name': 'Thi', 'language': 'Ruby'},
+        {'name': 'Ngoc', 'language': 'JS'},
+        {'name': 'Ngoc', 'language': 'C++'},
+        {'name': 'Ngoc', 'language': 'Python'},
+        {'name': 'Tran', 'language': 'C++'},
+      ]
+      return coder_list
 
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -176,4 +191,6 @@ class Research_Doc(TemplateView):
       data['somevar'] = self.somevar()
       data['myinfo'] = self.get_user()
       data['messages'] = self.messages()
+      data['language_program_list'] = self.language_program_list()
+      data['coder_list'] = self.coder_list()
       return data

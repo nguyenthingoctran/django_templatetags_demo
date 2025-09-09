@@ -1,0 +1,56 @@
+<div class="tab-pane fade" id="template-tag-ifchanged" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">ifchanged</h5>
+      <p class='mb-2'>Có thể sử dụng <code>ifchanged</code> bằng 2 cách</p> 
+      <ul>
+        <li>
+          <p>TH1: Kiểm tra nội dung hiển thị của chính nó so với trạng thái
+          trước đó và chỉ hiển thị nội dung nếu nó thay đổi.</p>
+          <div class="row mb-3">
+            <div class="col-6">
+              <p class='mb-2'>Render HTML</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% for lang in language_program_list %}
+  {<span></span>% ifchanged lang %}
+  <<span></span>hr/>
+  {<span></span>% endifchanged %}
+  <<span></span>b>{{ lang }}<<span></span>/b><<span></span>br/>
+{<span></span>% endfor %}</code></pre>
+            </div>
+            <div class="col-6">
+              <p class='mb-2'>Kết quả:</p> 
+              <div class="p-3 border rounded">
+                {% for lang in language_program_list %}
+                  {% ifchanged lang %}
+                  <hr/>
+                  {% endifchanged %}
+                  <b>{{ lang }}</b><br/>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <p>TH2: Trong nhiều biến được truyền vào, kiểm tra xem có biến nào đã 
+            thay đổi không</p>
+            <div class="row mb-3">
+              <div class="col-6">
+                
+              </div>
+              <div class="col-6">
+                <p class='mb-2'>Kết quả:</p>
+                <div class="p-3 border rounded">
+                  {% for coder in coder_list %}
+                    {% ifchanged coder.name %}
+                    <hr/>
+                    {% endifchanged %}
+                    <b>{{ coder.name }} - {{ coder.language }}</b> <br/>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
