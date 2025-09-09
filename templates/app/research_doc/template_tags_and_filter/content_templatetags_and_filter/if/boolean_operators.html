@@ -1,0 +1,353 @@
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th class="text-nowrap">Type Operator</th>
+                  <th style="width: 500px;">Code mẫu</th>
+                  <th style="width: 250px;">Demo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>and</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if fruits and cars %}
+  Both fruits and cars are available.
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    {% if fruits and cars %}
+                      Both fruits & cars are available.
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>not</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if not athlete_list %}
+  There are no athletes.
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    {% if not athlete_list %}
+                      There are no athletes.
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>or</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if athlete_list or fruits %}
+    There are some athletes or some fruits.
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    {% if athlete_list or fruits %}
+                        There are some athletes or some fruits.
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>not ... or</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if not athlete_list or fruits %}
+    There are no athletes or there are some fruits.
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+{% if not athlete_list or fruits %}
+    There are no athletes or there are some fruits.
+{% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>and not</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if athlete_list and not coach_list %}
+    There are some athletes and absolutely no coaches.
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+{% if fruits and not coach_list %}
+    There are some athletes and absolutely no coaches.
+{% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>and...or</td>
+                  <td>
+                    <p class="mb-2">
+                      Có thể sử dụng cả <code>and</code> và <code>or</code> trong cùng một 
+                      tag và tag <code>and</code> thì có độ ưu tiên cao hơn
+                    </p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if fruits and cars or cheerleader_list %}
+  There are some fruits, cars and some cheerleader
+{<span></span>% endif %}</code></pre>
+
+                    <p class="mb-2 mt-3">
+                      Phần này tương đương với
+                    </p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if (fruits and cars) or cheerleader_list %}
+  There are some fruits, cars and some cheerleader
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+{% if fruits and cars or cheerleader_list %}
+  There are some fruits, cars and some cheerleader
+{% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>==</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if somevar == "hello" %}
+  This appears if variable somevar 
+  equals the string "hello"
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+{% if somevar == "hello" %}
+  This appears if variable somevar equals the string "hello"
+{% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>!=</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if somevar != "x" %}
+  This appears if variable somevar 
+  does not equal the string "x",
+  or if somevar is not found in the context
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    {% if somevar != "x" %}
+                      This appears if variable somevar does not equal the string "x",
+                      or if somevar is not found in the context
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td><</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% with somevar=10 %}
+  {<span></span>% if somevar < 100 %}
+    This appears if variable somevar is greater than 0.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+                  </td>
+                  <td>
+                    {% with somevar=10 %}
+                      {% if somevar < 100 %}
+                        This appears if variable somevar is greater than 0.
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>></td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% with somevar=10 %}
+  {<span></span>% if somevar > 0 %}
+    This appears if variable somevar is greater than 0.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+                  </td>
+                  <td>
+                    {% with somevar=10 %}
+                      {% if somevar > 0 %}
+                        This appears if variable somevar is greater than 0.
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                </tr>
+                <tr>
+                  <td><=</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% with somevar=89 %}
+  {<span></span>% if somevar <= 100 %}
+    This appears if variable somevar 
+    is less than 100 or equal to 100.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+                  </td>
+                  <td>
+                    {% with somevar=89 %}
+                      {% if somevar <= 100 %}
+                        This appears if variable somevar is less than 100 or equal to 100.
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>>=</td>
+                  <td>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% with somevar=89 %}
+  {<span></span>% if somevar >= 1 %}
+    This appears if variable somevar 
+    is greater than 1 or equal to 1.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+                  </td>
+                  <td>
+                    {% with somevar=89 %}
+                      {% if somevar >= 1 %}
+                        This appears if variable somevar is greater than 1 or equal to 1.
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>in</td>
+                  <td>
+                    <p class="mb-2">TH1</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% if "bc" in "abcdef" %}
+  This appears since "bc" is a substring of "abcdef"
+{<span></span>% endif %}</code></pre>
+                    <hr/>
+
+                    <p class="mb-2">TH2</p>
+<pre class="chroma rounded mb-2"><code class="language-python" data-lang="python">firstof = [0, "", 'Hello', 'Kitty']</code></pre>
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% if "Kitty" in firstof %}
+  If <<span></span>code>firstof<<span></span>/code> is a list or set, 
+  one element of which is the string
+  "Kitty", this will appear.
+{<span></span>% endif %}</code></pre>   
+                  <hr/>
+                    <p class="mb-2">TH3</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% if myinfo in users %}
+  If users is a QuerySet, this will 
+  appear if user is an instance that 
+  belongs to the QuerySet.
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    <p class="mb-2">TH1</p> 
+                    {% if "bc" in "abcdef" %}
+                      This appears since "bc" is a substring of "abcdef"
+                    {% endif %}
+                    <hr/>
+
+                    <p class="mb-2">TH2</p> 
+                    {% if "Kitty" in firstof %}
+                      If <code>firstof</code> is a list or set, one element of which is the string
+                      "Kitty", this will appear.
+                    {% endif %}
+                    <hr/>
+
+                    <p class="mb-2">TH3</p> 
+                    {% if myinfo in users %}
+                      If users is a QuerySet, this will appear if user is an
+                      instance that belongs to the QuerySet.
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>not in</td>
+                  <td>Đây là toán tử phủ định của toán tử in. Tham khảo thêm ở phần toán
+                    tử in. Ở đây chỉ đưa ra 1 ví dụ minh hoạ.
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if "gj" not in "abcdef" %}
+  This not appears since "bc" 
+  is a substring of "abcdef"
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    {% if "gj" not in "abcdef" %}
+                      This not appears since "bc" is a substring of "abcdef"
+                    {% endif %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>is</td>
+                  <td>
+<pre class="chroma rounded mb-2"><code class="language-python" data-lang="python">{<span></span>% with somevar=True %}
+  {<span></span>% if somevar is True %}
+    This appears if and only if somevar is True.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% with somevar="" %}
+  {<span></span>% if somevar is not None %}
+    This appears if and only if somevar is not None.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+                  </td>
+                  <td>
+                    {% with somevar=True %}
+                      {% if somevar is True %}
+                        This appears if and only if somevar is True.
+                      {% endif %}
+                    {% endwith %}
+
+                    <hr/>
+
+                    {% with somevar="" %}
+                      {% if somevar is not None %}
+                        This appears if and only if somevar is not None.
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>is not</td>
+                  <td>
+<pre class="chroma rounded mb-2"><code class="language-python" data-lang="python">{<span></span>% with somevar=False %}
+  {<span></span>% if somevar is not True %}
+    This appears if somevar is not True, 
+    or if somevar is not found in the
+    context.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% with somevar=False %}
+  {<span></span>% if somevar is not None %}
+    This appears if and only if somevar is not None.
+  {<span></span>% endif %}
+{<span></span>% endwith %}</code></pre>
+                  </td>
+                  <td>
+                    {% with somevar=False %}
+                      {% if somevar is not True %}
+                        This appears if somevar is not True, or if somevar is not found in the
+                        context.
+                      {% endif %}
+                    {% endwith %}
+
+                    <hr/>
+
+                    {% with somevar=False %}
+                      {% if somevar is not None %}
+                        This appears if and only if somevar is not None.
+                      {% endif %}
+                    {% endwith %}
+                  </td>
+                </tr>
+                <tr>
+                  <td>filters</td>
+                  <td>
+                    <p class="mb-2">Data mẫu</p>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">messages = [
+  'All of the above can be combined.',
+  'For such expressions',
+  'That is, the precedence rules',
+  'The precedence of the operators',
+]
+</code></pre>
+
+                    <p class="mb-2 mt-3">Render HTML</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% if messages|length >= 3 %}
+  You have lots of messages today!
+{<span></span>% endif %}</code></pre>
+                  </td>
+                  <td>
+                    {% if messages|length >= 3 %}
+                      You have lots of messages today!
+                    {% endif %}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>

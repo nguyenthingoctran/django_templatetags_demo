@@ -119,10 +119,22 @@ class Research_Doc(TemplateView):
       users = User.objects.all()
       return users
     
+    def get_user(self):
+      users = User.objects.all()
+      user = users[0]
+      return user
+    
     def athlete_list(self):
       athlete_list = []
       return athlete_list
     
+    def coach_list(self):
+      coach_list = []
+      return coach_list
+    
+    def cheerleader_list(self):
+      cheerleader_list = ['tran', 'thao']
+      return cheerleader_list
     
     def mycar(self):
       mycar = {
@@ -133,6 +145,19 @@ class Research_Doc(TemplateView):
         }
       }
       return mycar
+    
+    def somevar(self):
+      somevar = 'hello'
+      return somevar
+    
+    def messages(self):
+      messages = [
+        'All of the above can be combined to form complex expressions.',
+        'For such expressions',
+        'That is, the precedence rules',
+        'The precedence of the operators',
+      ]
+      return messages
 
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -147,4 +172,8 @@ class Research_Doc(TemplateView):
       data['athlete_list'] = self.athlete_list()
       data['mycar'] = self.mycar()
       data['two_loop'] = self.research_doc_filter_add()
+      data['coach_list'] = self.coach_list()
+      data['somevar'] = self.somevar()
+      data['myinfo'] = self.get_user()
+      data['messages'] = self.messages()
       return data

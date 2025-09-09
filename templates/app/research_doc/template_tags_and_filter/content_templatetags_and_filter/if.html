@@ -11,13 +11,13 @@
         <div class="row">
           <div class="col-6">
             <p class='mb-2'>Render HTML</p> 
-  <pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if athlete_list %}
-      Number of athletes: {<span></span>{ athlete_list|length }}
-  {<span></span>% elif athlete_in_locker_room_list %}
-      Athletes should be out of the locker room soon!
-  {<span></span>% else %}
-      No athletes.
-  {<span></span>% endif %}</code></pre>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if athlete_list %}
+    Number of athletes: {<span></span>{ athlete_list|length }}
+{<span></span>% elif athlete_in_locker_room_list %}
+    Athletes should be out of the locker room soon!
+{<span></span>% else %}
+    No athletes.
+{<span></span>% endif %}</code></pre>
           </div>
 
           <div class="col-6">
@@ -35,11 +35,77 @@
         </div>
       </div>
 
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>2. Boolean operators</h5>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link active"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-boolean-operators"
+              aria-controls="navs-boolean-operators"
+              aria-selected="true">
+              Boolean Operators
+            </button>
+          </li>
+          <li class="nav-item">
+            <button
+              type="button"
+              class="nav-link"
+              role="tab"
+              data-bs-toggle="tab"
+              data-bs-target="#navs-priority"
+              aria-controls="navs-priority"
+              aria-selected="true">
+              Prority
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane show active" id="navs-boolean-operators" role="tabpanel">
+            {% include 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/if/boolean_operators.html' %}
+          </div>
 
+          <div class="tab-pane" id="navs-priority" role="tabpanel">
+            <p>Khi 1 biểu thức phức tạp gồm nhiều điệu kiện thì tuân theo quy định ưu tiên từ thấp nhất đến lớn nhất
+              như sau:
+            </p>
+            <ul>
+              <li>or</li>
+              <li>and</li>
+              <li>not</li>
+              <li>in</li>
+              <li>==, !=, <, >, <=, >=</li>
+            </ul>
 
-      <div class="row">
-        <div class="col-6">
+            <h5>Một số ví dụ cần lưu ý khi sử dụng biểu thức phức tạp</h5>
+            <div class="row">
+              <div class="col-6">
+                <p class="mb-2">Ta có biểu thức:</p>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if a == b or c == d and e %}</code></pre>
+              </div>
+              <div class="col-6">
+                <p class="mb-2">Tương đương với</p>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">(a == b) or ((c == d) and e)</code></pre>
+              </div>
+            </div>
 
+            <hr/>
+
+            <div class="row mt-5">
+              <div class="col-6">
+                <p class="mb-2">Không sử dụng như này là sai</p>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if a > b > c %}  (WRONG)</code></pre>
+              </div>
+
+              <div class="col-6">
+                <p class="mb-2">Sử dụng như này mới đúng</p>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% if a > b and b > c %}</code></pre>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
