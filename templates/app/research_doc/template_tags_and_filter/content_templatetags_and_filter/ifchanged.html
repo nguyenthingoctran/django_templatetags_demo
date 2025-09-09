@@ -8,8 +8,11 @@
           <p>TH1: Kiểm tra nội dung hiển thị của chính nó so với trạng thái
           trước đó và chỉ hiển thị nội dung nếu nó thay đổi.</p>
           <div class="row mb-3">
-            <div class="col-6">
-              <p class='mb-2'>Render HTML</p> 
+            <div class="col-8">
+              <p class='mb-2'>Mẫu data</p>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">value = ['Python', 'Python', 'Python', 'Ruby', 'Java', 'Java', 'Javascript', 'Javascript']</code></pre>
+
+              <p class='mb-2 mt-5'>Render HTML</p> 
 <pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% for lang in language_program_list %}
   {<span></span>% ifchanged lang %}
   <<span></span>hr/>
@@ -17,7 +20,7 @@
   <<span></span>b>{{ lang }}<<span></span>/b><<span></span>br/>
 {<span></span>% endfor %}</code></pre>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <p class='mb-2'>Kết quả:</p> 
               <div class="p-3 border rounded">
                 {% for lang in language_program_list %}
@@ -34,10 +37,26 @@
           <p>TH2: Trong nhiều biến được truyền vào, kiểm tra xem có biến nào đã 
             thay đổi không</p>
             <div class="row mb-3">
-              <div class="col-6">
-                
+              <div class="col-8">
+                <p class='mb-2'>Mẫu data</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">coder_list = [
+  {'name': 'Nguyen', 'language': 'Python'},
+  {'name': 'Thi', 'language': 'Ruby'},
+  {'name': 'Ngoc', 'language': 'JS'},
+  {'name': 'Ngoc', 'language': 'C++'},
+  {'name': 'Ngoc', 'language': 'Python'},
+  {'name': 'Tran', 'language': 'C++'},
+]</code></pre>
+
+                <p class='mb-2 mt-5'>Render HTML</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% for coder in coder_list %}
+  {<span></span>% ifchanged coder.name %}
+  <<span></span>hr/>
+  {<span></span>% endifchanged %}
+  <<span></span>b>{<span></span>{ coder.name }} - {<span></span>{ coder.language }}<<span></span>/b> <<span></span>br/>
+{<span></span>% endfor %}</code></pre>
               </div>
-              <div class="col-6">
+              <div class="col-4">
                 <p class='mb-2'>Kết quả:</p>
                 <div class="p-3 border rounded">
                   {% for coder in coder_list %}

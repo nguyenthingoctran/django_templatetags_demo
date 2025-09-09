@@ -1,0 +1,21 @@
+<div class="tab-pane fade" id="template-tag-include" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">include</h5>
+      <small class="mb-4 d-inline-block">Load template và render nó ra</small>
+
+      <p class='mb-2'>Render file html với URL string cụ thể</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% include "foo/bar.html" %}</code></pre>
+
+      <p class='mb-2 mt-5'>Render file html với URL là một biến truyền vào</p>
+<pre class="chroma rounded mb-2"><code class="language-html" data-lang="html">template_name = 'foo/bar.html'</code></pre>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% include template_name %}</code></pre>
+
+      <p class='mb-2 mt-5'>Render file html cùng với các đối số</p>
+<pre class="chroma rounded mb-2"><code class="language-html" data-lang="html">{<span></span>% include "name_snippet.html" with person="Jane" greeting="Hello" %}</code></pre>
+      
+      <p class='mb-2 mt-5'>Render file html cùng với đối số duy nhất</p>
+<pre class="chroma rounded mb-2"><code class="language-html" data-lang="html">{<span></span>% include "name_snippet.html" with greeting="Hi" only %}</code></pre>
+    </div>
+  </div>
+</div>
