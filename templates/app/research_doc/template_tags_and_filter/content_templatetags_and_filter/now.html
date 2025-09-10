@@ -1,0 +1,26 @@
+<div class="tab-pane fade" id="template-tag-now" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Now</h5>
+      <small class="mb-4 d-inline-block">Hiển thị ngày hoặc giờ.</small>
+
+      <div class="row">
+        <div class="col-6">
+          <p class='mb-2'>Kết quả:</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">It is {<span></span>% now "jS F Y H:i" %}</code></pre>
+        </div>
+        <div class="col-6">
+          <p class='mb-2'>Kết quả:</p>
+          <div class="p-3 border rounded">
+            It is {% now "jS F Y H:i - e" %}
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <p>Tham khảo render format hiển thị. 
+            <a href="https://docs.djangoproject.com/en/5.2/ref/templates/builtins/#std-templatefilter-date" target="_blank">Link Ref Date</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
