@@ -11,11 +11,20 @@
 <pre class="chroma rounded mb-2"><code class="language-html" data-lang="html">template_name = 'foo/bar.html'</code></pre>
 <pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% include template_name %}</code></pre>
 
-      <p class='mb-2 mt-5'>Render file html cùng với các đối số</p>
+      <p class='mb-2 mt-5'>Render file html cùng với các đối số. Data được truyền từ BE vào sẽ không được ưu tiên như khi
+            truyền từ tag <code>include</code>
+      </p>
 <pre class="chroma rounded mb-2"><code class="language-html" data-lang="html">{<span></span>% include "name_snippet.html" with person="Jane" greeting="Hello" %}</code></pre>
       
       <p class='mb-2 mt-5'>Render file html cùng với đối số duy nhất</p>
 <pre class="chroma rounded mb-2"><code class="language-html" data-lang="html">{<span></span>% include "name_snippet.html" with greeting="Hi" only %}</code></pre>
+
+      <p class="mt-5">
+        <b class="text-warning">Note:</b>
+        <ul>
+          <li>Không có sự chia sẻ giữa các template được include. Mỗi template được include là 1 cá thể độc lập</li>
+        </ul>
+      </p>
     </div>
   </div>
 </div>

@@ -5,10 +5,6 @@ class Home(TemplateView):
 
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
+    data['person'] = 'John'
+    data['greeting'] = 'Hello'
     return data
-
-# from django.http import HttpResponse
-
-
-# def index(request):
-#     return HttpResponse("Hello, world. You're at the polls index.")
