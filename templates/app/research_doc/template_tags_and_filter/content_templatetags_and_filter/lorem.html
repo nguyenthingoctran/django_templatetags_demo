@@ -1,0 +1,42 @@
+<div class="tab-pane fade" id="template-tag-lorem" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">lorem</h5>
+      <small>Dùng hardcode ngẫu nhiên</small>
+
+      <div class="border rounded px-5 py-5 my-5">
+        <h5>1. Cú pháp</h5>
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">{<span></span>% lorem [count] [method] [random] %}</code></pre>
+        <p class="mt-5">Trong đó:</p>
+        <ul>
+          <li><code>count</code>: số lượng từ hoặc đoạn cần hiển thị. Default là 1</li>
+          <li><code>method</code>: bao gồm các kiểu hiển thị
+            <ul>
+              <li><code>w</code>: từ</li>
+              <li><code>p</code>: đoạn văn</li>
+              <li><code>b</code>: 1 block</li>
+            </ul>
+          </li>
+          <li><code>random</code>: option này biểu thị có hiển thị ngẫu nhiên không.</li>
+        </ul>
+      </div>
+
+      <div class="border rounded px-5 py-5 my-5">
+        <h5>2. Example</h5>
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-2">Render HTML. </p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% lorem 3 p random %}</code></pre>
+          </div>
+          <div class="col-6">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              {% lorem 3 p random %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
