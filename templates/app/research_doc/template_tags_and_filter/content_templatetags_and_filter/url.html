@@ -1,0 +1,60 @@
+<div class="tab-pane fade" id="template-tag-url" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">url</h5>
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Sử dụng URL tag cơ bản</h5>
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-2">URL file</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">app_name = '_Extract_Tag'
+
+urlpatterns = [
+    path("title/", views.Title.as_view(), name='title')
+]</code></pre>
+
+            <p class="mb-2 mt-5">Render HTML</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% url '_Extract_Tag:title' %}</code></pre>
+          </div>
+
+          <div class="col-6">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              {% url '_Extract_Tag:title' %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>2. Có thể sử dụng url như 1 biến</h5>
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-2">Render HTML</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% url '_Extract_Tag:title' as the_url %}
+
+<<span></span>a href="{<span></span>{ the_url }}">I'm linking to {<span></span>{ the_url }}<<span></span>/a></code></pre>
+          </div>
+          <div class="col-6">
+            <p class="mb-2">Kết quả</p> 
+            <div class="p-3 border rounded">
+              {% url '_Extract_Tag:title' as the_url %}
+
+              <a href="{{ the_url }}">I'm linking to {{ the_url }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5 class="text-danger">3. Truyền biến vào URL - Chưa check thực tế.</h5>
+        <div class="row">
+          <div class="col-12">
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">path("client/<int:id>/", app_views.client, name="app-views-client")
+{<span></span>% url 'app-views-client' client.id %}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
