@@ -1,0 +1,26 @@
+<div class="tab-pane fade" id="template-tag-with" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">with</h5>
+      <small class="mb-4 d-inline-block">Tạo biến hardcode ngay tại trang template</small>
+
+      <div class="row">
+        <div class="col-6">
+          <p class='mb-2'>Render HTML</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% with name="Ngoc Tran" job="developer" %}
+  <<span></span>h3>My name is {<span></span>{ name }}. I'm a {<span></span>{ job }}<<span></span>/h3>
+{<span></span>% endwith %}</code></pre>
+        </div>
+
+        <div class="col-6">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border">
+            {% with name="Ngoc Tran" job="developer" %}
+              <h3>My name is {{ name }}. I'm a {{ job }}</h3>
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
