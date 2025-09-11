@@ -1,0 +1,49 @@
+<div class="tab-pane fade" id="template-tag-querystring" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Querystring</h5>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mt-5 mb-2">Đây là ví dụ khi sử dụng querystring. Nhấn "Next Page" và theo dõi 
+            URL để thấy kết quả. </p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>form class="form" method="GET">
+  <<span></span>select class="form-select" name='car'>
+    <<span></span>option value="ferrari">Ferrari<<span></span>/option>
+    <<span></span>option value="aston">Aston Martin<<span></span>/option>
+    <<span></span>option value="mercedes">Mercedes<<span></span>/option>
+    <<span></span>option value="audi">Audi<<span></span>/option>
+  <<span></span>/select>
+
+  <<span></span>button class="btn btn-primary mt-3" type="submit">Submit<<span></span>/button> <<span></span>br/>
+  <<span></span>a class="fw-medium mt-3 d-inline-block" href="{<span></span>% querystring page=page|add:1 car='ferrari' fruit=fruits %}">Next Page<<span></span>/a>
+<<span></span>/form></code></pre>
+        </div>
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-5 border rounded">
+            <form class="form" method="GET">
+              <select class="form-select" name='car'>
+                <option value="ferrari">Ferrari</option>
+                <option value="aston">Aston Martin</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+              </select>
+
+              <button class="btn btn-primary mt-3" type="submit">Submit</button> <br/>
+              <a class="fw-medium mt-3 d-inline-block" href="{% querystring page=page|add:1 car='ferrari' fruit=fruits %}">Next Page</a>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 mt-5">
+          <p>
+            <b class="text-warning">Note:</b>
+            <ul>
+              <li>Có thể remove variable bằng cách set None cho biến. Ex: <code>color=None</code></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

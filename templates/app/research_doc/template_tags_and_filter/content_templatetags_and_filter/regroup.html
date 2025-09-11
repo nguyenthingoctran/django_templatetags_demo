@@ -1,0 +1,157 @@
+<div class="tab-pane fade" id="template-tag-regroup" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Regroup</h5>
+      <small class="mb-4 d-inline-block">
+        Nhóm lại danh sách các đối tượng giống nhau theo một thuộc tính chung. 
+      </small>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Một số biến có sẵn sử dụng lấy data</h5>
+        <div class="row mt-5">
+          <div class="col-12">
+            <ul>
+              <li><code>grouper</code>: mục đang nhóm theo.</li>
+              <li><code>list</code>: 1 list các item được nhóm.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>2. Đối với trường hợp không có dict lồng nhau</h5>
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-2">Data mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-python" data-lang="python">def coder_list_2(self):
+  coder_list = [
+    {'name': 'Nguyen', 'language': 'Python'},
+    {'name': 'Thi', 'language': 'Ruby'},
+    {'name': 'Ngoc', 'language': 'JS'},
+    {'name': 'Ngoc', 'language': 'C++'},
+    {'name': 'Ngoc', 'language': 'Python'},
+    {'name': 'Tran', 'language': 'C++'},
+  ]
+  return coder_list</code></pre>
+
+            <p class="mt-5 mb-2">Render HTML. </p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">{<span></span>% regroup coder_list|dictsort:"language" by language as language_list %}
+<<span></span>ul>
+  {<span></span>% for lang in language_list %}
+    <<span></span>li>{<span></span>{ lang.grouper }}<<span></span>/li>
+    <<span></span>ul>
+      {<span></span>% for item in lang.list %}
+      <<span></span>li>{<span></span>{ item.name }} - {<span></span>{ item.language }}</li>
+      {<span></span>% endfor %}
+    <<span></span>/ul>
+  {<span></span>% endfor %}
+<<span></span>/ul></code></pre>
+          </div>
+
+          <div class="col-6">
+            <p class='mb-2'>Kết quả:</p>
+            <div class="p-3 border rounded">
+              {% regroup coder_list|dictsort:"language" by language as language_list %}
+              <ul>
+                {% for lang in language_list %}
+                  <li>{{ lang.grouper }}</li>
+                  <ul>
+                    {% for item in lang.list %}
+                    <li>{{ item.name }} - {{ item.language }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>3. Đối với trường hợp có dict lồng nhau</h5>
+        {% regroup coder_list_2 by language.lang_name as language_type %}
+        <div class="row">
+          <div class="col-6">
+            <p class="mb-2">Data mẫu</p>
+<pre class="chroma rounded mb-0" style="height:300px; overflow-y: scroll"><code class="language-python" data-lang="python">coder_list = [
+  {
+    'name': 'Nguyen', 
+    'language': {
+      'lang_name': "Python",
+      'framework': 'Django'
+    }
+  },{
+    'name': 'Ngoc', 
+    'language': {
+      'lang_name': 'Python',
+      'framework': 'Laravel'
+    }
+  },{
+    'name': 'Thi', 
+    'language': {
+      'lang_name': 'Ruby',
+      'framework': 'Wript'
+    }
+  },{
+    'name': 'Ngoc', 
+    'language': {
+      'lang_name': 'JS',
+      'framework': 'Jquery'
+    }
+  },{
+    'name': 'Ngoc', 
+    'language': {
+      'lang_name': 'C++',
+      'framework': 'Nope'
+    }
+  },{
+    'name': 'Tran', 
+    'language': {
+      'lang_name': 'JS',
+      'framework': 'Nope'
+    }
+  },{
+    'name': 'Tran', 
+    'language': {
+      'lang_name': 'Python',
+      'framework': 'Laravel'
+    }
+  }
+]</code></pre>
+
+            <p class="mb-2 mt-5">Render HTML</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>ul>
+  {<span></span>% for lang in language_type|dictsort:"grouper" %}
+    {<span></span>% ifchanged lang.grouper %}
+    <<span></span>li>{<span></span>{ lang.grouper }}<<span></span>/li>
+    {<span></span>% endifchanged %}
+    <<span></span>ul>
+      {<span></span>% for item in lang.list %}
+        <<span></span>li>{<span></span>{ item.name }} - {<span></span>{ item.language.framework }}<<span></span>/li>
+      {<span></span>% endfor %}
+    <<span></span>/ul>
+  {<span></span>% endfor %}
+<<span></span>/ul></code></pre>
+          </div>
+          <div class="col-6">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <ul>
+                {% for lang in language_type|dictsort:"grouper" %}
+                  {% ifchanged lang.grouper %}
+                  <li>{{ lang.grouper }}</li>
+                  {% endifchanged %}
+                  <ul>
+                    {% for item in lang.list %}
+                      <li>{{ item.name }} - {{ item.language.framework }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ from datetime import datetime
 from _Extract_Tags.data_hardcode.data_templatetag_filter import DataResearchTemplateTagFilter
 from django.utils.html import format_html
 from django.contrib.auth.models import User
+from django.shortcuts import render
 
 # Create your views here.
 class Research_Doc(TemplateView):
@@ -173,6 +174,54 @@ class Research_Doc(TemplateView):
         {'name': 'Tran', 'language': 'C++'},
       ]
       return coder_list
+    
+    def coder_list_2(self):
+      coder_list = [
+        {
+          'name': 'Nguyen', 
+          'language': {
+            'lang_name': "Python",
+            'framework': 'Django'
+          }
+        },{
+          'name': 'Ngoc', 
+          'language': {
+            'lang_name': 'Python',
+            'framework': 'Laravel'
+          }
+        },{
+          'name': 'Thi', 
+          'language': {
+            'lang_name': 'Ruby',
+            'framework': 'Wript'
+          }
+        },{
+          'name': 'Ngoc', 
+          'language': {
+            'lang_name': 'JS',
+            'framework': 'Jquery'
+          }
+        },{
+          'name': 'Ngoc', 
+          'language': {
+            'lang_name': 'C++',
+            'framework': 'Nope'
+          }
+        },{
+          'name': 'Tran', 
+          'language': {
+            'lang_name': 'JS',
+            'framework': 'Nope'
+          }
+        },{
+          'name': 'Tran', 
+          'language': {
+            'lang_name': 'Python',
+            'framework': 'Laravel'
+          }
+        }
+      ]
+      return coder_list
 
     def get_context_data(self, **kwargs):
       data = super().get_context_data(**kwargs)
@@ -193,4 +242,6 @@ class Research_Doc(TemplateView):
       data['messages'] = self.messages()
       data['language_program_list'] = self.language_program_list()
       data['coder_list'] = self.coder_list()
+      data['page'] = 1
+      data['coder_list_2'] = self.coder_list_2()
       return data
