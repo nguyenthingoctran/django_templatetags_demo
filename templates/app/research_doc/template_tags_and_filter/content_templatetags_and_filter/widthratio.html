@@ -1,0 +1,37 @@
+{% load static %}
+<div class="tab-pane fade" id="template-tag-widthratio" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Widthratio</h5>
+
+      <div class="row">
+        <div class="col-6">
+          <p class='mb-2'>Data mẫu</p> 
+<pre class="chroma rounded"><code class="language-python" data-lang="python">
+{<span></span>% with this_value=300 max_value=200 max_width=100 %}
+  {<span></span>% widthratio this_value max_value max_width as width %}
+  <<span></span>img 
+    src="{<span></span>% static 'img/avatars/1.png' %}" 
+    height="50" 
+    width="{<span></span>{ width }}"
+  />
+{<span></span>% endwith %}</code></pre>
+        </div>
+
+        <div class="col-6">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            {% with this_value=300 max_value=200 max_width=100 %}
+              {% widthratio this_value max_value max_width as width %}
+              <img 
+                src="{% static 'img/avatars/1.png' %}" 
+                height="50" 
+                width="{{ width }}"
+              />
+            {% endwith %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
