@@ -1,0 +1,40 @@
+<div class="tab-pane fade" id="js-forEach" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">forEach</h5>
+      <small class="mb-4 d-inline-block">Lặp qua mỗi phần tử trong mảng</small>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-forEach"><<span></span>/p>
+
+<<span></span>script>
+  const numbers_forEach = [45, 4, 9, 16, 25];
+  
+  numbers_forEach.forEach(function myFunction(value, index, array) {
+    var html_forEach = "index: " + index + " value: " + value + " array: " + array + "<br/>"
+    $("#show-data-forEach").append(html_forEach)
+  });
+<<span></span>/script></code></pre>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <p id="show-data-forEach"></p>
+
+            <script>
+              const numbers_forEach = [45, 4, 9, 16, 25];
+
+              numbers_forEach.forEach(function myFunction(value, index, array) {
+                var html_forEach = "index: " + index + " value: " + value + " array: " + array + "<br/>"
+                $("#show-data-forEach").append(html_forEach)
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
