@@ -1,0 +1,65 @@
+<div class="tab-pane fade" id="js-getter-setting" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Getters and Setters</h5>
+      <small class="mb-4 d-inline-block">Xử lý mảng thành 1 giá trị theo yêu cầu.</small>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Getters</h5>
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>h1 id="show-data-getters"><<span></span>/h1>
+
+<<span></span>script>
+  const Person = {
+    firstName: "John",
+    lastName: "Doe",
+    get fullName() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+
+  $("#show-data-getters").append(Person.fullName)
+<<span></span>/script></code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <h1 id="show-data-getters"></h1>
+              
+              <script>
+                const Person = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  get fullName() {
+                    return this.firstName + " " + this.lastName;
+                  }
+                }
+
+                $("#show-data-getters").append(Person.fullName)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Setters</h5>
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Code mẫu</p> 
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
