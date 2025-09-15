@@ -9,7 +9,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalAdd',
         'modal': {
           'title': 'Filter - Add',
-          'data': views.Research_Doc().research_doc_filter_add(),
+          'data': views.Django_Templatetags().research_doc_filter_add(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/add.html'
         }
       },{
@@ -50,7 +50,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalDate',
         'modal': {
           'title': 'Filter - Date',
-          'data': views.Research_Doc().research_doc_filter_date(),
+          'data': views.Django_Templatetags().research_doc_filter_date(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/date.html'
         }
       },{
@@ -59,7 +59,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalDefault',
         'modal': {
           'title': 'Filter - Default',
-          'data': views.Research_Doc().dict_color(),
+          'data': views.Django_Templatetags().dict_color(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/default.html'
         }
       },{
@@ -68,7 +68,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalDefaultIfNone',
         'modal': {
           'title': 'Filter - Default If None',
-          'data': views.Research_Doc().dict_none_color(),
+          'data': views.Django_Templatetags().dict_none_color(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/default_if_none.html'
         }
       },{
@@ -77,7 +77,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalDictsort',
         'modal': {
           'title': 'Filter - Dictsort',
-          'data': views.Research_Doc().dict_sort(),
+          'data': views.Django_Templatetags().dict_sort(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/dictsort.html'
         }
       },{
@@ -86,7 +86,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalDictsortreversed',
         'modal': {
           'title': 'Filter - Dictsortreversed',
-          'data': views.Research_Doc().dict_sort(),
+          'data': views.Django_Templatetags().dict_sort(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/dictsortreversed.html'
         }
       },{
@@ -103,7 +103,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalEscape',
         'modal': {
           'title': 'Filter - Escape',
-          'data': views.Research_Doc().research_doc_autoescape(),
+          'data': views.Django_Templatetags().research_doc_autoescape(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/escape.html'
         }
       },{
@@ -112,7 +112,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalEscapejs',
         'modal': {
           'title': 'Filter - Escapejs',
-          'data': views.Research_Doc().escapejs(),
+          'data': views.Django_Templatetags().escapejs(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/escapejs.html'
         }
       },{
@@ -121,7 +121,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalFilesizeformat',
         'modal': {
           'title': 'Filter - Filesizeformat',
-          'data': views.Research_Doc().filesizeformat(),
+          'data': views.Django_Templatetags().filesizeformat(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/filesizeformat.html'
         }
       },{
@@ -130,7 +130,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalFirst',
         'modal': {
           'title': 'Filter - modalFirst',
-          'data': views.Research_Doc().dict_color(),
+          'data': views.Django_Templatetags().dict_color(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/first.html'
         }
       },{
@@ -171,7 +171,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalJoin',
         'modal': {
           'title': 'Filter - Join',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/join.html'
         }
       },{
@@ -180,7 +180,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalJsonScript',
         'modal': {
           'title': 'Filter - Json Script',
-          'data': views.Research_Doc().dict_sort(),
+          'data': views.Django_Templatetags().dict_sort(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/json_script.html'
         }
       },{
@@ -189,7 +189,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalLast',
         'modal': {
           'title': 'Filter - Last',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/last.html'
         }
       },{
@@ -198,7 +198,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalLength',
         'modal': {
           'title': 'Filter - Length',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/length.html'
         }
       },{
@@ -207,7 +207,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalLinebreaks',
         'modal': {
           'title': 'Filter - Line Breaks',
-          'data': views.Research_Doc().text_1(),
+          'data': views.Django_Templatetags().text_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linebreaks.html'
         }
       },{
@@ -216,7 +216,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalLinebreaksBr',
         'modal': {
           'title': 'Filter - Line Breaks Br',
-          'data': views.Research_Doc().text_1(),
+          'data': views.Django_Templatetags().text_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linebreaksbr.html'
         }
       },{
@@ -225,7 +225,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalLinenumbers',
         'modal': {
           'title': 'Filter - Line Numbers',
-          'data': views.Research_Doc().text_1(),
+          'data': views.Django_Templatetags().text_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/linenumbers.html'
         }
       },{
@@ -266,7 +266,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalPluralize',
         'modal': {
           'title': 'Filter - Pluralize',
-          'data': views.Research_Doc().pluralize(),
+          'data': views.Django_Templatetags().pluralize(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/pluralize.html'
         }
       },{
@@ -275,7 +275,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalPluralize',
         'modal': {
           'title': 'Filter - Pluralize',
-          'data': views.Research_Doc().pluralize(),
+          'data': views.Django_Templatetags().pluralize(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/pluralize.html'
         }
       },{
@@ -287,7 +287,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalRandom',
         'modal': {
           'title': 'Filter - Random',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/random.html'
         }
       },{
@@ -304,7 +304,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalSafe',
         'modal': {
           'title': 'Filter - Safe',
-          'data': views.Research_Doc().text_2(),
+          'data': views.Django_Templatetags().text_2(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/safe.html'
         }
       },{
@@ -313,7 +313,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalSafeseq',
         'modal': {
           'title': 'Filter - Safeseq',
-          'data': views.Research_Doc().object_1(),
+          'data': views.Django_Templatetags().object_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/safeseq.html'
         }
       },{
@@ -322,7 +322,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalSlice',
         'modal': {
           'title': 'Filter - Slice',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/slice.html'
         }
       },{
@@ -331,7 +331,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalSlugify',
         'modal': {
           'title': 'Filter - Slugify',
-          'data': views.Research_Doc().text_3(),
+          'data': views.Django_Templatetags().text_3(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/slugify.html'
         }
       },{
@@ -340,7 +340,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalStringformat',
         'modal': {
           'title': 'Filter - Stringformat',
-          'data': views.Research_Doc().number_1(),
+          'data': views.Django_Templatetags().number_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/stringformat.html'
         }
       },{
@@ -349,7 +349,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalStriptags',
         'modal': {
           'title': 'Filter - Striptags',
-          'data': views.Research_Doc().text_2(),
+          'data': views.Django_Templatetags().text_2(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/striptags.html'
         }
       },{
@@ -358,7 +358,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalTime',
         'modal': {
           'title': 'Filter - Time',
-          'data': views.Research_Doc().research_doc_filter_date(),
+          'data': views.Django_Templatetags().research_doc_filter_date(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/time.html'
         }
       },{
@@ -367,7 +367,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalTimesince',
         'modal': {
           'title': 'Filter - Timesince',
-          'data': views.Research_Doc().date_list_1(),
+          'data': views.Django_Templatetags().date_list_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/timesince.html'
         }
       },{
@@ -376,7 +376,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalTimeuntil',
         'modal': {
           'title': 'Filter - Timeuntil',
-          'data': views.Research_Doc().date_list_1(),
+          'data': views.Django_Templatetags().date_list_1(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/timeuntil.html'
         }
       },{
@@ -425,7 +425,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalUnordered_list',
         'modal': {
           'title': 'Filter - Unordered_list',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/unordered_list.html'
         }
       },{
@@ -434,7 +434,7 @@ class DataResearchTemplateTagFilter():
         'id_modal': 'modalUpper',
         'modal': {
           'title': 'Filter - Upper',
-          'data': views.Research_Doc().research_doc_cycle(),
+          'data': views.Django_Templatetags().research_doc_cycle(),
           'template_name': 'app/research_doc/template_tags_and_filter/content_templatetags_and_filter/filter_modal/upper.html'
         }
       },{

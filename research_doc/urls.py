@@ -4,5 +4,6 @@ from research_doc import views
 app_name = 'Research_Doc'
 
 urlpatterns = [
-    path("index/", views.Research_Doc.as_view(), name='research_doc_index'),
+    path("django_templatetags/", views.Django_Templatetags.as_view(), name='django_templatetags'),
+    path("javascript/", views.Javascript.as_view(), name='javascript'),
 ]

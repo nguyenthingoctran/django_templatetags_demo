@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
-class Research_Doc(TemplateView):
-    template_name = "app/research_doc/template_tags_and_filter.html"
+class Django_Templatetags(TemplateView):
+    template_name = "app/research_doc/template_tags_and_filter/index.html"
 
     def research_doc_autoescape(self):
       data = 'Hello &lt;i&gt;my&lt;/i&gt; World!'
@@ -245,3 +245,10 @@ class Research_Doc(TemplateView):
       data['page'] = 1
       data['coder_list_2'] = self.coder_list_2()
       return data
+    
+class Javascript(TemplateView):
+  template_name = 'app/research_doc/javascript/index.html'
+
+  def get_context_data(self, **kwargs):
+    data = super().get_context_data(**kwargs)
+    return data
