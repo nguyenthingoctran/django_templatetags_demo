@@ -1,0 +1,34 @@
+<div class="tab-pane fade" id="js-toISOString" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">toISOString</h5>
+      <small class="mb-4 d-inline-block">Chuyển đổi object Date sang String</small>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-toISOString"><<span></span>/p>
+
+<<span></span>script>
+  const d_toISO = new Date();
+  $("#show-data-toISOString").append(d_toISO + "<br/>")
+  $("#show-data-toISOString").append(d_toISO.toISOString())
+<<span></span>/script></code></pre>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <p id="show-data-toISOString"></p>
+
+            <script>
+              const d_toISO = new Date();
+              $("#show-data-toISOString").append(d_toISO + "<br/>")
+              $("#show-data-toISOString").append(d_toISO.toISOString())
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
