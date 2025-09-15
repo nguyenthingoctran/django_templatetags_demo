@@ -1,0 +1,43 @@
+<div class="tab-pane fade" id="js-date-now" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Date.now()</h5>
+      <small class="d-inline-block">Trả về ngày tháng số milliseconds kể từ ngày số không.</small> <br/>
+      <small class="mb-4 d-inline-block">Tham khảo các hàm trả datetime khác để lấy chi tiết date. 
+        <a class="btn-link" href="https://www.w3schools.com/js/js_dates.asp" target="_blank">Link</a>
+      </small>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-date-now"><<span></span>/p>
+
+<<span></span>script>
+  var date_dn_1 = Date.now();
+  $("#show-data-date-now").append("Date 1: " + date_dn_1);
+  var date_dn_2 = new Date();
+  $("#show-data-date-now").append("<br/>Date 2: " + date_dn_2);
+  var time_dn_2 = date_dn_2.getTime();
+  $("#show-data-date-now").append("<br/>Date 3: " + time_dn_2);
+<<span></span>/script></code></pre>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <p id="show-data-date-now"></p>
+            
+            <script>
+              var date_dn_1 = Date.now();
+              $("#show-data-date-now").append("Date 1: " + date_dn_1);
+              var date_dn_2 = new Date();
+              $("#show-data-date-now").append("<br/>Date 2: " + date_dn_2);
+              var time_dn_2 = date_dn_2.getTime();
+              $("#show-data-date-now").append("<br/>Date 3: " + time_dn_2);
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
