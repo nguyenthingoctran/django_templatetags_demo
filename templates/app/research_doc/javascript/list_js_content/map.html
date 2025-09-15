@@ -1,0 +1,42 @@
+<div class="tab-pane fade" id="js-map" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Map</h5>
+      <small class="mb-4 d-inline-block">Phương thức map() tạo một mảng mới bằng cách thực hiện một hàm trên 
+        mỗi phần tử mảng.
+      </small>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-map"></p>
+
+<<span></span>script>
+  const numbers1_map = [45, 4, 9, 16, 25];
+  const numbers2_map = numbers1_map.map(function myFunction(value, index, array){
+    return "value: " + value + " index " + index + " array " + array + "<br/>"
+  });
+
+  $("#show-data-map").append(numbers2_map)
+<<span></span>/script></code></pre>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <p id="show-data-map"></p>
+
+            <script>
+              const numbers1_map = [45, 4, 9, 16, 25];
+              const numbers2_map = numbers1_map.map(function myFunction(value, index, array){
+                return "value: " + value + " index " + index + " array " + array + "<br/>"
+              });
+
+              $("#show-data-map").append(numbers2_map)
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
