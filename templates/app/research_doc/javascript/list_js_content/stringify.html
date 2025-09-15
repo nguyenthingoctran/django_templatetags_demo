@@ -1,0 +1,36 @@
+<div class="tab-pane fade" id="js-stringify" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">JSON.stringify()</h5>
+      <small class="mb-4 d-inline-block">Xử lý data gởi từ js lên server.</small>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>h1 id="show-data-stringify"><<span></span>/h1>
+
+<<span></span>script>
+  const myObj_stringify = {name: 'John', age: 30, city: "New York"};
+  const myJSON_stringify = JSON.stringify(myObj_stringify);
+
+  $("#show-data-stringify").append(myJSON_stringify)
+<<span></span>/script></code></pre>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <h1 id="show-data-stringify"></h1>
+            
+            <script>
+              const myObj_stringify = {name: 'John', age: 30, city: "New York"};
+              const myJSON_stringify = JSON.stringify(myObj_stringify);
+
+              $("#show-data-stringify").append(myJSON_stringify)
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

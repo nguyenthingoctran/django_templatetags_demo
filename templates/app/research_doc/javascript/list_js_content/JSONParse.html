@@ -1,0 +1,38 @@
+<div class="tab-pane fade" id="js-JSONParse" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">JSON.parse()</h5>
+      <small class="mb-4 d-inline-block">Cách sử dụng thông thường khi nhận data từ web server</small>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">
+<<span></span>h1 id="show-data-jsonparse"><<span></span>/h1>
+
+<<span></span>script>
+  const txt_parse = '{"name":"John", "age":30, "city":"New York"}';
+  const myObj = JSON.parse(txt_parse);
+
+  $("#show-data-jsonparse").append("Name: " + myObj.name + "<<span></span>br/> Age: " + myObj.age + "<<span></span>br/> City: " + myObj.city)
+<<span></span>/script>
+</code></pre>
+        </div>
+
+        <div class="col-12 mt-5">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <h1 id="show-data-jsonparse"></h1>
+            
+            <script>
+              const txt_parse = '{"name":"John", "age":30, "city":"New York"}';
+              const myObj = JSON.parse(txt_parse);
+
+              $("#show-data-jsonparse").append("Name: " + myObj.name + "<br/> Age: " + myObj.age + "<br/> City: " + myObj.city)
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
