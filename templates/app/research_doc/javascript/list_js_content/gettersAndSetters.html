@@ -46,16 +46,100 @@
       </div>
 
       <div class="border rounded px-5 py-5 mb-5">
-        <h5>1. Setters</h5>
+        <h5>2. Setters</h5>
         <div class="row">
           <div class="col-12">
             <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>h1 id="show-data-setters"><<span></span>/h1>
+
+<<span></span>script>
+  const Person_setters = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "",
+    set lang(value) {
+      this.language = value.toUpperCase();
+    }
+  };
+
+  Person_setters.lang = "en";
+  $("#show-data-setters").append(Person_setters.language)
+<<span></span>/script></code></pre>
           </div>
 
           <div class="col-12 mt-5">
             <p class='mb-2'>Kết quả:</p> 
             <div class="p-3 border rounded">
+              <h1 id="show-data-setters"></h1>
+
+              <script>
+                const Person_setters = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  language: "",
+                  set lang(value) {
+                    this.language = value.toUpperCase();
+                  }
+                };
+
+                Person_setters.lang = "en";
+                $("#show-data-setters").append(Person_setters.language)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>3. Ví dụ cho Setters & Getters</h5>
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Code mẫu</p>
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">
+<<span></span>h1 id="show-data-getters-setters"><<span></span>/h1>
               
+<<span></span>script>
+  const Person_sg = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "NO",
+    get lang() {
+      return this.language;
+    },
+    set lang(value) {
+      this.language = value;
+    }
+  }
+
+  Person_sg.lang = "en"
+
+  $("#show-data-getters-setters").append(Person_sg.lang)
+<<span></span>/script>
+</code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <h1 id="show-data-getters-setters"></h1>
+                            
+              <script>
+                const Person_sg = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  language: "NO",
+                  get lang() {
+                    return this.language;
+                  },
+                  set lang(value) {
+                    this.language = value;
+                  }
+                }
+
+                Person_sg.lang = "en"
+
+                $("#show-data-getters-setters").append(Person_sg.lang)
+              </script>
             </div>
           </div>
         </div>
