@@ -1,0 +1,33 @@
+<div class="tab-pane fade" id="js-reserved-word-as-property-name" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-1">Reserved Word As Property Name</h5>
+      <small class="mb-4 d-inline-block">Cho phép sử dụng các từ dành riêng làm tên thuộc tính</small>
+
+      <div class="row">
+        <div class="col-6">
+          <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>h1 id="show-data-reWAPN"><<span></span>/h1>
+  
+<<span></span>script>
+  var obj_rwspn = {name: 'John', new: 'yes'}
+
+  $("#show-data-reWAPN").append(obj_rwspn.new)
+<<span></span>/script></code></pre>
+        </div>
+
+        <div class="col-6">
+          <p class='mb-2'>Kết quả:</p> 
+          <div class="p-3 border rounded">
+            <h1 id="show-data-reWAPN"></h1>
+            <script>
+              var obj_rwspn = {name: 'John', new: 'yes'}
+
+              $("#show-data-reWAPN").append(obj_rwspn.new)
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
