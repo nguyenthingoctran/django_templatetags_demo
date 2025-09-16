@@ -1,0 +1,98 @@
+<div class="tab-pane fade" id="js-object-managemennt" role="tabpanel">
+  <div class="card mb-6">
+    <div class="card-body">
+      <h5 class="card-title mb-5">Object Management</h5>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Thêm hoặc thay đổi 1 Property mới</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Syntax</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">Object.defineProperty(object, property, descriptor)</code></pre>
+          </div>
+          <div class="col-12 mt-5">
+            <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-dp"><<span></span>/p>
+
+<<span></span>script>
+  const person_dp = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "EN"
+  };
+
+  // Thêm 1 property mới
+  Object.defineProperty(person_dp, 'year', { value: '2008' })
+  $("#show-data-dp").append("- Thêm 1 property 'year': " + person_dp.year + "</br>")
+
+  // Thay đổi property
+  Object.defineProperty(person_dp, 'language', { value: 'NO' })
+  $("#show-data-dp").append("- Thay đổi giá trị của property 'language': " + person_dp.language)
+<<span></span>/script></code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <p id="show-data-dp"></p>
+
+              <script>
+                const person_dp = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  language: "EN"
+                };
+
+                // Thêm 1 property mới
+                Object.defineProperty(person_dp, 'year', { value: '2008' })
+                $("#show-data-dp").append("- Thêm 1 property 'year': " + person_dp.year + "</br>")
+
+                // Thay đổi property
+                Object.defineProperty(person_dp, 'language', { value: 'NO' })
+                $("#show-data-dp").append("- Thay đổi giá trị của property 'language': " + person_dp.language)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>2. Thêm hoặc thay đổi nhiều properties</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Syntax</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">Object.defineProperties(object, descriptors)</code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class="mb-2">Code mẫu</p> 
+          </div>
+
+          <div class="col-12">
+            <p class="mb-2">Kết quả</p> 
+            <div class="p-3 border rounded">
+              <p id="show-data-dps"></p>
+
+              <script>
+                const object_dps = {};
+                
+                Object.defineProperties(object_dps, {
+                  property1: {
+                    value: 42,
+                    writable: true
+                  },
+                  property2: {},
+                })
+
+                $("#show-data-dps").append(object_dps.property1)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

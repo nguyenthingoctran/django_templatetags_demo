@@ -1,0 +1,24 @@
+<p class="mb-2">Sao chép tất cả các thuộc tính của object này vào 1 object khác.</p> 
+
+<div class="border rounded px-5 py-5 mb-5">
+  <div class="row">
+    <div class="col-6">
+      <p class="mb-2">Data mẫu</p> 
+    </div>
+
+    <div class="col-6">
+      <p class='mb-2'>Kết quả:</p>
+      <div class="p-3 borde rounded">
+        <p id="show-data-assign">Mở console để xem kết quả</p>
+
+        <script>
+          const a_target = { a : 1, b : 2 };
+          const a_source = { c : 4, d : 5 };
+
+          const a_returnedTarget = Object.assign(a_target, a_source)
+          console.log(a_returnedTarget, "a_returnedTarget")
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

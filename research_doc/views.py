@@ -4,6 +4,7 @@ from _Extract_Tags.data_hardcode.data_templatetag_filter import DataResearchTemp
 from django.utils.html import format_html
 from django.contrib.auth.models import User
 from django.shortcuts import render
+from research_doc.data.list_object import ListObjectResearch
 
 # Create your views here.
 class Django_Templatetags(TemplateView):
@@ -251,4 +252,6 @@ class Javascript(TemplateView):
 
   def get_context_data(self, **kwargs):
     data = super().get_context_data(**kwargs)
+    data['object_list'] = ListObjectResearch().data_object()
+    data['static_method'] = ListObjectResearch().data_static_methods()
     return data
