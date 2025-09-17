@@ -1,22 +1,230 @@
-<p class="mb-2">Sao chép tất cả các thuộc tính của object này vào 1 object khác.</p> 
+<p class="mb-2">Định nghĩa: Sao chép tất cả các thuộc tính của object này vào 1 object khác.</p> 
 
 <div class="border rounded px-5 py-5 mb-5">
+  <h5>1. Trường hợp 2 object</h5>
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
       <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-assign"><<span></span>/p>
+
+<<span></span>script>
+  const a_target = { a : 1, b : 2 };
+  const a_source = { c : 4, d : 5 };
+
+  const a_returnedTarget = Object.assign(a_target, a_source)
+  $("#show-data-assign").append(JSON.stringify(a_returnedTarget))
+<<span></span>/script></code></pre>
     </div>
 
-    <div class="col-6">
+    <div class="col-12 mt-5">
       <p class='mb-2'>Kết quả:</p>
-      <div class="p-3 borde rounded">
-        <p id="show-data-assign">Mở console để xem kết quả</p>
+      <div class="p-3 border rounded">
+        <p id="show-data-assign"></p>
 
         <script>
           const a_target = { a : 1, b : 2 };
           const a_source = { c : 4, d : 5 };
 
           const a_returnedTarget = Object.assign(a_target, a_source)
-          console.log(a_returnedTarget, "a_returnedTarget")
+          $("#show-data-assign").append(JSON.stringify(a_returnedTarget))
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>2. Trường hợp nhiều object</h5>
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>script>
+  const a_target_m = { a : 1, b : 2 };
+  const a_source_m_1 = { c : 4, d : 5 };
+  const a_source_m_2 = { e : 6, f : 7 };
+
+  const a_returnedTarget_m = Object.assign(a_target_m, a_source_m_1, a_source_m_2)
+  console.log(a_returnedTarget_m, "a_returnedTarget_m")
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <div class="p-3 border rounded">
+        <p id="show-data-assign-m"></p>
+        <script>
+          const a_target_m = { a : 1, b : 2 };
+          const a_source_m_1 = { c : 4, d : 5 };
+          const a_source_m_2 = { e : 6, f : 7 };
+
+          const a_returnedTarget_m = Object.assign(a_target_m, a_source_m_1, a_source_m_2)
+          $("#show-data-assign-m").append(JSON.stringify(a_returnedTarget_m))
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>3. Sao chép 1 object <span class="text-danger">(Tránh dùng phần này phức tạp khó sử dụng, khó kiểm soát)</span></h5>
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-assign-co"><<span></span>/p>
+<<span></span>script>
+  const obj_co = { a : 1 };
+  const copy_co = Object.assign({}, obj_co);
+
+  $("#show-data-assign-co").append(JSON.stringify(copy_co))
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <div class="p-3 border rounded">
+        <p id="show-data-assign-co"></p>
+        <script>
+          const obj_co = { a : 1 };
+          const copy_co = Object.assign({}, obj_co);
+
+          $("#show-data-assign-co").append(JSON.stringify(copy_co))
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>4. Deep clone <span class="text-danger">(Tránh dùng phần này phức tạp khó sử dụng, khó kiểm soát)</span></h5>
+  <div class="row">
+    <div class="col-8">
+      <p class="mb-2">Code mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-assign-dc-1"><<span></span>/p>
+<<span></span>script>
+  const obj1_dc = { a : 0, b : { c : 0 } };
+  const obj2_dc = Object.assign({}, obj1_dc)
+  const obj3_dc = { a : 0, b : { c : 0 } };
+  const obj4_dc = structuredClone(obj3_dc);
+
+  obj1_dc.a = 1;
+  $("#show-data-assign-dc-1").append("- Đối với obj1_dc.a = 1; <br/>")
+  $("#show-data-assign-dc-1").append("Obj1: " + JSON.stringify(obj1_dc) + "<br/>")
+  $("#show-data-assign-dc-1").append("Obj2: " + JSON.stringify(obj2_dc) + "<hr/>")
+
+  obj2_dc.a = 2;
+  $("#show-data-assign-dc-1").append("- Đối với obj2_dc.a = 2 <br/>")
+  $("#show-data-assign-dc-1").append("Obj1: " + JSON.stringify(obj1_dc) + "<br/>")
+  $("#show-data-assign-dc-1").append("Obj2: " + JSON.stringify(obj2_dc) + "<hr/>")
+
+  obj2_dc.b.c = 3;
+  $("#show-data-assign-dc-1").append("- Đối với obj2_dc.b.c = 3; <br/>")
+  $("#show-data-assign-dc-1").append("Obj1: " + JSON.stringify(obj1_dc) + "<br/>")
+  $("#show-data-assign-dc-1").append("Obj2: " + JSON.stringify(obj2_dc) + "<hr/>")
+
+  obj3_dc.a = 4;
+  obj3_dc.b.c = 4;
+  $("#show-data-assign-dc-1").append("- Đây là trường hợp Deep Clone <br/>")
+  $("#show-data-assign-dc-1").append("Obj4: " + JSON.stringify(obj4_dc))
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-4">
+      <p class='mb-2'>Kết quả:</p> 
+      <div class="p-3 border rounded">
+        <p id="show-data-assign-dc-1"></p>
+        <script>
+          const obj1_dc = { a : 0, b : { c : 0 } };
+          const obj2_dc = Object.assign({}, obj1_dc)
+          const obj3_dc = { a : 0, b : { c : 0 } };
+          const obj4_dc = structuredClone(obj3_dc);
+
+          obj1_dc.a = 1;
+          $("#show-data-assign-dc-1").append("- Đối với obj1_dc.a = 1; <br/>")
+          $("#show-data-assign-dc-1").append("Obj1: " + JSON.stringify(obj1_dc) + "<br/>")
+          $("#show-data-assign-dc-1").append("Obj2: " + JSON.stringify(obj2_dc) + "<hr/>")
+
+          obj2_dc.a = 2;
+          $("#show-data-assign-dc-1").append("- Đối với obj2_dc.a = 2 <br/>")
+          $("#show-data-assign-dc-1").append("Obj1: " + JSON.stringify(obj1_dc) + "<br/>")
+          $("#show-data-assign-dc-1").append("Obj2: " + JSON.stringify(obj2_dc) + "<hr/>")
+
+          obj2_dc.b.c = 3;
+          $("#show-data-assign-dc-1").append("- Đối với obj2_dc.b.c = 3; <br/>")
+          $("#show-data-assign-dc-1").append("Obj1: " + JSON.stringify(obj1_dc) + "<br/>")
+          $("#show-data-assign-dc-1").append("Obj2: " + JSON.stringify(obj2_dc) + "<hr/>")
+
+          obj3_dc.a = 4;
+          obj3_dc.b.c = 4;
+          $("#show-data-assign-dc-1").append("- Đây là trường hợp Deep Clone <br/>")
+          $("#show-data-assign-dc-1").append("Obj4: " + JSON.stringify(obj4_dc))
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>5. Merging object</span></h5>
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-assign-mo"><<span></span>/p>
+<<span></span>script>
+  const o1_mo = { a : 1 };
+  const o2_mo = { b : 2 };
+  const o3_mo = { c : 3 };
+
+  const obj_mo = Object.assign(o1_mo, o2_mo, o3_mo)
+  $("#show-data-assign-mo").append(JSON.stringify(obj_mo))
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <div class="p-3 border rounded">
+        <p id="show-data-assign-mo"></p>
+        <script>
+          const o1_mo = { a : 1 };
+          const o2_mo = { b : 2 };
+          const o3_mo = { c : 3 };
+
+          const obj_mo = Object.assign(o1_mo, o2_mo, o3_mo)
+          $("#show-data-assign-mo").append(JSON.stringify(obj_mo))
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>6. Merging object with the properties</span></h5>
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-assign-mowsp"><<span></span>/p>
+<<span></span>script>
+  const o1_mowsp = { a : 1, b : 1, c : 1 };
+  const o2_mowsp = { b : 2, c : 2 };
+  const o3_mowsp = { c : 3 };
+
+  const obj_mowsp = Object.assign({}, o1_mowsp, o2_mowsp, o3_mowsp)
+  $("#show-data-assign-mowsp").append(JSON.stringify(obj_mowsp))
+<<span></span>/script>
+</code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <div class="p-3 border rounded">
+        <p id="show-data-assign-mowsp"></p>
+        <script>
+          const o1_mowsp = { a : 1, b : 1, c : 1 };
+          const o2_mowsp = { b : 2, c : 2 };
+          const o3_mowsp = { c : 3 };
+
+          const obj_mowsp = Object.assign({}, o1_mowsp, o2_mowsp, o3_mowsp)
+          $("#show-data-assign-mowsp").append(JSON.stringify(obj_mowsp))
         </script>
       </div>
     </div>
