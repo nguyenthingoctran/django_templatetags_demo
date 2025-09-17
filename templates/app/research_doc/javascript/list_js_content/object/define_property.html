@@ -1,51 +1,196 @@
-      <div class="border rounded px-5 py-5 mb-5">
-        <h5>1. Thêm hoặc thay đổi 1 Property mới</h5>
+      <p class="mb-2">Định nghĩa: Phương thức này có thể thêm hoặc thay đổi 1 property,
+        1 property metadata, getters and setters của object.</p> 
 
+      <div class="row mb-5">
+        <div class="col-12">
+          <p class="mb-2">Syntax</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">Object.defineProperty(object, property, descriptor)</code></pre>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Thêm một property</h5>
         <div class="row">
           <div class="col-12">
-            <p class="mb-2">Syntax</p> 
-<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">Object.defineProperty(object, property, descriptor)</code></pre>
-          </div>
-          <div class="col-12 mt-5">
             <p class="mb-2">Code mẫu</p> 
-<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-dp"><<span></span>/p>
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-dpa"><<span></span>/p>
 
 <<span></span>script>
-  const person_dp = {
+  const dpa_person = {
     firstName: "John",
     lastName: "Doe",
     language: "EN"
-  };
+  }
 
-  // Thêm 1 property mới
-  Object.defineProperty(person_dp, 'year', { value: '2008' })
-  $("#show-data-dp").append("- Thêm 1 property 'year': " + person_dp.year + "</br>")
-
-  // Thay đổi property
-  Object.defineProperty(person_dp, 'language', { value: 'NO' })
-  $("#show-data-dp").append("- Thay đổi giá trị của property 'language': " + person_dp.language)
+  Object.defineProperty(dpa_person, "year", { value: "2008" })
+  $("#show-data-dpa").append(dpa_person.year)
 <<span></span>/script></code></pre>
           </div>
 
           <div class="col-12 mt-5">
             <p class='mb-2'>Kết quả:</p> 
             <div class="p-3 border rounded">
-              <p id="show-data-dp"></p>
+              <p id="show-data-dpa"></p>
 
               <script>
-                const person_dp = {
+                const dpa_person = {
+                  firstName: "John",
+                  lastName: "Doe",
+                  language: "EN"
+                }
+
+                Object.defineProperty(dpa_person, "year", { value: "2008" })
+                $("#show-data-dpa").append(dpa_person.year)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>2. Thay đổi một property</h5>
+
+        <div class="row">
+          <div class="col-12 mt-5">
+            <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-dpch"><<span></span>/p>
+
+<<span></span>script>
+  const dpch_person = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "EN"
+  };
+
+  Object.defineProperty(dpch_person, "language", { value: "NO" })
+  $("#show-data-dpch").append(dpch_person.language)
+<<span></span>/script></code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <p id="show-data-dpch"></p>
+
+              <script>
+                const dpch_person = {
                   firstName: "John",
                   lastName: "Doe",
                   language: "EN"
                 };
 
-                // Thêm 1 property mới
-                Object.defineProperty(person_dp, 'year', { value: '2008' })
-                $("#show-data-dp").append("- Thêm 1 property 'year': " + person_dp.year + "</br>")
+                Object.defineProperty(dpch_person, "language", { value: "NO" })
+                $("#show-data-dpch").append(dpch_person.language)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
 
-                // Thay đổi property
-                Object.defineProperty(person_dp, 'language', { value: 'NO' })
-                $("#show-data-dp").append("- Thay đổi giá trị của property 'language': " + person_dp.language)
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>3. Ẩn property</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-hideP"><<span></span>/p>
+
+<<span></span>script>
+  const hideP_person = {
+      firstName: "John",
+      lastName : "Doe",
+      language : "NO",
+  }
+
+  Object.defineProperty(hideP_person, "language", {
+    value: "EN",
+    writable : true,
+    enumerable : false,
+    configurable : true
+  });
+
+  let hideP_txt = "";
+  for (let x in hideP_person) {
+    hideP_txt += hideP_person[x] + "<br>";
+  }
+
+  $("#show-data-hideP").append(hideP_txt)
+<<span></span>/script></code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <p id="show-data-hideP"></p>
+
+              <script>
+                const hideP_person = {
+                    firstName: "John",
+                    lastName : "Doe",
+                    language : "NO",
+                }
+
+                Object.defineProperty(hideP_person, "language", {
+                  value: "EN",
+                  writable : true,
+                  enumerable : false,
+                  configurable : true
+                });
+
+                let hideP_txt = "";
+                for (let x in hideP_person) {
+                  hideP_txt += hideP_person[x] + "<br>";
+                }
+
+                $("#show-data-hideP").append(hideP_txt)
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>4. Tạo setters và getters</h5>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-dpsg-person"><<span></span>/p>
+<<span></span>script>
+  const dpsg_person = {
+    firstName: "John",
+    lastName : "Doe",
+    language : "NO"
+  };
+
+  Object.defineProperty(dpsg_person, "language", {
+    get : function() { return language },
+    set : function(value) { language = value.toUpperCase()}
+  });
+
+  dpsg_person.language = "en";
+  $("#show-data-dpsg-person").append(dpsg_person.language)
+<<span></span>/script></code></pre>
+          </div>
+
+          <div class="col-12 mt-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <p id="show-data-dpsg-person"></p>
+              <script>
+                const dpsg_person = {
+                  firstName: "John",
+                  lastName : "Doe",
+                  language : "NO"
+                };
+
+                Object.defineProperty(dpsg_person, "language", {
+                  get : function() { return language },
+                  set : function(value) { language = value.toUpperCase()}
+                });
+
+                dpsg_person.language = "en";
+                $("#show-data-dpsg-person").append(dpsg_person.language)
               </script>
             </div>
           </div>

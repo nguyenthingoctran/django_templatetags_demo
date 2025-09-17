@@ -1,0 +1,51 @@
+<p class="mb-2">
+  Định nghĩa:
+  <ul>
+    <li>Toán tử delete xoá một thuộc tính của một đối tượng</li>
+    <li>Toán tử delete xoá cả giá trị và chính thuộc tính đó</li>
+    <li>Sau khi xoá, thuộc tính không thể dùng được cho đến khi 
+      được thêm lại
+    </li>
+    <li>Toán tử delete được thiết kế để sử dụng trên các thuộc tính
+      của đối tượng. Nó không ảnh hưởng đến các hàm và biến.
+    </li>
+  </ul>
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-delete"><<span></span>/p>
+
+<<span></span>script>
+  const person_1 = {
+    firstName: "John",
+    lastname:"Doe",
+    age:50,
+    eyecolor:"blue"
+  }
+
+  delete person_1.age;
+  $("#show-data-object-delete").append(person_1.firstName + " is " + person_1.age + " year old.")
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-delete"></p>
+
+      <script>
+        const person_1 = {
+          firstName: "John",
+          lastname:"Doe",
+          age:50,
+          eyecolor:"blue"
+        }
+
+        delete person_1.age;
+        $("#show-data-object-delete").append(person_1.firstName + " is " + person_1.age + " year old.")
+      </script>
+    </div>
+  </div>
+</div>

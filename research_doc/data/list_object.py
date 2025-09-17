@@ -25,6 +25,16 @@ class ListObjectResearch():
         'data_bs_target': 'st_defineProperties',
         'name': 'defineProperties()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/define_properties.html',
+      },
+      {
+        'data_bs_target': 'st_defineProperty',
+        'name': 'defineProperty()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/define_property.html',
+      },
+      {
+        'data_bs_target': 'st_delete',
+        'name': 'delete',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/delete.html',
       }
     ]
     return data
