@@ -1,0 +1,115 @@
+<p class="mb-2">
+  Định nghĩa: Trả về mảng vừa key/value thành 1 cặp object
+</p>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>1. Example 1</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-entries"><<span></span>/p>
+
+<<span></span>script>
+  const person_2 = {
+      firstName: "John",
+      lastName: "Doe",
+      age: 50,
+      eyeColor: "blue"
+  }
+
+  let text_2 = Object.entries(person_2);
+  $("#show-data-object-entries").append(text_2)
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class="mb-2">Kết quả</p> 
+      <div class="p-3 border rounded">
+        <p id="show-data-object-entries"></p>
+
+        <script>
+          const person_2 = {
+              firstName: "John",
+              lastName: "Doe",
+              age: 50,
+              eyeColor: "blue"
+          }
+
+          let text_2 = Object.entries(person_2);
+          $("#show-data-object-entries").append(text_2)
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>2. Example cho loop được đơn giản hơn.</h5>
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Code mẫu</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-object-entries-2"><<span></span>/p>
+
+<<span></span>script>
+  const fruits_1 = { Bananas: 300, Oranges: 200, Apples: 500 };
+
+  let text = "";
+  for (let [fruit, amount] of Object.entries(fruits_1)) {
+    text += fruit + ": " + amount + "<br/>"
+  }
+
+  $("#show-data-object-entries-2").append(text)
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+      <div class="p-3 border rounded">
+        <p id="show-data-object-entries-2"></p>
+
+        <script>
+          const fruits_1 = { Bananas: 300, Oranges: 200, Apples: 500 };
+
+          let text = "";
+          for (let [fruit, amount] of Object.entries(fruits_1)) {
+            text += fruit + ": " + amount + "<br/>"
+          }
+
+          $("#show-data-object-entries-2").append(text)
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>3. Chuyển một Object thành Map.</h5>
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Code mẫu</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-object-entries-3"><<span></span>/p>
+
+<<span></span>script>
+  const fruits_3 = { Bananas: 300, Oranges: 200, Apples: 500 };
+  const myMap = new Map(Object.entries(fruits_3))
+  console.log(myMap, "myMap")
+  document.getElementById("show-data-object-entries-3").innerHTML = myMap;
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+      <div class="p-3 border rounded">
+        <p id="show-data-object-entries-3"></p>
+
+        <script>
+          const fruits_3 = { Bananas: 300, Oranges: 200, Apples: 500 };
+          const myMap = new Map(Object.entries(fruits_3))
+          console.log(myMap, "myMap")
+          document.getElementById("show-data-object-entries-3").innerHTML = myMap;
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

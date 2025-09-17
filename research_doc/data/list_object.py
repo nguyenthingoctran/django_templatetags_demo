@@ -35,6 +35,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_delete',
         'name': 'delete',
         'include_template': 'app/research_doc/javascript/list_js_content/object/delete.html',
+      },
+      {
+        'data_bs_target': 'st_entries',
+        'name': 'entries',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/entries.html',
       }
     ]
     return data
