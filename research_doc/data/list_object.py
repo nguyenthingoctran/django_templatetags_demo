@@ -38,8 +38,13 @@ class ListObjectResearch():
       },
       {
         'data_bs_target': 'st_entries',
-        'name': 'entries',
+        'name': 'entries()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/entries.html',
+      },
+      {
+        'data_bs_target': 'st_freeze',
+        'name': 'freeze()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/freeze.html',
       }
     ]
     return data
