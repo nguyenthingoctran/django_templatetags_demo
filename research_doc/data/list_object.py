@@ -60,6 +60,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_getOwnPropertyDescriptors',
         'name': 'getOwnPropertyDescriptors()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/getOwnPropertyDescriptors.html',
+      },
+      {
+        'data_bs_target': 'st_getOwnPropertyNames',
+        'name': 'getOwnPropertyNames()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/getOwnPropertyNames.html',
       }
     ]
     return data

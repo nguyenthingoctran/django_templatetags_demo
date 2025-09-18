@@ -1,0 +1,41 @@
+<p class="mb-2">
+  Định nghĩa: Phương thức này trả về 1 mảng với nhiều properties của 1 object
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-getOwnPropertyNames"><<span></span>/p>
+
+<<span></span>script>
+  const person_6 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  let props = Object.getOwnPropertyNames(person_6);
+  $("#show-data-object-getOwnPropertyNames").append(props[0])
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-getOwnPropertyNames"></p>
+
+      <script>
+        const person_6 = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue"
+        }
+
+        let props = Object.getOwnPropertyNames(person_6);
+        $("#show-data-object-getOwnPropertyNames").append(props[0])
+      </script>
+    </div>
+  </div>
+</div>
