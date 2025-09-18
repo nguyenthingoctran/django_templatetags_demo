@@ -8,3 +8,61 @@
     <li>Sử dụng <code>Object.isFrozen()</code> để check Object có frozen không.</li>
   </ul>
 </p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-freeze"><<span></span>/p>
+
+<<span></span>script>
+  "use strict"
+  const person_3 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  Object.freeze(person_3)
+
+  let text_1;
+  try {
+    person_3.age = 51;
+    text_1 = Object.values(person_3)
+  } catch (err) {
+    text_1 = err;
+  }
+
+  $("#show-data-object-freeze").append(text_1)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p>
+    <div class="p-3 border rounded">
+      <p id="show-data-object-freeze"></p>
+
+      <script>
+        "use strict"
+        const person_3 = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue"
+        }
+
+        Object.freeze(person_3)
+
+        let text_1;
+        try {
+          person_3.age = 51;
+          text_1 = Object.values(person_3)
+        } catch (err) {
+          text_1 = err;
+        }
+
+        $("#show-data-object-freeze").append(text_1)
+      </script>
+    </div>
+  </div>
+</div>
