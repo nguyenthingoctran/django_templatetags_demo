@@ -1,0 +1,39 @@
+<p class="mb-2">Định nghĩa: Hàm này trả về mô tả của một property.</p> 
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p>
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-getOwnPropertyDescriptor"><<span></span>/p>
+
+<<span></span>script>
+  const person_4 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  };
+
+  let descriptor = Object.getOwnPropertyDescriptor(person_4, "age");
+  $("#show-data-object-getOwnPropertyDescriptor").append(descriptor.value + " " + descriptor.writable);
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-getOwnPropertyDescriptor"></p>
+
+      <script>
+        const person_4 = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue"
+        };
+
+        let descriptor = Object.getOwnPropertyDescriptor(person_4, "age");
+        $("#show-data-object-getOwnPropertyDescriptor").append(descriptor.value + " " + descriptor.writable);
+      </script>
+    </div>
+  </div>
+</div>

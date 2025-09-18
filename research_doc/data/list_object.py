@@ -50,6 +50,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_fromEntries',
         'name': 'fromEntries()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/fromEntries.html',
+      },
+      {
+        'data_bs_target': 'st_getOwnPropertyDescriptor',
+        'name': 'getOwnPropertyDescriptor()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/getOwnPropertyDescriptor.html',
       }
     ]
     return data
