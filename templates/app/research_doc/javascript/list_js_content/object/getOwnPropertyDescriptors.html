@@ -1,0 +1,41 @@
+<p class="mb-2">
+  Định nghĩa: Phương thức này trả về các mô tả thuộc tính của một đối tượng.
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-getOwnPropertyDescriptors"><<span></span>/p>
+
+<<span></span>script>
+  const person_5 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  let descriptors = Object.getOwnPropertyDescriptors(person_5);
+  $("#show-data-object-getOwnPropertyDescriptors").append(descriptors.age.value)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-getOwnPropertyDescriptors"></p>
+
+      <script>
+        const person_5 = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue"
+        }
+
+        let descriptors = Object.getOwnPropertyDescriptors(person_5);
+        $("#show-data-object-getOwnPropertyDescriptors").append(descriptors.age.value)
+      </script>
+    </div>
+  </div>
+</div>
