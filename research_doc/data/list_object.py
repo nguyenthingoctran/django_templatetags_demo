@@ -45,6 +45,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_freeze',
         'name': 'freeze()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/freeze.html',
+      },
+      {
+        'data_bs_target': 'st_fromEntries',
+        'name': 'fromEntries()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/fromEntries.html',
       }
     ]
     return data
