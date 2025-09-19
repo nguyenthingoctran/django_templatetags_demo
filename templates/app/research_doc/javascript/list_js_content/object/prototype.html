@@ -1,0 +1,43 @@
+<p class="mb-2">
+  Định nghĩa: Đây là một thuộc tính toàn cục có sẵn trong tất cả các đối tượng JS.
+  Prototype property cho phép bạn thêm các thuộc tính và phương thức mới vào các đối tượng.
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p>
+
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-prototype"><<span></span>/p>
+
+<<span></span>script>
+  function employee(name, jobtitle, born) {
+    this.name = name;
+    this.jobtitle = jobtitle;
+    this.born = born;
+  }
+
+  employee.prototype.salary = 2000;
+  const fred = new employee("Fred Flintstone", "Caveman", 1970);
+  $("#show-data-object-prototype").append(fred.salary)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-prototype"></p>
+
+      <script>
+        function employee(name, jobtitle, born) {
+          this.name = name;
+          this.jobtitle = jobtitle;
+          this.born = born;
+        }
+
+        employee.prototype.salary = 2000;
+        const fred = new employee("Fred Flintstone", "Caveman", 1970);
+        $("#show-data-object-prototype").append(fred.salary)
+      </script>
+    </div>
+  </div>
+</div>

@@ -95,6 +95,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_preventExtensions',
         'name': 'preventExtensions()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/preventExtensions.html',
+      },
+      {
+        'data_bs_target': 'st_prototype',
+        'name': 'prototype()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/prototype.html',
       }
     ]
     return data
