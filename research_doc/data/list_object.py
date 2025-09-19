@@ -75,6 +75,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_isExtensible',
         'name': 'isExtensible()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/isExtensible.html',
+      },
+      {
+        'data_bs_target': 'st_isFrozen',
+        'name': 'isFrozen()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/isFrozen.html',
       }
     ]
     return data
