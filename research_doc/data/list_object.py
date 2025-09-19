@@ -90,6 +90,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_keys',
         'name': 'keys()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/keys.html',
+      },
+      {
+        'data_bs_target': 'st_preventExtensions',
+        'name': 'preventExtensions()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/preventExtensions.html',
       }
     ]
     return data

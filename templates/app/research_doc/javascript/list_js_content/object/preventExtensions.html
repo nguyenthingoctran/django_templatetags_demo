@@ -1,0 +1,48 @@
+<p class="mb-2">
+  Định nghĩa: là phương thức ngăn chặn thêm property vào object. Yêu cầu cần sử 
+  dụng "use strict" để có thể hiển thị error.
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-preventExtensions"><<span></span>/p>
+
+<<span></span>script>
+  "use strict"
+  const person_10 = { firstName: "John", lastName: "Doe" }
+  Object.preventExtensions(person_10)
+
+  let text_4 = "";
+  try {
+    person_10.nationality = "English";
+  } catch (err) {
+    text_4 = err
+  }
+
+  $("#show-data-object-preventExtensions").append(text_4)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-preventExtensions"></p>
+
+      <script>
+        "use strict"
+        const person_10 = { firstName: "John", lastName: "Doe" }
+        Object.preventExtensions(person_10)
+
+        let text_4 = "";
+        try {
+          person_10.nationality = "English";
+        } catch (err) {
+          text_4 = err
+        }
+
+        $("#show-data-object-preventExtensions").append(text_4)
+      </script>
+    </div>
+  </div>
+</div>
