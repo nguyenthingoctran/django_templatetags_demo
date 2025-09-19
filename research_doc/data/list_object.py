@@ -85,6 +85,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_isSealed',
         'name': 'isSealed()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/isSealed.html',
+      },
+      {
+        'data_bs_target': 'st_keys',
+        'name': 'keys()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/keys.html',
       }
     ]
     return data
