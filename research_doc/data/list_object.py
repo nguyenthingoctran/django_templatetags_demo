@@ -70,6 +70,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_groupBy',
         'name': 'groupBy()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/groupBy.html',
+      },
+      {
+        'data_bs_target': 'st_isExtensible',
+        'name': 'isExtensible()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/isExtensible.html',
       }
     ]
     return data

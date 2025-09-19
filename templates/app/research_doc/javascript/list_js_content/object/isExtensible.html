@@ -1,0 +1,40 @@
+<p class="mb-2">
+  Định nghĩa: Phương thức này check object có thể mở rộng hay không.
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-isExtensible"><<span></span>/p>
+
+<<span></span>script>
+  const person_7 = { firstName: "John", lastName: "Doe" };
+
+  var is_extensible = Object.isExtensible(person_7);
+  $("#show-data-object-isExtensible").append("1) " + is_extensible + "<br/>")
+
+  Object.preventExtensions(person_7)
+  is_extensible = Object.isExtensible(person_7);
+  $("#show-data-object-isExtensible").append("2) " + is_extensible)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-isExtensible"></p>
+
+      <script>
+        const person_7 = { firstName: "John", lastName: "Doe" };
+
+        var is_extensible = Object.isExtensible(person_7);
+        $("#show-data-object-isExtensible").append("1) " + is_extensible + "<br/>")
+
+        Object.preventExtensions(person_7)
+        is_extensible = Object.isExtensible(person_7);
+        $("#show-data-object-isExtensible").append("2) " + is_extensible)
+      </script>
+    </div>
+  </div>
+</div>
