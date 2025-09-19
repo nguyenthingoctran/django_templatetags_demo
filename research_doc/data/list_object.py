@@ -110,6 +110,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_toString',
         'name': 'toString()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/toString.html',
+      },
+      {
+        'data_bs_target': 'st_valueOf',
+        'name': 'valueOf()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/valueOf.html',
       }
     ]
     return data
