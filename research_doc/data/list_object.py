@@ -100,6 +100,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_prototype',
         'name': 'prototype()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/prototype.html',
+      },
+      {
+        'data_bs_target': 'st_seal',
+        'name': 'seal()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/seal.html',
       }
     ]
     return data

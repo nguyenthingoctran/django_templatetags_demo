@@ -1,0 +1,67 @@
+<p class="mb-2">
+  Định nghĩa: Phương thức này
+  <ul>
+    <li>Ngăn chặn việc thêm hoặc xoá các thuộc tính mới</li>
+    <li>Làm cho các thuộc tính hiện có không thể cấu hình được</li>
+    <li>Tự động lỗi ở chế độ non-strict</li>
+    <li>Khi ở chế độ use-strict sẽ trả về lỗi TypeError</li>
+  </ul>
+</p>
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-seal"><<span></span>/p>
+
+<<span></span>script>
+  "use strict"
+
+  const person_11 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  Object.seal(person_11);
+  let text_5 = "";
+  try {
+    delete person_11.age;
+  } catch (err) {
+    text_5 = err;
+  }
+
+  $("#show-data-object-seal").append(text_5)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+
+    <div class="p-3 border rounded">
+      <p id="show-data-object-seal"></p>
+
+      <script>
+        "use strict"
+
+        const person_11 = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue"
+        }
+
+        Object.seal(person_11);
+        let text_5 = "";
+        try {
+          delete person_11.age;
+        } catch (err) {
+          text_5 = err;
+        }
+
+        $("#show-data-object-seal").append(text_5)
+      </script>
+    </div>
+  </div>
+</div>
