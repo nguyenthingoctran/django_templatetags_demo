@@ -1,0 +1,55 @@
+<p class="mb-2">Định nghĩa: 
+  Phương thức này gom nhóm các thành phần của object theo các giá trị chuỗi 
+  trả về một hàm gọi lại.
+</p> 
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Code mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-groupBy"><<span></span>/p>
+
+<<span></span>script>
+  const fruits_4 = [
+    { name: "apples", quatity: 300 },
+    { name: "bananas", quatity: 500 },
+    { name: "organges", quatity: 200 },
+    { name: "kiwi", quatity: 150 },
+  ];
+
+  function myCallback({quatity}) {
+    return quatity > 200 ? "ok" : "low";
+  }
+
+  const result = Object.groupBy(fruits_4, myCallback);
+  const result_stringify = JSON.stringify(result.ok)
+
+  $("#show-data-object-groupBy").append(result_stringify)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p>
+    <div class="p-3 border rounded">
+      <p id="show-data-object-groupBy"></p>
+
+      <script>
+        const fruits_4 = [
+          { name: "apples", quatity: 300 },
+          { name: "bananas", quatity: 500 },
+          { name: "organges", quatity: 200 },
+          { name: "kiwi", quatity: 150 },
+        ];
+
+        function myCallback({quatity}) {
+          return quatity > 200 ? "ok" : "low";
+        }
+
+        const result = Object.groupBy(fruits_4, myCallback);
+        const result_stringify = JSON.stringify(result.ok)
+
+        $("#show-data-object-groupBy").append(result_stringify)
+      </script>
+    </div>
+  </div>
+</div>

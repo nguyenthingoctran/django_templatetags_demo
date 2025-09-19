@@ -65,6 +65,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_getOwnPropertyNames',
         'name': 'getOwnPropertyNames()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/getOwnPropertyNames.html',
+      },
+      {
+        'data_bs_target': 'st_groupBy',
+        'name': 'groupBy()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/groupBy.html',
       }
     ]
     return data
