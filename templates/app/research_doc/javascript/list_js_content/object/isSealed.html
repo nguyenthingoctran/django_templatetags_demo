@@ -1,0 +1,34 @@
+<p class="mb-2">
+  Định nghĩa: Trả về true nếu là seal.
+</p>
+
+<div class="row">
+  <div class="col-12">
+<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript"><<span></span>p id="show-data-object-isSeal"><<span></span>/p>
+
+<<span></span>script>
+  const person_9 = { firstName: "John", lastName: "Doe" }
+
+  Object.seal(person_9);
+
+  let answer = Object.isSealed(person_9)
+  $("#show-data-object-isSeal").append(answer)
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class="mb-2">Kết quả</p> 
+    <div class="p-3 border rounded">
+      <p id="show-data-object-isSeal"></p>
+
+      <script>
+        const person_9 = { firstName: "John", lastName: "Doe" }
+
+        Object.seal(person_9);
+
+        let answer = Object.isSealed(person_9)
+        $("#show-data-object-isSeal").append(answer)
+      </script>
+    </div>
+  </div>
+</div>

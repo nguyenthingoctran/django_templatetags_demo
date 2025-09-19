@@ -80,6 +80,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_isFrozen',
         'name': 'isFrozen()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/isFrozen.html',
+      },
+      {
+        'data_bs_target': 'st_isSealed',
+        'name': 'isSealed()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/isSealed.html',
       }
     ]
     return data
