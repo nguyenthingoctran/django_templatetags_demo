@@ -1,0 +1,125 @@
+<p class="mb-2">
+  Định nghĩa: Trả về object như 1 string
+</p>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>1. Sử dụng toString trong array</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-object-toString"><<span></span>/p>
+
+<<span></span>script>
+  const fruits_5 = ['Banana', 'Orange', "Apple", "Mango"];
+  const myArray = fruits_5.toString();
+
+  $("#show-data-object-toString").append(myArray)
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+
+      <div class="p-3 border rounded">
+        <p id="show-data-object-toString"></p>
+
+        <script>
+          const fruits_5 = ['Banana', 'Orange', "Apple", "Mango"];
+          const myArray = fruits_5.toString();
+
+          $("#show-data-object-toString").append(myArray)
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>2. Sử dụng toString trong 1 object</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-object-toString-1"><<span></span>/p>
+
+<<span></span>script>
+  const person_12 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  const keys_1 = person_12.toString();
+  $("#show-data-object-toString-1").append(keys_1)
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+
+      <div class="p-3 border rounded">
+        <p id="show-data-object-toString-1"></p>
+
+        <script>
+          const person_12 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+          }
+
+          const keys_1 = person_12.toString();
+          $("#show-data-object-toString-1").append(keys_1)
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>3. Sử dụng Object.toString trong 1 object</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Code mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-object-toString-2"><<span></span>/p>
+
+<<span></span>script>
+  const person_13 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  }
+
+  const keys_2 = Object.toString(person_13)
+  $("#show-data-object-toString-2").append(keys_2)
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+
+      <div class="p-3 border rounded">
+        <p id="show-data-object-toString-2"></p>
+
+        <script>
+          const person_13 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+          }
+
+          const keys_2 = Object.toString(person_13)
+          $("#show-data-object-toString-2").append(keys_2)
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

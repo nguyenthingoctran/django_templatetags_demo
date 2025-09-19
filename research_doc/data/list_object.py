@@ -105,6 +105,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_seal',
         'name': 'seal()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/seal.html',
+      },
+      {
+        'data_bs_target': 'st_toString',
+        'name': 'toString()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/toString.html',
       }
     ]
     return data
