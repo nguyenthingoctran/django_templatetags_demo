@@ -1,0 +1,107 @@
+<p class="mb-2">Định nghĩa: Tạo một mảng array mới.</p> 
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>1. Tạo 1 array mới cách 1</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-array[]"><<span></span>/p>
+
+<<span></span>script>
+  const cars = ['Saab', 'Volvo', 'BMW'];
+  document.getElementById("show-data-array[]").innerHTML = cars
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+      <div class="p-3 border rounded">
+        <p id="show-data-array[]"></p>
+
+        <script>
+          const cars = ['Saab', 'Volvo', 'BMW'];
+          document.getElementById("show-data-array[]").innerHTML = cars
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>2. Tạo 1 array mới cách 2</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-array[]-1"><<span></span>/p>
+
+<<span></span>script>
+  const cars_1 = [];
+
+  cars_1.push("Apple");
+  cars_1.push("Samsung");
+  cars_1.push("HP");
+
+  document.getElementById("show-data-array[]-1").innerHTML = cars_1
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+      <div class="p-3 border rounded">
+        <p id="show-data-array[]-1"></p>
+
+        <script>
+          const cars_1 = [];
+
+          cars_1.push("Apple");
+          cars_1.push("Samsung");
+          cars_1.push("HP");
+
+          document.getElementById("show-data-array[]-1").innerHTML = cars_1
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="border rounded px-5 py-5 mb-5">
+  <h5>3. Tạo 1 array mới cách 3</h5>
+
+  <div class="row">
+    <div class="col-12">
+      <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-array[]-2"><<span></span>/p>
+
+<<span></span>script>
+  const cars_2 = new Array();
+
+  cars_2.push("cat");
+  cars_2.push("dog");
+  cars_2.push("fish");
+
+  document.getElementById("show-data-array[]-2").innerHTML = cars_2;
+<<span></span>/script></code></pre>
+    </div>
+
+    <div class="col-12 mt-5">
+      <p class='mb-2'>Kết quả:</p>
+      <div class="p-3 border rounded">
+        <p id="show-data-array[]-2"></p>
+
+        <script>
+          const cars_2 = new Array();
+
+          cars_2.push("cat");
+          cars_2.push("dog");
+          cars_2.push("fish");
+
+          document.getElementById("show-data-array[]-2").innerHTML = cars_2;
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

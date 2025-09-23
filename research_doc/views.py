@@ -5,6 +5,7 @@ from django.utils.html import format_html
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from research_doc.data.list_object import ListObjectResearch
+from research_doc.data.list_array import ListArrayResearch
 
 # Create your views here.
 class Django_Templatetags(TemplateView):
@@ -254,4 +255,5 @@ class Javascript(TemplateView):
     data = super().get_context_data(**kwargs)
     data['object_list'] = ListObjectResearch().data_object()
     data['static_method'] = ListObjectResearch().data_static_methods()
+    data['array_list'] = ListArrayResearch().data_array()
     return data
