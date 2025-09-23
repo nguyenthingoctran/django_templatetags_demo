@@ -115,6 +115,11 @@ class ListObjectResearch():
         'data_bs_target': 'st_valueOf',
         'name': 'valueOf()',
         'include_template': 'app/research_doc/javascript/list_js_content/object/valueOf.html',
+      },
+      {
+        'data_bs_target': 'st_values',
+        'name': 'values()',
+        'include_template': 'app/research_doc/javascript/list_js_content/object/values.html',
       }
     ]
     return data

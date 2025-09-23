@@ -1,26 +1,40 @@
-<p class="mb-2">Định nghĩa: Sao chép tất cả các thuộc tính của object này vào 1 object khác.</p> 
+<p class="mb-2">Định nghĩa: 
+  <ul>
+    <li>Phương thức <code>valueOf()</code> trả về nguyên thuỷ của một đối tượng.</li>
+    <li>Nếu đối tượng không có giá trị nguyên thuỷ, <code>valueOf()</code> sẽ trả về chính đối tượng đó.</li>
+    <li>Phương thức <code>valueOf()</code> không thay đổi đối tượng gốc.</li>
+  </ul>
+</p> 
 
-<div class="border rounded px-5 py-5 mb-5">
-  <h5>1. Trường hợp 2 object</h5>
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Data mẫu</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-valueOf"><<span></span>/p>
+<<span></span>p id="show-data-valueOf-2"><<span></span>/p>
 
-  <div class="row">
-    <div class="col-12">
-      <p class="mb-2">Data mẫu</p> 
-<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html">
-  
-</code></pre>
-    </div>
+<<span></span>script>
+  const fruits_6 = ['Banana', 'Orange', 'Apple', 'Mango'];
+  const myArray_1 = fruits_6.valueOf();
+  const myArray_2 = fruits_6;
+  document.getElementById("show-data-valueOf").innerHTML = myArray_1;
+  document.getElementById("show-data-valueOf-2").innerHTML = myArray_2;
+<<span></span>/script></code></pre>
+  </div>
 
-    <div class="col-12 mt-5">
-      <p class='mb-2'>Kết quả:</p>
+  <div class="col-12 mt-5">
+    <p class='mb-2'>Kết quả:</p>
 
-      <div class="p-3 border rounded">
-        <p id="show-data-valueOf"></p>
+    <div class="p-3 border rounded">
+      <p id="show-data-valueOf"></p>
+      <p id="show-data-valueOf-2"></p>
 
-        <script>
-          
-        </script>
-      </div>
+      <script>
+        const fruits_6 = ['Banana', 'Orange', 'Apple', 'Mango'];
+        const myArray_1 = fruits_6.valueOf();
+        const myArray_2 = fruits_6;
+        document.getElementById("show-data-valueOf").innerHTML = myArray_1;
+        document.getElementById("show-data-valueOf-2").innerHTML = myArray_2;
+      </script>
     </div>
   </div>
 </div>

@@ -1,0 +1,42 @@
+<p class="mb-2">Định nghĩa: 
+  Trả về 1 mảng là giá trị thuộc tính của 1 object.
+</p> 
+
+<div class="row">
+  <div class="col-12">
+    <p class="mb-2">Data mẫu</p> 
+
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>p id="show-data-values"><<span></span>/p>
+
+<<span></span>script>
+  const person_14 = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  };
+
+  let text_6 = Object.values(person_14);
+  document.getElementById("show-data-values").innerHTML = text_6
+<<span></span>/script></code></pre>
+  </div>
+
+  <div class="col-12 mt-5">
+    <p class='mb-2'>Kết quả:</p>
+    <div class="p-3 border rounded">
+      <p id="show-data-values"></p>
+
+      <script>
+        const person_14 = {
+          firstName: "John",
+          lastName: "Doe",
+          age: 50,
+          eyeColor: "blue"
+        };
+
+        let text_6 = Object.values(person_14);
+        document.getElementById("show-data-values").innerHTML = text_6
+      </script>
+    </div>
+  </div>
+</div>
