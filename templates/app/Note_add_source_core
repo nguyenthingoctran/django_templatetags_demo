@@ -1,0 +1,27 @@
+==============================
+Setup BaseTemplateView: đây là class handle.
+
+- Tại urls:
+from django.urls import path
+from .views import SampleView
+
+
+urlpatterns = [
+    path(
+        "",
+        SampleView.as_view(),
+        name="index",
+    ),
+    path(
+        "page_2/",
+        SampleView.as_view(),
+        name="page-2",
+    ),
+]
+
+- Tại web_project/views.py 
+Cop paste class BaseTemplateView
+File này chỉ setup 1 lần ban đầu thôi
+
+- Tại index.html
+{% extends layout_path %}
