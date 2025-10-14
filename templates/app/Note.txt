@@ -66,3 +66,6 @@ Popover
 {% endblock %}
 
 =========================================
+Custom scss cho proj Vuexy
+- Tạo file src/scss/_components/_tabulator-table.scss
+- Import file vừa tạo vào file src/scss/_components.scss
