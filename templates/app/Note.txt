@@ -69,3 +69,9 @@ Popover
 Custom scss cho proj Vuexy
 - Tạo file src/scss/_components/_tabulator-table.scss
 - Import file vừa tạo vào file src/scss/_components.scss
+
+=========================================
+Show field name Model
+
+for item_field in User._meta.fields:
+    print(item_field)

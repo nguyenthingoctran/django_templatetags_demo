@@ -257,3 +257,6 @@ class Javascript(TemplateView):
     data['static_method'] = ListObjectResearch().data_static_methods()
     data['array_list'] = ListArrayResearch().data_array()
     return data
+  
+class Scss(TemplateView):
+  template_name = 'app/research_doc/scss/index.html'
