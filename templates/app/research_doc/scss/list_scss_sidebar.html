@@ -1,0 +1,32 @@
+<div class="nav-align-left">
+  <ul class="nav nav-pills flex-column w-100" id="list_sidebar_scss"></ul>
+</div>
+
+<script>
+  let icon_brand_scss = "brand-sass"
+  var list_sidebar_scss = [
+    {
+      'data_bs_target': 'scss-variables',
+      'icon_name': icon_brand_scss,
+      'name': 'variables',
+      'active': 'active'
+    }
+  ]
+
+  for (var item_sidebar of list_sidebar_scss) {
+    var data_bs_target = item_sidebar['data_bs_target']
+    var icon_name = item_sidebar['icon_name']
+    var name = item_sidebar['name']
+    var active = item_sidebar['active'] ? item_sidebar['active'] : ''
+
+    var html_item_sidebar = `
+          <li class="nav-item">
+            <button class="nav-link ${active}" data-bs-toggle="tab" data-bs-target="#${data_bs_target}">
+              <i class="icon-base ti tabler-${icon_name} icon-sm me-1_5"></i>
+              <span class="align-middle">${name}</span>
+            </button>
+          </li>
+      `
+    $(html_item_sidebar).appendTo("#list_sidebar_scss")
+  }
+</script>
