@@ -1,3 +1,10 @@
+// Variables 
+$myFont: fantasy;
+$myColor: red;
+$myFontSize: 18px;
+
 #text-demo-varibles {
-    color: red;
+    font-family: $myFont;
+    color: $myColor;
+    font-size: $myFontSize;
 }
