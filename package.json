@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "watch:scss": "node-sass -w static/styles/scss/research_doc.scss static/styles/css/research_doc.css"
+  },
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
+}

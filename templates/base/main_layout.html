@@ -10,7 +10,11 @@
   data-assets-path="{% static 'vendor/' %}"
   data-template="vertical-menu-template">
 
-  {% include 'base/control/head.html' %}
+  <head>
+    <title>TranNTN - Vuexy Teamplate</title>
+    {% include 'base/control/plugin_common.html' %}
+    {% block css %} {% endblock %}
+  </head>
 
   <body>
     <!-- Layout wrapper -->
