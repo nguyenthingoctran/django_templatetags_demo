@@ -4,7 +4,65 @@ $myColor: red;
 $myFontSize: 18px;
 
 #text-demo-varibles {
-    font-family: $myFont;
-    color: $myColor;
-    font-size: $myFontSize;
+	font-family: $myFont;
+	color: $myColor;
+	font-size: $myFontSize;
+}
+
+// Variables Scope
+$color_1: red;
+
+#h1-varibles-scope {
+	$color_1: green;
+	color: $color_1;
+}
+
+#p-variables-scope {
+	color: $color_1;
+}
+
+// Variables Global
+$color_2: red;
+
+#h1-var-global {
+	$color_2: green !global;
+	color: $color_2;
+}
+
+#p-var-global {
+	color: $color_2;
+}
+
+// Sass Nested Rules
+#nav-nested-rules {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		display: block;
+		padding: 6px 12px;
+		text-decoration: underline;
+	}
+}
+
+// Sass Nested Properties
+#h3-nested-properties {
+	font: {
+		family: fantasy;
+		size: 18px;
+		weight: bold;
+	}
+
+	text: {
+		align: center;
+		transform: lowercase;
+		overflow: hidden;
+	}
 }

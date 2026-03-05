@@ -23,4 +23,101 @@ data = datetime.now()
       {{ data|date }}
     </div>
   </div>
+
+  <div class="col-12">
+    <p class="mb-0 mt-3">Note: Tham khảo một số format sau:</p>
+    <div class="mt-4">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Format character</th>
+            <th>Description</th>
+            <th>Example output</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="3" class="bg-label-warning">
+              <h5 class="mb-0">Day</h5>
+            </td>
+          </tr>
+          <tr>
+            <td>d</td>
+            <td>Day of the month, 2 digits with leading zeros.</td>
+            <td>01 to 31</td>
+          </tr>
+          <tr>
+            <td>j</td>
+            <td>Day of the month without leading zeros.</td>
+            <td>1 to 31</td>
+          </tr>
+          <tr>
+            <td>S</td>
+            <td>English ordinal suffix for day of the month, 2 characters.</td>
+            <td>st, nd, rd or th</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="bg-label-warning">
+              <h5 class="mb-0">Month</h5>
+            </td>
+          </tr>
+          <tr>
+            <td>m</td>
+            <td>Month, 2 digits with leading zeros.</td>
+            <td>01 to 12</td>
+          </tr>
+          <tr>
+            <td>n</td>
+            <td>Month without leading zeros.</td>
+            <td>1 to 12</td>
+          </tr>
+          <tr>
+            <td>b</td>
+            <td>Month, textual, 3 letters, lowercase.</td>
+            <td>jan</td>
+          </tr>
+          <tr>
+            <td>M</td>
+            <td>Month, textual, 3 letters.</td>
+            <td>Jan</td>
+          </tr>
+          <tr>
+            <td>F</td>
+            <td>Month, textual, long.</td>
+            <td>January</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="bg-label-warning">
+              <h5 class="mb-0">Year</h5>
+            </td>
+          </tr>
+          <tr>
+            <td>y</td>
+            <td>Year, 2 digits.</td>
+            <td>99</td>
+          </tr>
+          <tr>
+            <td>Y</td>
+            <td>Year, 4 digits.</td>
+            <td>1999</td>
+          </tr>
+          <tr>
+            <td colspan="3" class="bg-label-warning">
+              <h5 class="mb-0">Week</h5>
+            </td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Day of the week, textual, 3 letters.</td>
+            <td>Fri</td>
+          </tr>
+          <tr>
+            <td>l</td>
+            <td>Day of the week, textual, long.</td>
+            <td>Friday</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

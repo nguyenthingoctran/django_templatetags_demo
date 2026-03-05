@@ -2,3 +2,36 @@
   font-family: fantasy;
   color: red;
   font-size: 18px; }
+
+#h1-varibles-scope {
+  color: green; }
+
+#p-variables-scope {
+  color: red; }
+
+#h1-var-global {
+  color: green; }
+
+#p-var-global {
+  color: green; }
+
+#nav-nested-rules ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#nav-nested-rules li {
+  display: inline-block; }
+
+#nav-nested-rules a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: underline; }
+
+#h3-nested-properties {
+  font-family: fantasy;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  text-overflow: hidden; }

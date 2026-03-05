@@ -1,0 +1,20 @@
+Tại 1 folder app tạo folder "templatetags"
+
+====================================
++ Trong folder "templatetags" tạo 2 file
+   - __init__.py (tên này phải đúng quy chuẩn)
+   - templatetags_demo.py (tên này tuỳ ý)
+
+====================================
++ Vào file "templatetags_demo.py" code như sau
+from django import template
+
+register = template.Library()
+
+@register.inclusion_tag('app/templatetags/tags/title/main_title.html')
+def main_title(value="", className=""):
+  data = {
+    "value": value,
+    "className": className
+  }
+  return data

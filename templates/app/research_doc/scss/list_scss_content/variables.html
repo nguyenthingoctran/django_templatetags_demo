@@ -17,46 +17,146 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-12">
-          <p class="mt-3 mb-2">Syntax</p>
-<pre class="chroma rounded mb-0"><code class="language-javascript" data-lang="javascript">$variablename: value;</code></pre>
+      <!-- 1. Syntax -->
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>1. Syntax</h5>
+        <div class="row">
+          <div class="col-12">
+      <pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">$variablename: value;</code></pre>
+          </div>
         </div>
       </div>
 
-      <div class="row mt-5">
-        <div class="col-12 mb-5">
-          <p class='mb-2'>HTML:</p>
+      <!-- 2. Basic Uses -->
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>2. Basic Uses</h5>
+        <div class="row mt-5">
+          <div class="col-12 mb-5">
+            <p class='mb-2'>HTML</p>
 <pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>h1 id="text-demo-varibles">Demo cho phần Variables<<span></span>/h1></code></pre>
-        </div>
-        <div class="col-6">
-          <p class='mb-2'>SCSS:</p> 
-<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="javascript">$myFont: fantasy;
+          </div>
+          <div class="col-6">
+            <p class='mb-2'>SCSS</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">$myFont: fantasy;
 $myColor: red;
 $myFontSize: 18px;
 
 #text-demo-varibles {
-    font-family: $myFont;
-    color: $myColor;
-    font-size: $myFontSize;
+  font-family: $myFont;
+  color: $myColor;
+  font-size: $myFontSize;
 }</code></pre>
+          </div>
+          <div class="col-6">
+            <p class='mb-2'>CSS render</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#text-demo-varibles {
+  font-family: fantasy;
+  color: red;
+  font-size: 18px; }
+</code></pre>
+          </div>
         </div>
-        <div class="col-6">
-          <p class='mb-2'>CSS:</p> 
-<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="javascript">$myFont: fantasy;
-$myColor: red;
-$myFontSize: 18px;
 
-#text-demo-varibles {
-    font-family: $myFont;
-    color: $myColor;
-    font-size: $myFontSize;
-}</code></pre>
+        <div class="row mt-5">
+          <div class="col-12">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <h1 id="text-demo-varibles">Demo cho phần Variables</h1>
+            </div>
+          </div>
         </div>
-        <div class="col-6">
-          <p class='mb-2'>Kết quả:</p> 
-          <div class="p-3 border rounded">
-            <h1 id="text-demo-varibles">Demo cho phần Variables</h1>
+      </div>
+
+      <!-- 3. Variable Scope -->
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>3. Variable Scope</h5>
+        <p>Khi khai báo variables trong 1 block scss thì variable này sẽ có độ ưu tiên cao trong block. Biến global sẽ không ưu tiên.</p>
+        <div class="row">
+          <div class="col-12">
+            <p class='mb-2'>HTML:</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>h1 id="h1-varibles-scope">Demo cho phần Variables Scope<<span></span>/h1>
+<<span></span>p id="p-variables-scope">Paragraph Variables Scope<<span></span>/p></code></pre>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-6">
+            <p class='mb-2'>SCSS:</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">$color_1: red;
+
+#h1-varibles-scope {
+  $color_1: green;
+  color: $color_1;
+}
+
+#p-variables-scope {
+  color: $color_1;
+}</code></pre>
+          </div>
+          <div class="col-6">
+            <p class='mb-2'>CSS render:</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#h1-varibles-scope {
+  color: green; }
+
+#p-variables-scope {
+  color: red; }</code></pre>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <h1 id="h1-varibles-scope">Demo cho phần Variables Scope</h1>
+              <p id="p-variables-scope">Paragraph Variables Scope</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Sass !global -->
+      <div class="border rounded px-5 py-5 mb-5">
+        <h5>4. Sass !global</h5>
+        <div class="row">
+          <div class="col-12 mb-5">
+            <p class='mb-2'>HTML:</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>h1 id="h1-var-global">Demo cho phần Variables Global<<span></span>/h1>
+<<span></span>p id="p-var-global">Paragraph Variables Global<<span></span>/p></code></pre>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <p class='mb-2'>SCSS:</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="javascript">$color_2: red;
+
+#h1-var-global {
+  $color_2: green !global;
+  color: $color_2;
+}
+
+#p-var-global {
+  color: $color_2;
+}</code></pre>
+          </div>
+
+          <div class="col-6">
+            <p class='mb-2'>CSS render:</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#h1-var-global {
+  color: green; }
+
+#p-var-global {
+  color: green; }</code></pre>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-12 mb-5">
+            <p class='mb-2'>Kết quả:</p> 
+            <div class="p-3 border rounded">
+              <h1 id="h1-var-global">Demo cho phần Variables Global</h1>
+              <p id="p-var-global">Paragraph Variables Global</p>
+            </div>
           </div>
         </div>
       </div>

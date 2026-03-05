@@ -1,0 +1,129 @@
+<div class="tab-pane fade" id="scss-nesting" role="tabpanel">
+  <div class="card mb-6">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Nesting</h5>
+
+        <!-- 1. Sass Nested Rules -->
+        <div class="border rounded px-5 py-5 mb-5">
+          <h5>1. Sass Nested Rules</h5>
+          <div class="row">
+            <div class="col-12">
+              <p class='mb-2'>HTML</p>
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>nav id="nav-nested-rules">
+  <<span></span>ul>
+    <<span></span>li><<span></span>a href="#">HTML<<span></span>/a><<span></span>/li>
+    <<span></span>li><<span></span>a href="#">CSS<<span></span>/a><<span></span>/li>
+    <<span></span>li><<span></span>a href="#">SASS<<span></span>/a><<span></span>/li>
+  <<span></span>/ul>
+<<span></span>/nav></code></pre>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-6">
+              <p class='mb-2'>SCSS</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#nav-nested-rules {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: underline;
+  }
+}</code></pre>
+            </div>
+
+            <div class="col-6">
+              <p class='mb-2'>CSS render</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#nav-nested-rules ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+#nav-nested-rules li {
+  display: inline-block; }
+
+#nav-nested-rules a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: underline; }</code></pre>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-12">
+              <p class='mb-2'>Kết quả:</p>
+              <div class="p-3 border rounded">
+                <nav id="nav-nested-rules">
+                  <ul>
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">SASS</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Sass Nested Properties -->
+        <div class="border rounded px-5 py-5 mb-5">
+          <h5>2. Sass Nested Properties</h5>
+
+          <div class="row">
+            <div class="col-12">
+              <p class='mb-2'>HTML:</p> 
+<pre class="chroma rounded mb-0"><code class="language-html" data-lang="html"><<span></span>h3 id="h3-nested-properties">Hello Kitty<<span></span>/h3></code></pre>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-6">
+              <p class='mb-2'>SCSS:</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#h3-nested-properties {
+  font: {
+    family: fantasy;
+    size: 18px;
+    weight: bold;
+  }
+
+  text: {
+    align: center;
+    transform: lowercase;
+    overflow: hidden;
+  }
+}</code></pre>
+            </div>
+
+            <div class="col-6">
+              <p class='mb-2'>CSS render:</p> 
+<pre class="chroma rounded mb-0"><code class="language-scss" data-lang="scss">#h3-nested-properties {
+  font-family: fantasy;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: lowercase;
+  text-overflow: hidden; }</code></pre>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-6">
+              <p class='mb-2'>Kết quả:</p>
+              <div class="p-3 border rounded">
+                <h3 id="h3-nested-properties">Hello Kitty</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
